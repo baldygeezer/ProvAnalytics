@@ -18,7 +18,7 @@ public class Main {
         //wobble.doTheWibblyThing();
         FileLoader f = null;
         try {
-            f = new FileLoader("xslt/", "xml_to_RDF.xsl");
+            f = new FileLoader("xslt/", "xmlToRDF.xsl");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

@@ -5,14 +5,16 @@
         xmlns:osm="http://www.openstreetmap.org/"
         xmlns:pa="https://www.ecs.soton.ac.uk/people/bar1g16/provanalytics#">
     <xsl:output method="xml" indent="yes" encoding="utf-8"/>
+
     <xsl:template match="/">
+
         <rdf:RDF>
             <xsl:apply-templates/>
         </rdf:RDF>
     </xsl:template>
     <!--handle the root node-->
     <xsl:template match="/*">
-        <xsl:apply-templates/>
+        <xsl:apply-templates select="/*/*"/>
     </xsl:template>
     <!--Handle element nodes: i.e. nodes, ways, relations-->
     <xsl:template match="/*/*">
@@ -54,15 +56,24 @@
 
             </xsl:template>
 
+
+            <xsl:apply-templates select="/*/*/*"/>
+
+
+
         </rdf:Description>
-        <xsl:apply-templates select="/*/*/*"/>
+
+
+        <xsl:template match="/*/*/*">
+<!--wibb            <xsl:apply-templates select="@*"/>-->
+
+        </xsl:template>
+
+
+
+
 
     </xsl:template>
-
-    <xsl:template match="/*/*/*">
-        <xsl:apply-templates select="@*"/>
-    </xsl:template>
-
     <!--template to turn attributes into nodes-->
     <xsl:template match="@*">
         <xsl:for-each select="attribute::*">
