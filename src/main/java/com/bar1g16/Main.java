@@ -13,6 +13,7 @@ import java.io.IOException;
 public class Main {
 
     public static void main(String[] args) {
+        boolean printStacktraces=false;
        // Wibble wobble = new Wibble();
 
         //wobble.doTheWibblyThing();
@@ -20,7 +21,8 @@ public class Main {
         try {
             f = new FileLoader("xslt/", "xmlToRDF.xsl");
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.out.println("whoopsy we cant file a file: "+e.getMessage());
+            if (printStacktraces) e.printStackTrace();
         }
         Transformer t = f.getStylesheet();
         Document d = null;
@@ -28,7 +30,7 @@ public class Main {
         try {
             d = f.getXMLDocument("testfixture.osm");
         } catch (IOException e) {
-            e.printStackTrace();
+            if (printStacktraces) e.printStackTrace();
         }
         DOMSource source = new DOMSource(d);
         StreamResult result = new StreamResult(System.out);
