@@ -84,7 +84,7 @@ public class TripleBuilder {
 
         Model m = ModelFactory.createDefaultModel();
         m.read("data-out/result.rdf");
-        m.write(System.out, "TURTLE");
+        m.write(System.out);
 
     }
 

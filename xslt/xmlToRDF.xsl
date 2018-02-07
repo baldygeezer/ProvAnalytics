@@ -26,8 +26,9 @@
     <!--process every child node (way, relation, node)-->
     <xsl:template match="/*/*">
         <rdf:Description rdf:about="https://openstreetmap.org/{name()}/{@id}/v{@version}">
-            <xsl:element name="pa:versionOf">https://www.openstreetmap.org/<xsl:value-of select="name()"/>/<xsl:value-of select="@id"/>
-            </xsl:element>
+            <!--<xsl:element name="pa:versionOf">https://www.openstreetmap.org/<xsl:value-of select="name()"/>/<xsl:value-of select="@id"/>-->
+            <!--</xsl:element>-->
+            <pa:versionOf rdf:resource="https://openstreetmap.org/{name()}/{@id}"/>
             <!--apply a template that processes the attributes and turns them into elements-->
             <xsl:apply-templates select="@*"/>
             <!--if there are child nodes...-->
@@ -71,14 +72,15 @@
     <!--</xsl:template>-->
 
     <xsl:template match="child::member">
-        <xsl:element name="osmd:member" >https://www.openstreetmap.org/<xsl:value-of select="attribute::type"/>/<xsl:value-of
+        <xsl:element name="osmd:member">https://www.openstreetmap.org/<xsl:value-of select="attribute::type"/>/<xsl:value-of
                 select="attribute::ref"/>
         </xsl:element>
     </xsl:template>
 
     <xsl:template match="child::nd">
-        <xsl:element name="osmd:nd">https://www.openstreetmap.org/node/<xsl:value-of select="attribute::ref"/>
-        </xsl:element>
+        <osmd:nd rdf:resource="https://www.openstreetmap.org/node/{attribute::ref}"/>
+        <!--<xsl:element name="osmd:nd">https://www.openstreetmap.org/node/<xsl:value-of select="attribute::ref"/>-->
+        <!--</xsl:element>-->
     </xsl:template>
 
     <xsl:template match="child::tag">
@@ -88,11 +90,13 @@
     </xsl:template>
 
     <xsl:template match="attribute::changeset">
-        <xsl:element name="osmd:changeset">https://www.openstreetmap.org/changeset/<xsl:value-of select="."/></xsl:element>
+        <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/{.}"/>
+        <!--<xsl:element name="osmd:changeset">https://www.openstreetmap.org/changeset/<xsl:value-of select="."/></xsl:element>-->
     </xsl:template>
 
     <xsl:template match="attribute::uid">
-        <xsl:element name="osmd:uid">https://www.openstreetmap.org/users/<xsl:value-of select="."/></xsl:element>
+        <osmd:uid rdf:resource="https://www.openstreetmap.org/users/{.}"/>
+        <!--<xsl:element name="osmd:uid">https://www.openstreetmap.org/users/<xsl:value-of select="."/></xsl:element>-->
     </xsl:template>
 
 
