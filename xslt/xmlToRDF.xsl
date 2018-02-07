@@ -71,7 +71,7 @@
     <!--</xsl:template>-->
 
     <xsl:template match="child::member">
-        <xsl:element name="osmd:member">https://www.openstreetmap.org/<xsl:value-of select="attribute::type"/>/<xsl:value-of
+        <xsl:element name="osmd:member" >https://www.openstreetmap.org/<xsl:value-of select="attribute::type"/>/<xsl:value-of
                 select="attribute::ref"/>
         </xsl:element>
     </xsl:template>

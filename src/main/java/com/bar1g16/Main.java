@@ -7,38 +7,48 @@ import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class Main {
 
     public static void main(String[] args) {
-        boolean printStacktraces=false;
-       // Wibble wobble = new Wibble();
+        boolean printStacktraces = false;
+        // Wibble wobble = new Wibble();
 
         //wobble.doTheWibblyThing();
-        FileLoader f = null;
-        try {
-            f = new FileLoader("xslt/", "xmlToRDF.xsl");
-        } catch (FileNotFoundException e) {
-            System.out.println("whoopsy we cant file a file: "+e.getMessage());
-            if (printStacktraces) e.printStackTrace();
-        }
-        Transformer t = f.getStylesheet();
-        Document d = null;
+//        FileLoader f = null;
+//        try {
+//            f = new FileLoader("xslt/", "xmlToRDF.xsl");
+//        } catch (FileNotFoundException e) {
+//            System.out.println("whoopsy we cant file a file: "+e.getMessage());
+//            if (printStacktraces) e.printStackTrace();
+//        }
+//        Transformer t = f.getStylesheet();
+//        Document d = null;
+//
+//        try {
+//            d = f.getXMLDocument("testfixture.osm");
+//        } catch (IOException e) {
+//            if (printStacktraces) e.printStackTrace();
+//        }
+//        DOMSource source = new DOMSource(d);
 
+        //        StreamResult result = new StreamResult(System.out);
+//        try {
+//            t.transform(source, result);
+//        } catch (TransformerException e) {
+//            e.printStackTrace();
+//        }
+
+        TripleBuilder t = null;
         try {
-            d = f.getXMLDocument("testfixture.osm");
-        } catch (IOException e) {
-            if (printStacktraces) e.printStackTrace();
-        }
-        DOMSource source = new DOMSource(d);
-        StreamResult result = new StreamResult(System.out);
-        try {
-            t.transform(source, result);
-        } catch (TransformerException e) {
+            t = new TripleBuilder("xslt/", "xmlToRDF.xsl");
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+        t.getModel();
     }
 
 

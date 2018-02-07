@@ -17,7 +17,6 @@ public class Wibble {
 
         model_from_file.read(rdf_input, null);
         //model_from_file.write(System.out);
-
         Model home_made_model = ModelFactory.createDefaultModel();
 
 
