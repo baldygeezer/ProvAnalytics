@@ -89,7 +89,9 @@ public class FileLoader extends FileIO {
         try {
             transformer = transformerFactory.newTransformer(xslSource);
         } catch (TransformerConfigurationException e) {
-            throw new FileNotFoundException("We were unable to locate a stylesheet. Please ensure there is a valid xsl file named: "
+            e.printStackTrace();
+            throw new FileNotFoundException("We were unable to locate a valid stylesheet. Please ensure there is a valid xsl file " +
+                    "named: "
                     + xsl.getName() + " located in the directory: " + super.getDataPath());
         } finally {
             result= false;

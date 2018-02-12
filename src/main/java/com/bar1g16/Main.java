@@ -44,7 +44,7 @@ public class Main {
 
         TripleBuilder t = null;
         try {
-            t = new TripleBuilder("xslt/", "xmlToRDF.xsl");
+            t = new TripleBuilder("xslt/", "OshToOwl.xsl");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
