@@ -6,21 +6,33 @@
         xmlns:pa="https://www.ecs.soton.ac.uk/people/bar1g16/provanalytics#"
         xmlns:owl="http://www.w3.org/2002/07/owl#"
         xmlns:prov="http://www.w3.org/ns/prov#">
-
-
     <xsl:output method="xml" indent="yes"/>
+
     <!--Handle the document root  (<osm>)
     ...put an RDF tag in it-->
     <xsl:template match="/">
-        <rdf:RDF xmlns="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#"
-                 xml:base="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#"
-                 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-                 xmlns:owl="http://www.w3.org/2002/07/owl#"
-                 xmlns:xml="http://www.w3.org/XML/1998/namespace"
-                 xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-                 xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-                 xmlns:prov="http://www.w3.org/ns/prov#">
-            <owl:Ontology rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv">
+        <!--<rdf:RDF xmlns="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#"-->
+                 <!--xml:base="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#"-->
+                 <!--xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"-->
+                 <!--xmlns:owl="http://www.w3.org/2002/07/owl#"-->
+                 <!--xmlns:xml="http://www.w3.org/XML/1998/namespace"-->
+                 <!--xmlns:xsd="http://www.w3.org/2001/XMLSchema#"-->
+                 <!--xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"-->
+                 <!--xmlns:prov="http://www.w3.org/ns/prov#">-->
+        <rdf:RDF
+                xmlns="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#"
+                xml:base="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv"
+                xmlns:pa="https://www.ecs.soton.ac.uk/people/bar1g16/provanalytics#"
+                xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                xmlns:owl="http://www.w3.org/2002/07/owl#"
+                xmlns:xml="http://www.w3.org/XML/1998/namespace"
+                xmlns:osm="http://www.openstreetmap.org/"
+                xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+                xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+                xmlns:prov="http://www.w3.org/ns/prov#"
+                xmlns:osmd="https://wiki.openstreetmap.org/wiki/Elements#">
+
+        <owl:Ontology rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv">
                 <owl:imports rdf:resource="http://www.w3.org/ns/prov-o-20130430"/>
             </owl:Ontology>
             <owl:Class rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node">
@@ -46,11 +58,14 @@
 
     <!--process every child node (way, relation, node)-->
     <xsl:template match="/*/*">
+        <xsl:variable name="vsn" select="@version - 1"/>
         <owl:NamedIndividual rdf:about="https://openstreetmap.org/{name()}/{@id}v{@version}">
             <!--<rdf:Description rdf:about="https://openstreetmap.org/{name()}/{@id}/v{@version}">-->
             <!--<xsl:apply-templates match="/*/way"/>-->
-            <!--<prov:wasRevisionOf rdf:resource="https://openstreetmap.org/node/254429v1"/>-->
-<xsl:element name="prov:wasRevisionOf" ><xsl:attribute name="rdf:resource">https://openstreetmap.org/{name()}/{@id</xsl:attribute></xsl:element>
+            <!--<prov:wasRevisionOf rdf:resource="https://openstreetmap.org/node/2544291"/>-->
+            <!--<xsl:element name="prov:wasRevisionOf"><xsl:attribute name="rdf:resource" ><xsl:value-of select="https://openstreetmap.org/{name()}/{@id}v{@version}"/></xsl:attribute></xsl:element>-->
+            <!--<prov:wasRevisionOf ><xsl:attribute name="rdf:resource">https://openstreetmap.org/<xsl:value-of-->
+            <!--select="."/></xsl:attribute></prov:wasRevisionOf>-->
             <xsl:choose>
                 <xsl:when test="name()='way'">
                     <xsl:element
@@ -58,7 +73,6 @@
                         <xsl:attribute name="rdf:resource">https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Way</xsl:attribute>
                     </xsl:element>
                 </xsl:when>
-
                 <xsl:when test="name()='relation'">
                     <xsl:element
                             name="rdf:type">
@@ -71,23 +85,34 @@
                         <xsl:attribute name="rdf:resource">https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node</xsl:attribute>
                     </xsl:element>
                 </xsl:when>
-
             </xsl:choose>
 
+            <xsl:if test="@version > 1">
+                <prov:qualifiedRevision rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dv{name()}{@id}v{@version}v{$vsn}"/>
+
+            </xsl:if>
+            <!--<prov:qualifiedRevision rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dv{name()}{@id}v{@version}v{$vsn}"/>-->
             <pa:versionOf rdf:resource="https://openstreetmap.org/{name()}/{@id}"/>
             <!--apply a template that processes the attributes and turns them into elements-->
             <xsl:apply-templates select="@*"/>
             <!--if there are child nodes...-->
             <xsl:apply-templates select="child::*"/>
         </owl:NamedIndividual>
-        <!--</rdf:Description>-->
+
+<!--if the version number is greater than 1 then it is derived from a prior version
+  in which case we make a derivation (qualified relation design pattern)-->
+        <xsl:if test="@version > 1">
+        <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dv{name()}{@id}v{@version}v{$vsn}">
+            <rdf:type rdf:resource="http://www.w3.org/ns/prov#Revision"/>
+            <prov:entity rdf:resource="https://openstreetmap.org/{name()}/{@id}v{$vsn}"/>
+            <!--<prov:qualifiedDerivation rdf:resource="https://openstreetmap.org/{name()}/{@id}v{@version}"/>-->
+        </owl:NamedIndividual>
+        </xsl:if>
+
+
     </xsl:template>
 
-    <!--<xsl:template match="/*/way">-->
 
-    <!--<xsl:element name="rdf:type"><xsl:attribute name="resource">http://www.w3.org/ns/prov#Way</xsl:attribute></xsl:element>-->
-
-    <!--</xsl:template>-->
 
     <!-- ********************************************
     This is an osm specific block
