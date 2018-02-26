@@ -1,22 +1,15 @@
 package com.bar1g16;
-
 import com.bar1g16.interfaces.IDataLoader;
-import com.sun.xml.internal.stream.buffer.XMLStreamBufferResult;
 import org.w3c.dom.Document;
-
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.transform.Result;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
-import javax.xml.transform.dom.DOMResult;
 import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.sax.SAXResult;
 import javax.xml.transform.stream.StreamResult;
 import java.io.*;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 
-import java.nio.file.*;
 
 /***
  * Injests plain XML data using an IDataLoader - a strategy for allowing us to use XML files or input streams,
@@ -61,7 +54,6 @@ public class TripleBuilder {
     }
 
     public void getModel() {
-
 
         Transformer transformer = fileLoader.getStylesheet();
         Document xmlDoc = null;

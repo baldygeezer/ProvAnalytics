@@ -45,9 +45,18 @@
     put the precessed child tags in here -->
     <xsl:template match="/*">
         <xsl:apply-templates select="/*/*"/>
+        <!--<xsl:for-each select="distinct-values(/*/*/@uid)">-->
+        <!--<ploppy/>-->
+        <!--make a user agent for each unique user id we find-->
+        <!--<xsl:for-each select="child::*/@uid">-->
+        <xsl:for-each select="child::*/@uid">
+            <owl:NamedIndividual rdf:about="https://openstreetmap.org/users/{.}">
+                <rdf:type rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+            </owl:NamedIndividual>
+        </xsl:for-each>
     </xsl:template>
 
-    <!--process every child node (way, relation, node)-->
+    <!--process a child node (way, relation, node)-->
     <xsl:template match="/*/*">
         <xsl:variable name="vsn" select="@version - 1"/>
         <owl:NamedIndividual rdf:about="https://openstreetmap.org/{name()}/{@id}v{@version}">
@@ -78,8 +87,11 @@
                 <prov:qualifiedRevision
                         rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dv{name()}{@id}v{@version}v{$vsn}"/>
             </xsl:if>
+            <!-- make the attribution to an agent we have created-->
+            <prov:qualifiedAttribution rdf:resource="whoopsweneedanagent!"/>
+            <!-- triple which says what the current map version is NB @todo we need to look at whether we need to handle the fact
+            that not all nodes are displayed - we could reason this with OWL  -->
             <pa:versionOf rdf:resource="https://openstreetmap.org/{name()}/{@id}"/>
-
             <!--apply a template that processes the attributes and turns them into elements-->
             <xsl:apply-templates select="@*"/>
             <!--deal with any child nodes...-->
