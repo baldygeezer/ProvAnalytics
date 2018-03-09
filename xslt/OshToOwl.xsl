@@ -86,7 +86,7 @@
             </xsl:if>
             <!-- make the attribution to an agent we have created todo except that the qualifiedAttribution relationship should go
             to an attribution not an agent-->
-            <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr{@id}"/>
+            <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr{name()}{@id}v{@version}"/>
             <!-- triple which says what the current map version is NB @todo we need to look at whether we need to handle the fact
             that not all nodes are displayed - we could reason this with OWL  -->
             <pa:versionOf rdf:resource="https://openstreetmap.org/{name()}/{@id}"/>
@@ -102,11 +102,10 @@
             <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dv{name()}{@id}v{@version}v{$vsn}">
                 <rdf:type rdf:resource="http://www.w3.org/ns/prov#Revision"/>
                 <prov:entity rdf:resource="https://openstreetmap.org/{name()}/{@id}v{$vsn}"/>
-                <!--<prov:qualifiedDerivation rdf:resource="https://openstreetmap.org/{name()}/{@id}v{@version}"/>-->
             </owl:NamedIndividual>
         </xsl:if>
         <!--create an attribution-->
-        <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr{@id}">
+        <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr{name()}{@id}v{@version}">
             <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
             <prov:agent rdf:resource="https://openstreetmap.org/users/{@uid}"/>
         </owl:NamedIndividual>
