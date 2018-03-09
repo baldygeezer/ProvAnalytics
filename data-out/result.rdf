@@ -23,7 +23,7 @@
    </owl:Class>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/254429v1">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/12935"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr254429"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/254429"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/514036"/>
       <osmd:id>254429</osmd:id>
@@ -34,10 +34,14 @@
       <osmd:user>perros</osmd:user>
       <osmd:version>1</osmd:version>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr254429">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/12935"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/254429v2">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
       <prov:qualifiedRevision rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dvnode254429v2v1"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/21244"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr254429"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/254429"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/287333"/>
       <osmd:id>254429</osmd:id>
@@ -52,10 +56,14 @@
       <rdf:type rdf:resource="http://www.w3.org/ns/prov#Revision"/>
       <prov:entity rdf:resource="https://openstreetmap.org/node/254429v1"/>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr254429">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/21244"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/254429v3">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
       <prov:qualifiedRevision rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dvnode254429v3v2"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/174"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr254429"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/254429"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/479991"/>
       <osmd:id>254429</osmd:id>
@@ -71,10 +79,14 @@
       <rdf:type rdf:resource="http://www.w3.org/ns/prov#Revision"/>
       <prov:entity rdf:resource="https://openstreetmap.org/node/254429v2"/>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr254429">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/174"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/254429v4">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
       <prov:qualifiedRevision rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dvnode254429v4v3"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/55782"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr254429"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/254429"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/3877615"/>
       <osmd:id>254429</osmd:id>
@@ -91,10 +103,14 @@
       <rdf:type rdf:resource="http://www.w3.org/ns/prov#Revision"/>
       <prov:entity rdf:resource="https://openstreetmap.org/node/254429v3"/>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr254429">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/55782"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/254429v5">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
       <prov:qualifiedRevision rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dvnode254429v5v4"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/55782"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr254429"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/254429"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/7746576"/>
       <osmd:id>254429</osmd:id>
@@ -111,10 +127,14 @@
       <rdf:type rdf:resource="http://www.w3.org/ns/prov#Revision"/>
       <prov:entity rdf:resource="https://openstreetmap.org/node/254429v4"/>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr254429">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/55782"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/254429v6">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
       <prov:qualifiedRevision rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dvnode254429v6v5"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/534393"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr254429"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/254429"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/10650281"/>
       <osmd:id>254429</osmd:id>
@@ -131,10 +151,14 @@
       <rdf:type rdf:resource="http://www.w3.org/ns/prov#Revision"/>
       <prov:entity rdf:resource="https://openstreetmap.org/node/254429v5"/>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr254429">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/534393"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/254429v7">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
       <prov:qualifiedRevision rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dvnode254429v7v6"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/14020"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr254429"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/254429"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/10899959"/>
       <osmd:id>254429</osmd:id>
@@ -151,9 +175,13 @@
       <rdf:type rdf:resource="http://www.w3.org/ns/prov#Revision"/>
       <prov:entity rdf:resource="https://openstreetmap.org/node/254429v6"/>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr254429">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/14020"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/254430v1">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/12935"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr254430"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/254430"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/514036"/>
       <osmd:id>254430</osmd:id>
@@ -164,10 +192,14 @@
       <osmd:user>perros</osmd:user>
       <osmd:version>1</osmd:version>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr254430">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/12935"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/254430v2">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
       <prov:qualifiedRevision rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dvnode254430v2v1"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/35271"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr254430"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/254430"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/485587"/>
       <osmd:id>254430</osmd:id>
@@ -182,10 +214,14 @@
       <rdf:type rdf:resource="http://www.w3.org/ns/prov#Revision"/>
       <prov:entity rdf:resource="https://openstreetmap.org/node/254430v1"/>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr254430">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/35271"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/254430v3">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
       <prov:qualifiedRevision rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dvnode254430v3v2"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/84000"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr254430"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/254430"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/340545"/>
       <osmd:id>254430</osmd:id>
@@ -200,9 +236,13 @@
       <rdf:type rdf:resource="http://www.w3.org/ns/prov#Revision"/>
       <prov:entity rdf:resource="https://openstreetmap.org/node/254430v2"/>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr254430">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/84000"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/319638v1">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/12935"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr319638"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/319638"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/514036"/>
       <osmd:id>319638</osmd:id>
@@ -213,10 +253,14 @@
       <osmd:user>perros</osmd:user>
       <osmd:version>1</osmd:version>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr319638">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/12935"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/319638v2">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
       <prov:qualifiedRevision rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dvnode319638v2v1"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/35271"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr319638"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/319638"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/485587"/>
       <osmd:id>319638</osmd:id>
@@ -231,10 +275,14 @@
       <rdf:type rdf:resource="http://www.w3.org/ns/prov#Revision"/>
       <prov:entity rdf:resource="https://openstreetmap.org/node/319638v1"/>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr319638">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/35271"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/319638v3">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
       <prov:qualifiedRevision rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dvnode319638v3v2"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/84000"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr319638"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/319638"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/340545"/>
       <osmd:id>319638</osmd:id>
@@ -249,10 +297,14 @@
       <rdf:type rdf:resource="http://www.w3.org/ns/prov#Revision"/>
       <prov:entity rdf:resource="https://openstreetmap.org/node/319638v2"/>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr319638">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/84000"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/319638v4">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
       <prov:qualifiedRevision rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dvnode319638v4v3"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/84000"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr319638"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/319638"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/340545"/>
       <osmd:id>319638</osmd:id>
@@ -267,10 +319,14 @@
       <rdf:type rdf:resource="http://www.w3.org/ns/prov#Revision"/>
       <prov:entity rdf:resource="https://openstreetmap.org/node/319638v3"/>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr319638">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/84000"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/319638v5">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
       <prov:qualifiedRevision rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dvnode319638v5v4"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/84000"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr319638"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/319638"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/5971653"/>
       <osmd:id>319638</osmd:id>
@@ -285,10 +341,14 @@
       <rdf:type rdf:resource="http://www.w3.org/ns/prov#Revision"/>
       <prov:entity rdf:resource="https://openstreetmap.org/node/319638v4"/>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr319638">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/84000"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/319638v6">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
       <prov:qualifiedRevision rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dvnode319638v6v5"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/55782"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr319638"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/319638"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/7746576"/>
       <osmd:id>319638</osmd:id>
@@ -303,10 +363,14 @@
       <rdf:type rdf:resource="http://www.w3.org/ns/prov#Revision"/>
       <prov:entity rdf:resource="https://openstreetmap.org/node/319638v5"/>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr319638">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/55782"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/319638v7">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
       <prov:qualifiedRevision rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dvnode319638v7v6"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/534393"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr319638"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/319638"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/10650281"/>
       <osmd:id>319638</osmd:id>
@@ -321,10 +385,14 @@
       <rdf:type rdf:resource="http://www.w3.org/ns/prov#Revision"/>
       <prov:entity rdf:resource="https://openstreetmap.org/node/319638v6"/>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr319638">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/534393"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/319638v8">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
       <prov:qualifiedRevision rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dvnode319638v8v7"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/14020"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr319638"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/319638"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/10899959"/>
       <osmd:id>319638</osmd:id>
@@ -339,10 +407,14 @@
       <rdf:type rdf:resource="http://www.w3.org/ns/prov#Revision"/>
       <prov:entity rdf:resource="https://openstreetmap.org/node/319638v7"/>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr319638">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/14020"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/319638v9">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
       <prov:qualifiedRevision rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dvnode319638v9v8"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/534393"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr319638"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/319638"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/12776108"/>
       <osmd:id>319638</osmd:id>
@@ -357,9 +429,13 @@
       <rdf:type rdf:resource="http://www.w3.org/ns/prov#Revision"/>
       <prov:entity rdf:resource="https://openstreetmap.org/node/319638v8"/>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr319638">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/534393"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/319640v1">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/55782"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr319640"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/319640"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/7746576"/>
       <osmd:id>319640</osmd:id>
@@ -370,10 +446,14 @@
       <osmd:user>0123456789</osmd:user>
       <osmd:version>1</osmd:version>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr319640">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/55782"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/319640v2">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
       <prov:qualifiedRevision rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dvnode319640v2v1"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/534393"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr319640"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/319640"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/10650281"/>
       <osmd:id>319640</osmd:id>
@@ -388,10 +468,14 @@
       <rdf:type rdf:resource="http://www.w3.org/ns/prov#Revision"/>
       <prov:entity rdf:resource="https://openstreetmap.org/node/319640v1"/>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr319640">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/534393"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/319640v3">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
       <prov:qualifiedRevision rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dvnode319640v3v2"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/14020"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr319640"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/319640"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/10899959"/>
       <osmd:id>319640</osmd:id>
@@ -406,9 +490,13 @@
       <rdf:type rdf:resource="http://www.w3.org/ns/prov#Revision"/>
       <prov:entity rdf:resource="https://openstreetmap.org/node/319640v2"/>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr319640">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/14020"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/324341v1">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/12935"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr324341"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/324341"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/514036"/>
       <osmd:id>324341</osmd:id>
@@ -419,10 +507,14 @@
       <osmd:user>perros</osmd:user>
       <osmd:version>1</osmd:version>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr324341">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/12935"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/324341v2">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
       <prov:qualifiedRevision rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dvnode324341v2v1"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/35271"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr324341"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/324341"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/485587"/>
       <osmd:id>324341</osmd:id>
@@ -437,10 +529,14 @@
       <rdf:type rdf:resource="http://www.w3.org/ns/prov#Revision"/>
       <prov:entity rdf:resource="https://openstreetmap.org/node/324341v1"/>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr324341">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/35271"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/324341v3">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
       <prov:qualifiedRevision rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dvnode324341v3v2"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/35271"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr324341"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/324341"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/485587"/>
       <osmd:id>324341</osmd:id>
@@ -455,10 +551,14 @@
       <rdf:type rdf:resource="http://www.w3.org/ns/prov#Revision"/>
       <prov:entity rdf:resource="https://openstreetmap.org/node/324341v2"/>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr324341">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/35271"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/324341v4">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
       <prov:qualifiedRevision rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dvnode324341v4v3"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/35271"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr324341"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/324341"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/485587"/>
       <osmd:id>324341</osmd:id>
@@ -473,10 +573,14 @@
       <rdf:type rdf:resource="http://www.w3.org/ns/prov#Revision"/>
       <prov:entity rdf:resource="https://openstreetmap.org/node/324341v3"/>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr324341">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/35271"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/324341v5">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
       <prov:qualifiedRevision rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dvnode324341v5v4"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/35271"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr324341"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/324341"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/485587"/>
       <osmd:id>324341</osmd:id>
@@ -491,10 +595,14 @@
       <rdf:type rdf:resource="http://www.w3.org/ns/prov#Revision"/>
       <prov:entity rdf:resource="https://openstreetmap.org/node/324341v4"/>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr324341">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/35271"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/324341v6">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
       <prov:qualifiedRevision rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dvnode324341v6v5"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/84000"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr324341"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/324341"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/340545"/>
       <osmd:id>324341</osmd:id>
@@ -509,10 +617,14 @@
       <rdf:type rdf:resource="http://www.w3.org/ns/prov#Revision"/>
       <prov:entity rdf:resource="https://openstreetmap.org/node/324341v5"/>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr324341">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/84000"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/324341v7">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
       <prov:qualifiedRevision rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dvnode324341v7v6"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/84000"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr324341"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/324341"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/340545"/>
       <osmd:id>324341</osmd:id>
@@ -527,10 +639,14 @@
       <rdf:type rdf:resource="http://www.w3.org/ns/prov#Revision"/>
       <prov:entity rdf:resource="https://openstreetmap.org/node/324341v6"/>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr324341">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/84000"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/324341v8">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
       <prov:qualifiedRevision rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dvnode324341v8v7"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/55782"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr324341"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/324341"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/6713760"/>
       <osmd:id>324341</osmd:id>
@@ -545,10 +661,14 @@
       <rdf:type rdf:resource="http://www.w3.org/ns/prov#Revision"/>
       <prov:entity rdf:resource="https://openstreetmap.org/node/324341v7"/>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr324341">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/55782"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/324341v9">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
       <prov:qualifiedRevision rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dvnode324341v9v8"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/534393"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr324341"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/324341"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/10650281"/>
       <osmd:id>324341</osmd:id>
@@ -563,10 +683,14 @@
       <rdf:type rdf:resource="http://www.w3.org/ns/prov#Revision"/>
       <prov:entity rdf:resource="https://openstreetmap.org/node/324341v8"/>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr324341">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/534393"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/324341v10">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
       <prov:qualifiedRevision rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dvnode324341v10v9"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/534393"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr324341"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/324341"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/12452880"/>
       <osmd:id>324341</osmd:id>
@@ -581,9 +705,13 @@
       <rdf:type rdf:resource="http://www.w3.org/ns/prov#Revision"/>
       <prov:entity rdf:resource="https://openstreetmap.org/node/324341v9"/>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr324341">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/534393"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/21420434v1">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/534393"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr21420434"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/21420434"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/10650281"/>
       <osmd:id>21420434</osmd:id>
@@ -594,10 +722,14 @@
       <osmd:user>Chris Baines</osmd:user>
       <osmd:version>1</osmd:version>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr21420434">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/534393"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/21420434v2">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
       <prov:qualifiedRevision rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dvnode21420434v2v1"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/14020"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr21420434"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/21420434"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/10899959"/>
       <osmd:id>21420434</osmd:id>
@@ -612,9 +744,13 @@
       <rdf:type rdf:resource="http://www.w3.org/ns/prov#Revision"/>
       <prov:entity rdf:resource="https://openstreetmap.org/node/21420434v1"/>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr21420434">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/14020"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/27558592v1">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/12935"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr27558592"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/27558592"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/514036"/>
       <osmd:id>27558592</osmd:id>
@@ -626,10 +762,14 @@
       <osmd:version>1</osmd:version>
       <osmd:tag>created_by|JOSM</osmd:tag>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr27558592">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/12935"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/27558592v2">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
       <prov:qualifiedRevision rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dvnode27558592v2v1"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/84000"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr27558592"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/27558592"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/340545"/>
       <osmd:id>27558592</osmd:id>
@@ -644,10 +784,14 @@
       <rdf:type rdf:resource="http://www.w3.org/ns/prov#Revision"/>
       <prov:entity rdf:resource="https://openstreetmap.org/node/27558592v1"/>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr27558592">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/84000"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/27558592v3">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
       <prov:qualifiedRevision rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dvnode27558592v3v2"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/84000"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr27558592"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/27558592"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/340545"/>
       <osmd:id>27558592</osmd:id>
@@ -662,10 +806,14 @@
       <rdf:type rdf:resource="http://www.w3.org/ns/prov#Revision"/>
       <prov:entity rdf:resource="https://openstreetmap.org/node/27558592v2"/>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr27558592">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/84000"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/27558592v4">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
       <prov:qualifiedRevision rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dvnode27558592v4v3"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/534393"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr27558592"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/27558592"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/10650281"/>
       <osmd:id>27558592</osmd:id>
@@ -680,10 +828,14 @@
       <rdf:type rdf:resource="http://www.w3.org/ns/prov#Revision"/>
       <prov:entity rdf:resource="https://openstreetmap.org/node/27558592v3"/>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr27558592">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/534393"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/27558592v5">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
       <prov:qualifiedRevision rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dvnode27558592v5v4"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/534393"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr27558592"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/27558592"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/10650721"/>
       <osmd:id>27558592</osmd:id>
@@ -698,9 +850,13 @@
       <rdf:type rdf:resource="http://www.w3.org/ns/prov#Revision"/>
       <prov:entity rdf:resource="https://openstreetmap.org/node/27558592v4"/>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr27558592">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/534393"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/1740735279v1">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/84000"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr1740735279"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/1740735279"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/340545"/>
       <osmd:id>1740735279</osmd:id>
@@ -711,9 +867,13 @@
       <osmd:user>pcman1985</osmd:user>
       <osmd:version>1</osmd:version>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr1740735279">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/84000"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/1740735278v1">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/84000"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr1740735278"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/1740735278"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/340545"/>
       <osmd:id>1740735278</osmd:id>
@@ -724,9 +884,13 @@
       <osmd:user>pcman1985</osmd:user>
       <osmd:version>1</osmd:version>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr1740735278">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/84000"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/1740735275v1">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/84000"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr1740735275"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/1740735275"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/340545"/>
       <osmd:id>1740735275</osmd:id>
@@ -737,9 +901,13 @@
       <osmd:user>pcman1985</osmd:user>
       <osmd:version>1</osmd:version>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr1740735275">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/84000"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/node/1740735276v1">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Node"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/84000"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr1740735276"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/node/1740735276"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/340545"/>
       <osmd:id>1740735276</osmd:id>
@@ -750,9 +918,13 @@
       <osmd:user>pcman1985</osmd:user>
       <osmd:version>1</osmd:version>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr1740735276">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/84000"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/way/149920731v1">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Way"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/55782"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr149920731"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/way/149920731"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/11217591"/>
       <osmd:id>149920731</osmd:id>
@@ -771,10 +943,14 @@
       <osmd:tag>old_ref|A335</osmd:tag>
       <osmd:tag>motorcar|yes</osmd:tag>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr149920731">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/55782"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/way/149920731v2">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Way"/>
       <prov:qualifiedRevision rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dvway149920731v2v1"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/84000"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr149920731"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/way/149920731"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/13796146"/>
       <osmd:id>149920731</osmd:id>
@@ -798,10 +974,14 @@
       <rdf:type rdf:resource="http://www.w3.org/ns/prov#Revision"/>
       <prov:entity rdf:resource="https://openstreetmap.org/way/149920731v1"/>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr149920731">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/84000"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/way/149920731v3">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Way"/>
       <prov:qualifiedRevision rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dvway149920731v3v2"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/534393"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr149920731"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/way/149920731"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/16173913"/>
       <osmd:id>149920731</osmd:id>
@@ -826,9 +1006,13 @@
       <rdf:type rdf:resource="http://www.w3.org/ns/prov#Revision"/>
       <prov:entity rdf:resource="https://openstreetmap.org/way/149920731v2"/>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr149920731">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/534393"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/way/162141724v1">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Way"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/534393"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr162141724"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/way/162141724"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/11502302"/>
       <osmd:id>162141724</osmd:id>
@@ -842,10 +1026,14 @@
       <osmd:nd rdf:resource="https://www.openstreetmap.org/node/1740735276"/>
       <osmd:tag>building|house</osmd:tag>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr162141724">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/534393"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/way/162141724v2">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Way"/>
       <prov:qualifiedRevision rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dvway162141724v2v1"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/534393"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr162141724"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/way/162141724"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/12793195"/>
       <osmd:id>162141724</osmd:id>
@@ -865,9 +1053,13 @@
       <rdf:type rdf:resource="http://www.w3.org/ns/prov#Revision"/>
       <prov:entity rdf:resource="https://openstreetmap.org/way/162141724v1"/>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr162141724">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/534393"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/relation/1867844v1">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Relation"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/540739"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr1867844"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/relation/1867844"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/9977905"/>
       <osmd:id>1867844</osmd:id>
@@ -881,10 +1073,14 @@
       <osmd:tag>type|route</osmd:tag>
       <osmd:tag>route|bus</osmd:tag>
    </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr1867844">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/540739"/>
+   </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/relation/1867844v2">
       <rdf:type rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#Relation"/>
       <prov:qualifiedRevision rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dvrelation1867844v2v1"/>
-      <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/540739"/>
+      <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr1867844"/>
       <pa:versionOf rdf:resource="https://openstreetmap.org/relation/1867844"/>
       <osmd:changeset rdf:resource="https://www.openstreetmap.org/changeset/9977905"/>
       <osmd:id>1867844</osmd:id>
@@ -902,6 +1098,10 @@
    <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dvrelation1867844v2v1">
       <rdf:type rdf:resource="http://www.w3.org/ns/prov#Revision"/>
       <prov:entity rdf:resource="https://openstreetmap.org/relation/1867844v1"/>
+   </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr1867844">
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+      <prov:agent rdf:resource="https://openstreetmap.org/users/540739"/>
    </owl:NamedIndividual>
    <owl:NamedIndividual rdf:about="https://openstreetmap.org/users/12935">
       <rdf:type rdf:resource="http://www.w3.org/ns/prov#Agent"/>

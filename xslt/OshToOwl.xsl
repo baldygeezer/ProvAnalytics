@@ -46,10 +46,7 @@
     <xsl:template match="/*">
         <xsl:apply-templates select="/*/*"/>
         <xsl:for-each select="distinct-values(/*/*/@uid)">
-        <!--<ploppy/>-->
         <!--make a user agent for each unique user id we find-->
-        <!--<xsl:for-each select="child::*/@uid">-->
-      <!--  <xsl:for-each select="child::*/@uid">-->
             <owl:NamedIndividual rdf:about="https://openstreetmap.org/users/{.}">
                 <rdf:type rdf:resource="http://www.w3.org/ns/prov#Agent"/>
             </owl:NamedIndividual>
@@ -89,7 +86,7 @@
             </xsl:if>
             <!-- make the attribution to an agent we have created todo except that the qualifiedAttribution relationship should go
             to an attribution not an agent-->
-            <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/{@uid}"/>
+            <prov:qualifiedAttribution rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr{@id}"/>
             <!-- triple which says what the current map version is NB @todo we need to look at whether we need to handle the fact
             that not all nodes are displayed - we could reason this with OWL  -->
             <pa:versionOf rdf:resource="https://openstreetmap.org/{name()}/{@id}"/>
@@ -108,7 +105,11 @@
                 <!--<prov:qualifiedDerivation rdf:resource="https://openstreetmap.org/{name()}/{@id}v{@version}"/>-->
             </owl:NamedIndividual>
         </xsl:if>
-
+        <!--create an attribution-->
+        <owl:NamedIndividual rdf:about="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#attr{@id}">
+            <rdf:type rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+            <prov:agent rdf:resource="https://openstreetmap.org/users/{@uid}"/>
+        </owl:NamedIndividual>
 
     </xsl:template>
 
