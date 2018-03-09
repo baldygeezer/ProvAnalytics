@@ -1,5 +1,5 @@
 <xsl:stylesheet
-        xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
+        xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="3.0"
         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
         xmlns:osm="http://www.openstreetmap.org/"
         xmlns:osmd="https://wiki.openstreetmap.org/wiki/Elements#"
@@ -45,11 +45,11 @@
     put the precessed child tags in here -->
     <xsl:template match="/*">
         <xsl:apply-templates select="/*/*"/>
-        <!--<xsl:for-each select="distinct-values(/*/*/@uid)">-->
+        <xsl:for-each select="distinct-values(/*/*/@uid)">
         <!--<ploppy/>-->
         <!--make a user agent for each unique user id we find-->
         <!--<xsl:for-each select="child::*/@uid">-->
-        <xsl:for-each select="child::*/@uid">
+      <!--  <xsl:for-each select="child::*/@uid">-->
             <owl:NamedIndividual rdf:about="https://openstreetmap.org/users/{.}">
                 <rdf:type rdf:resource="http://www.w3.org/ns/prov#Agent"/>
             </owl:NamedIndividual>
@@ -87,8 +87,9 @@
                 <prov:qualifiedRevision
                         rdf:resource="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#dv{name()}{@id}v{@version}v{$vsn}"/>
             </xsl:if>
-            <!-- make the attribution to an agent we have created-->
-            <prov:qualifiedAttribution rdf:resource="whoopsweneedanagent!"/>
+            <!-- make the attribution to an agent we have created todo except that the qualifiedAttribution relationship should go
+            to an attribution not an agent-->
+            <prov:qualifiedAttribution rdf:resource="https://openstreetmap.org/users/{@uid}"/>
             <!-- triple which says what the current map version is NB @todo we need to look at whether we need to handle the fact
             that not all nodes are displayed - we could reason this with OWL  -->
             <pa:versionOf rdf:resource="https://openstreetmap.org/{name()}/{@id}"/>

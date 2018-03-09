@@ -2,10 +2,11 @@ package com.bar1g16;
 
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
-
+import net.sf.saxon.*;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerFactory;
@@ -83,10 +84,12 @@ public class FileLoader extends FileIO {
 
     private boolean setStyleSheet() throws FileNotFoundException {
         StreamSource xslSource = new StreamSource(xsl);
-        TransformerFactory transformerFactory = TransformerFactory.newInstance();
+        TransformerFactory transformerFactory = new net.sf.saxon.TransformerFactoryImpl();
 
         boolean result = true;
         try {
+
+
             transformer = transformerFactory.newTransformer(xslSource);
         } catch (TransformerConfigurationException e) {
             e.printStackTrace();
