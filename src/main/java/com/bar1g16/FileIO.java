@@ -5,25 +5,29 @@ import org.w3c.dom.Document;
 import java.io.IOException;
 
 /***
- * Handles file IO. Ingests an xslt stylesheet and xml file. Outputs objects required to apply the xslt to the xml
+ * Handles ingests information using file IO. Ingests an xslt stylesheet and xml file. Outputs objects required to apply the xslt transformation to the xml
+ * Abstract so that specifics about how the files are handled, and where they come from can be delegated to a concrete class
  */
 public abstract class FileIO implements IDataLoader {
     private String dataPath;
+    private String  fileName;
 
     @Override
-    public abstract Document getXMLDocument(String Filename) throws IOException;
+    public abstract Document getXMLDocument() throws IOException;
 
-    public FileIO(String dataPath, String xsltDocument) {
+    public FileIO(String dataPath, String fileName) {
         this.dataPath = dataPath;
+        this.fileName = fileName;
     }
 
     public String getDataPath() {
         return dataPath;
     }
-    @Override
+
+    //@Override
     public String getDataSourceInfo() {
 
-        return dataPath;
+        return dataPath+fileName;
     }
 
 

@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
 
 import javax.xml.transform.Transformer;
 import javax.xml.transform.stream.StreamSource;
@@ -22,11 +23,16 @@ public class FileLoaderTest {
     @BeforeEach
     void setUp() {
         try {
-            testLoader = new FileLoader("testfixture/", "xml_to_RDF.xsl");
+            testLoader = new FileLoader("testfixture.osm", "xml_to_RDF.xsl");
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+        } catch (SAXException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        testStyles = testLoader.getStylesheet();
+        testStyles = testLoader.getStyleSheet();
     }
 
     @AfterEach
@@ -36,48 +42,47 @@ public class FileLoaderTest {
     }
 
     @Test
-    void testGetFileThrowsNotFoundException() {
+    void testConstructorThrowsNotFoundException() {
         assertThrows(FileNotFoundException.class, () -> {
-            testLoader.getXMLDocument("test1.xml");
+            new FileLoader("wibble","xml_to_RDF.xsl");
         });
+
+
+
     }
 
     @Test
     void testgetFileFindsDoc() {
-        try {
-            assertNotNull(testLoader.getXMLDocument("test.xml"));
-        } catch (IOException e) {
-        }
+
+            assertNotNull(testLoader.getXMLDocument());
+
     }
 
     @Test
     void testloadedDocHasNoAttributes() {
 
-        try {
-            assertFalse(testLoader.getXMLDocument("test.xml").hasAttributes());
-        } catch (IOException e) {
-        }
+
+            assertFalse(testLoader.getXMLDocument().hasAttributes());
+
     }
 
     @Test
     void testloadedDocHasChildNodes() {
 
-        try {
-            assertTrue(testLoader.getXMLDocument("test.xml").hasChildNodes());
-        } catch (IOException e) {
-        }
+
+            assertTrue(testLoader.getXMLDocument().hasChildNodes());
+
+
     }
 
     @Test
     void testloadedDocHasCorrectNumElements() {
         Document doc = null;
 
-        try {
-            doc = testLoader.getXMLDocument("test.xml");
+
+            doc = testLoader.getXMLDocument();
             int testvar = doc.getElementsByTagName("SECT").getLength();
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
+
         assertTrue(doc.getElementsByTagName("SECT").getLength() == 2 && doc.getElementsByTagName("TITLE").getLength() == 1 && doc
                 .getElementsByTagName("ARTICLE").getLength() == 1);
     }
@@ -91,6 +96,10 @@ public class FileLoaderTest {
         } catch (FileNotFoundException e) {
 
             assertTrue(e.getClass().getCanonicalName().equals("java.io.FileNotFoundException"));
+        } catch (SAXException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         //if we made this FileLoader successfully then no exception was generated so fail
         if (testLoader1 !=null){
@@ -103,7 +112,7 @@ public class FileLoaderTest {
 
     @Test
     void testGetStyleSheetReturnsNotNull() {
-        testStyles = testLoader.getStylesheet();
+        testStyles = testLoader.getStyleSheet();
         assertNotNull(testStyles);
     }
 

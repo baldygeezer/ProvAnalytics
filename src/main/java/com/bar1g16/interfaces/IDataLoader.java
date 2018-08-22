@@ -7,25 +7,24 @@ import java.io.IOException;
  * Interface for loading data to carry out the processing
  * The implementing classes should be able to ingest XML data and an XSLT stylesheet
  * and supply javax xml Transformer object and w3c xml document object that can be
- * used to create RDF Triples
+ * used to create RDF Triples. details about how the data is ingested are left to concrete classes
  */
 public interface IDataLoader {
     /**
-     * @param srcName string representing the name of the data source
      * @return w3c xml document object
      * @throws IOException
      */
-    Document getXMLDocument(String srcName) throws IOException;
+    Document getXMLDocument() throws IOException;
 
     /**
      * @return string - mesage with information about the data source
      * e.g. a file location or filestream info
      */
-    String getDataSourceInfo();
+    //String getDataSourceInfo();
 
     /**
      * @return a Transformer object containing the stylesheet information
      */
-    Transformer getStylesheet();
+    Transformer getStyleSheet();
 
 }

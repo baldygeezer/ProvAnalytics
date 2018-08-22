@@ -23,31 +23,30 @@ public class TripleBuilder {
     // private File datafile;
     // xml parser to create Document objects from files
     DocumentBuilderFactory docFactory;
-    IDataLoader fileLoader;
+    IDataLoader dataLoader;
 
 
     /***
      * constructor
-     * @param datapath      A string representing the path to the data directory
-     * @param styleSheet    A string representing the name of the stylesheet file in the data directory
      */
-    public TripleBuilder(String datapath, String styleSheet) throws FileNotFoundException {
+    public TripleBuilder(IDataLoader dataloader) {
 
         //I don't know why I am doing this yet, but it may come in handy...
         //using java.nio  code gives us other options for file manipulation later...
         // @ TODO: 23/01/2018 switch this to just use File if we don't need it als ship this out to fileIO
         //Path stylesheet_Nio_p = Paths.get("xslt/" + styleSheet);
         //stylesheet = stylesheet_Nio_p.toFile();
-        this.fileLoader = new FileLoader(datapath, styleSheet);
+        //we are a triplebuilder - we don't give a shit about files anymore!
+        this.dataLoader = dataloader;
 
 
     }
 
-    public void convert(String dataFile) {
+    public void convert() {
         try {
-            document = fileLoader.getXMLDocument(dataFile);
+            document = dataLoader.getXMLDocument();
         } catch (IOException e) {
-            System.err.println("The input xml file could not be loaded. We were looking in " + fileLoader.getDataSourceInfo());
+
             //TODO: get shot of this stacktrace
             if (Prefs.printStackTraces) e.printStackTrace();
         }
@@ -55,11 +54,11 @@ public class TripleBuilder {
 
     public void getModel() {
 
-        Transformer transformer = fileLoader.getStylesheet();
+        Transformer transformer = dataLoader.getStyleSheet();
         Document xmlDoc = null;
 
         try {
-            xmlDoc = fileLoader.getXMLDocument("testfixture.osm");
+            xmlDoc = dataLoader.getXMLDocument();
         } catch (IOException e) {
             if (Prefs.printStackTraces) e.printStackTrace();
         }

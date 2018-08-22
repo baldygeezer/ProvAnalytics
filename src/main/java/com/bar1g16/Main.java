@@ -2,6 +2,7 @@ package com.bar1g16;
 
 
 import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
 
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
@@ -16,8 +17,7 @@ public class Main {
     public static void main(String[] args) {
         boolean printStacktraces = false;
         // Wibble wobble = new Wibble();
-
-        //wobble.doTheWibblyThing();
+        // wobble.doTheWibblyThing();
 //        FileLoader f = null;
 //        try {
 //            f = new FileLoader("xslt/", "xmlToRDF.xsl");
@@ -42,12 +42,18 @@ public class Main {
 //            e.printStackTrace();
 //        }
 
-        TripleBuilder t = null;
+FileLoader loader=null;
         try {
-            t = new TripleBuilder("xslt/", "OshToOwl.xsl");
-        } catch (FileNotFoundException e) {
+             loader = new FileLoader("testfixture.osm", "OshToOwl.xsl");
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SAXException e) {
             e.printStackTrace();
         }
+
+        TripleBuilder t = null;
+            t = new TripleBuilder(loader);
+
         t.getModel();
     }
 

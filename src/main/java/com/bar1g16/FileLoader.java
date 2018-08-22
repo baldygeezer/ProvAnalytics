@@ -1,8 +1,8 @@
 package com.bar1g16;
 
+import com.bar1g16.interfaces.IDataLoader;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
-
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -15,55 +15,47 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 
-public class FileLoader extends FileIO {
+public class FileLoader implements IDataLoader {
     private DocumentBuilderFactory docBuilderFactory;
     private DocumentBuilder docBuilder;
-    private final File xsl;
-    private StreamSource xslt;
+    // private final File xsl;
+    //private StreamSource xslt;
     //private static Document document;
     private Transformer transformer;
+    private Document xmlDocument;
+    public static final String DATAPATH = "data-in/";
+    public static final String XSDPATH = "xslt/";
 
 
     /***
-     *
-     * @param dataPath path to a directory containing the xsl and xml files
-     * @param xslt name of the xsl file
+     * @param xsltFilename name of the xsl file
+     * @param dataFileName name of the data file
      */
-    public FileLoader(String dataPath, String xslt) throws FileNotFoundException {
-        super(dataPath, xslt);
+    public FileLoader(String dataFileName, String xsltFilename) throws IOException, SAXException {
+
         //get the XSD transformation as a Transformer object, store it, throwing exception if we can't
         //find the xsl file
         docBuilderFactory = DocumentBuilderFactory.newInstance();
-        xsl = new File(dataPath + xslt);
-        setStyleSheet();
-
         try {
             docBuilder = docBuilderFactory.newDocumentBuilder();
         } catch (ParserConfigurationException e) {
-           // e.printStackTrace();
+            // e.printStackTrace();
         }
+
+        setStyleSheet(xsltFilename);
+        setXMLDocument(dataFileName);
+
     }
 
+
     /**
-     * ingests an XML file. returns w3 xml document object
+     * get a w3 xml document object
      *
-     * @param filename
      * @return
      */
     @Override
-    public Document getXMLDocument(String filename) throws IOException {
-        //make a document builder object to parse the xml source
-        File file = new File(super.getDataPath() + filename);
-
-        Document document = null;
-        try {
-            document = docBuilder.parse(file);
-        } catch (SAXException e) {
-            System.err.println(e.getMessage());
-            e.printStackTrace();
-        }
-
-        return document;
+    public Document getXMLDocument() {
+        return xmlDocument;
     }
 
     /***
@@ -72,16 +64,26 @@ public class FileLoader extends FileIO {
      * @return
      */
     @Override
-    public Transformer getStylesheet() {
-
-
+    public Transformer getStyleSheet() {
         //Object o = transformerFactory.getAttribute("match");
         return transformer;
-
-
     }
 
-    private boolean setStyleSheet() throws FileNotFoundException {
+    /**
+     * ingests an XML file (geographic data version history). initialises a w3 xml document object
+     */
+    private Document setXMLDocument(String XmlFileName) throws IOException, SAXException {
+
+        File file = new File(DATAPATH + XmlFileName);
+        Document document = null;
+        document = docBuilder.parse(file);
+
+
+        return document;
+    }
+
+    private boolean setStyleSheet(String xsltFileName) throws FileNotFoundException {
+        File xsl = new File(XSDPATH + xsltFileName);
         StreamSource xslSource = new StreamSource(xsl);
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
 
@@ -92,13 +94,14 @@ public class FileLoader extends FileIO {
             e.printStackTrace();
             throw new FileNotFoundException("We were unable to locate a valid stylesheet. Please ensure there is a valid xsl file " +
                     "named: "
-                    + xsl.getName() + " located in the directory: " + super.getDataPath());
+                    + xsl.getName() + " located in the directory: " + XSDPATH);
         } finally {
-            result= false;
+            result = false;
 
         }
         return result;
 
     }
+
 
 }
