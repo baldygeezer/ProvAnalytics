@@ -41,21 +41,24 @@ public class Main {
 //        } catch (TransformerException e) {
 //            e.printStackTrace();
 //        }
+start();
 
-FileLoader loader=null;
-        try {
-             loader = new FileLoader("testfixture.osm", "OshToOwl.xsl");
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (SAXException e) {
-            e.printStackTrace();
-        }
-
-        TripleBuilder t = null;
-            t = new TripleBuilder(loader);
-
-        t.getModel();
     }
 
+public static void start(){
+    FileLoader loader=null;
+    try {
+        loader = new FileLoader(new FileIO("testfixture.osm","OshToOwl.xsl"));
+    } catch (IOException e) {
+        e.printStackTrace();
+    } catch (SAXException e) {
+        e.printStackTrace();
+    }
+
+    TripleBuilder t = null;
+    t = new TripleBuilder(loader);
+
+    t.getModel();
+}
 
 }

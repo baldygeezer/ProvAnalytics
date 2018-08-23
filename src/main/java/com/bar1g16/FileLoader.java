@@ -1,6 +1,7 @@
 package com.bar1g16;
 
 import com.bar1g16.interfaces.IDataLoader;
+import com.bar1g16.interfaces.IFileIO;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 import javax.xml.parsers.DocumentBuilder;
@@ -18,32 +19,27 @@ import java.io.IOException;
 public class FileLoader implements IDataLoader {
     private DocumentBuilderFactory docBuilderFactory;
     private DocumentBuilder docBuilder;
-    // private final File xsl;
-    //private StreamSource xslt;
-    //private static Document document;
     private Transformer transformer;
     private Document xmlDocument;
-    public static final String DATAPATH = "data-in/";
-    public static final String XSDPATH = "xslt/";
+   private IFileIO files;
 
 
     /***
-     * @param xsltFilename name of the xsl file
-     * @param dataFileName name of the data file
+     * @param files an object that gets the required files
      */
-    public FileLoader(String dataFileName, String xsltFilename) throws IOException, SAXException {
-
+    public FileLoader( IFileIO files) throws IOException, SAXException {
+this.files=files;
         //get the XSD transformation as a Transformer object, store it, throwing exception if we can't
         //find the xsl file
         docBuilderFactory = DocumentBuilderFactory.newInstance();
         try {
             docBuilder = docBuilderFactory.newDocumentBuilder();
         } catch (ParserConfigurationException e) {
-            // e.printStackTrace();
+             e.printStackTrace();
         }
 
-        setStyleSheet(xsltFilename);
-        setXMLDocument(dataFileName);
+        setStyleSheet();
+       xmlDocument=setXMLDocument();
 
     }
 
@@ -72,18 +68,17 @@ public class FileLoader implements IDataLoader {
     /**
      * ingests an XML file (geographic data version history). initialises a w3 xml document object
      */
-    private Document setXMLDocument(String XmlFileName) throws IOException, SAXException {
-
-        File file = new File(DATAPATH + XmlFileName);
+    private Document setXMLDocument() throws IOException, SAXException {
+        File file = files.getDataFile();
         Document document = null;
         document = docBuilder.parse(file);
-
 
         return document;
     }
 
-    private boolean setStyleSheet(String xsltFileName) throws FileNotFoundException {
-        File xsl = new File(XSDPATH + xsltFileName);
+    private boolean setStyleSheet() throws FileNotFoundException {
+        //File xsl = new File(XSDPATH + xsltFileName);
+        File xsl = files.getStyleSheet();
         StreamSource xslSource = new StreamSource(xsl);
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
 
@@ -94,7 +89,7 @@ public class FileLoader implements IDataLoader {
             e.printStackTrace();
             throw new FileNotFoundException("We were unable to locate a valid stylesheet. Please ensure there is a valid xsl file " +
                     "named: "
-                    + xsl.getName() + " located in the directory: " + XSDPATH);
+                    + xsl.getName() + " located in the directory: " + files.getStyleSheetPath());
         } finally {
             result = false;
 

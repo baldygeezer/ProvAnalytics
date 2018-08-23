@@ -1,3 +1,4 @@
+import com.bar1g16.FileIO;
 import com.bar1g16.FileLoader;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -23,7 +24,8 @@ public class FileLoaderTest {
     @BeforeEach
     void setUp() {
         try {
-            testLoader = new FileLoader("testfixture.osm", "xml_to_RDF.xsl");
+            FileIO files = new FileIO("testfixture.osm", "xml_to_RDF.xsl");
+            testLoader = new FileLoader(files);
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -44,7 +46,7 @@ public class FileLoaderTest {
     @Test
     void testConstructorThrowsNotFoundException() {
         assertThrows(FileNotFoundException.class, () -> {
-            new FileLoader("wibble","xml_to_RDF.xsl");
+            new FileLoader(new FileIO("testfixture.osm", "xml_to_RDF.xsl"));
         });
 
 
@@ -92,7 +94,7 @@ public class FileLoaderTest {
         FileLoader testLoader1 = null;
 
         try {
-            testLoader1 = new FileLoader("testfixture/", "xml_to_DF.xsf");
+            testLoader1 = new FileLoader(new FileIO("testfixture/", "xml_to_DF.xsf"));
         } catch (FileNotFoundException e) {
 
             assertTrue(e.getClass().getCanonicalName().equals("java.io.FileNotFoundException"));
