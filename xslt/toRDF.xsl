@@ -25,6 +25,7 @@
 
     <!--process every top level element(way, relation, node)-->
     <xsl:template match="/*/*">
+
         <rdf:Description rdf:about="https://openstreetmap.org/{name()}/{@id}/v{@version}">
             <xsl:for-each select="@*">
                 <xsl:attribute name="osm:{name()}">
