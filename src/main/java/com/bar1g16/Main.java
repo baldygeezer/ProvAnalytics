@@ -48,7 +48,7 @@ start();
 public static void start(){
     FileLoader loader=null;
     try {
-        loader = new FileLoader(new FileIO("testfixture.osm","OshToOwl.xsl"));
+        loader = new FileLoader(new FileIO("testfixture.osm","toRDF.xsl"));
     } catch (IOException e) {
         e.printStackTrace();
     } catch (SAXException e) {

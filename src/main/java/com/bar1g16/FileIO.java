@@ -14,7 +14,7 @@ public class FileIO implements IFileIO {
     private String dataFileName;
     private String styleSheetName;
     private String dataPath = "data-in/";
-    private String xsdPath = "xslt/";
+    private String xslPath = "xslt/";
     private String savePath = "data-out/";
     private File dataFile;
     private File styleSheet;
@@ -29,13 +29,13 @@ public class FileIO implements IFileIO {
      * Constructor to use custom file locations
      *
      * @param dataPath path to the data file location
-     * @param xsdPath  path to the xslt stylesheet file
+     * @param xslPath  path to the xslt stylesheet file
      * @param savePath path to save rdf files to
      */
-    public FileIO(String dataPath, String xsdPath, String savePath, String dataFileName, String styleSheetName) {
+    public FileIO(String dataPath, String xslPath, String savePath, String dataFileName, String styleSheetName) {
         this(dataFileName, styleSheetName);
         this.dataPath = dataPath;
-        this.xsdPath = xsdPath;
+        this.xslPath = xslPath;
         this.savePath = savePath;
     }
 
@@ -49,12 +49,12 @@ public class FileIO implements IFileIO {
         this.dataFileName = dataFileName;
         this.styleSheetName = styleSheetName;
         dataFile = getFile(dataPath + this.dataFileName);
-        styleSheet = getFile(xsdPath + this.styleSheetName);
+        styleSheet = getFile(xslPath + this.styleSheetName);
     }
 
     @Override
-    public File getStyleSheet(String xsdFileName) {
-        return getFile(xsdPath + xsdFileName);
+    public File getStyleSheet(String xslFileName) {
+        return getFile(xslPath + xslFileName);
     }
 
     @Override
@@ -84,7 +84,7 @@ public class FileIO implements IFileIO {
 
     @Override
     public String getStyleSheetPath() {
-        return xsdPath;
+        return xslPath;
     }
 
     private File getFile(String path) {
