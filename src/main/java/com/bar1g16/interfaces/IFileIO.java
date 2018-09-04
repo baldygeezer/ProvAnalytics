@@ -2,7 +2,7 @@ package com.bar1g16.interfaces;
 
 import java.io.File;
 
-public interface IFileIO {
+public interface IFileIO  {
 
     File getStyleSheet(String xsdFileName);
     File getDataFile(String dataFileName);

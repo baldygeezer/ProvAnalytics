@@ -1,14 +1,16 @@
 package com.bar1g16;
 
+import com.bar1g16.interfaces.IDataStore;
 import com.bar1g16.interfaces.IFileIO;
 
+import javax.xml.transform.Result;
 import java.io.File;
 import java.util.Scanner;
 
 /***
  * Handles ingests information using file IO. Ingests an xslt stylesheet and xml file. Outputs objects required to apply the xslt transformation to the xml
  * Abstract so that specifics about how the files are handled, and where they come from can be delegated to a concrete class
- * NOW NOT IN USE (It wasn't doing much.)
+ * saves results to file
  */
 public class FileIO implements IFileIO {
     private String dataFileName;
@@ -113,4 +115,6 @@ public class FileIO implements IFileIO {
         }
 
     }
+
+
 }

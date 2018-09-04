@@ -21,7 +21,7 @@ public class FileLoader implements IDataLoader {
     private DocumentBuilder docBuilder;
     private Transformer transformer;
     private Document xmlDocument;
-   private IFileIO files;
+    private IFileIO files;
 
 
     /***

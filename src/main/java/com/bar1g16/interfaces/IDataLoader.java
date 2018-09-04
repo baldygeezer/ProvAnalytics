@@ -11,7 +11,7 @@ import java.io.IOException;
  */
 public interface IDataLoader {
     /**
-     * @return w3c xml document object
+     * @return w3c xml document object with the data to be analysed
      * @throws IOException
      */
     Document getXMLDocument() throws IOException;

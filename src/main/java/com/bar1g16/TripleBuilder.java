@@ -1,12 +1,18 @@
 package com.bar1g16;
+
 import com.bar1g16.interfaces.IDataLoader;
+import com.bar1g16.interfaces.IDataStore;
 import org.w3c.dom.Document;
+
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.Result;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
+import javax.xml.transform.dom.DOMResult;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.*;
+
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 
@@ -24,20 +30,22 @@ public class TripleBuilder {
     // xml parser to create Document objects from files
     DocumentBuilderFactory docFactory;
     IDataLoader dataLoader;
-
+    IDataStore dataStorage;
 
     /***
      * constructor
      */
-    public TripleBuilder(IDataLoader dataloader) {
+    public TripleBuilder(IDataLoader dataLoader, IDataStore dataStorage) {
 
         //I don't know why I am doing this yet, but it may come in handy...
         //using java.nio  code gives us other options for file manipulation later...
         // @ TODO: 23/01/2018 switch this to just use File if we don't need it als ship this out to fileIO
         //Path stylesheet_Nio_p = Paths.get("xslt/" + styleSheet);
         //stylesheet = stylesheet_Nio_p.toFile();
-        //we are a triplebuilder - we don't give a shit about files anymore!
-        this.dataLoader = dataloader;
+        //we are a triplebuilder - we don't care about files any more!
+        this.dataLoader = dataLoader;
+        //we also don't care about data persistence
+        this.dataStorage = dataStorage;
 
 
     }
@@ -63,16 +71,24 @@ public class TripleBuilder {
             if (Prefs.printStackTraces) e.printStackTrace();
         }
         DOMSource source = new DOMSource(xmlDoc);
-        StreamResult result = new StreamResult(new File("data-out/result.rdf"));
-       // DOMResult result=new DOMResult();
+
+         /* @TODO this should not be here
+         write the resylt to file. This needs to be replaced with an object that persists the data
+          */
+       // Result result = new StreamResult(new File("data-out/result.rdf"));
+
+        // DOMResult result1=new DOMResult();
         //SAXResult result=new SAXResult();
         try {
 
-            transformer.transform(source, result);
+            transformer.transform(source, dataStorage.getResult());
         } catch (TransformerException e) {
             e.printStackTrace();
         }
 
+        /* @TODO this should not be here
+        create a JENA model and read the daya form the result file into it
+         */
         Model m = ModelFactory.createDefaultModel();
         m.read("data-out/result.rdf");
         m.write(System.out);

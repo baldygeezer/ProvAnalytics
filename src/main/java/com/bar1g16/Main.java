@@ -56,7 +56,7 @@ public static void start(){
     }
 
     TripleBuilder t = null;
-    t = new TripleBuilder(loader);
+    t = new TripleBuilder(loader,new FileStore("data-out/result.rdf"));
 
     t.getModel();
 }
