@@ -1,6 +1,9 @@
 package com.bar1g16.interfaces;
 
 import javax.xml.transform.Result;
+import java.io.BufferedOutputStream;
+import java.io.ByteArrayOutputStream;
+
 
 public interface IDataStore  {
 
@@ -11,5 +14,5 @@ public interface IDataStore  {
      * @return a reference to a sax result object that an XSLT Transformer writes data to
      */
     Result getResult();
-
+    boolean save(ByteArrayOutputStream b);
 }

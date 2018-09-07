@@ -1,64 +1,47 @@
 package com.bar1g16;
 
 
-import org.w3c.dom.Document;
+import com.bar1g16.interfaces.ITransformer;
 import org.xml.sax.SAXException;
 
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class Main {
 
     public static void main(String[] args) {
-        boolean printStacktraces = false;
-        // Wibble wobble = new Wibble();
-        // wobble.doTheWibblyThing();
-//        FileLoader f = null;
-//        try {
-//            f = new FileLoader("xslt/", "xmlToRDF.xsl");
-//        } catch (FileNotFoundException e) {
-//            System.out.println("whoopsy we cant file a file: "+e.getMessage());
-//            if (printStacktraces) e.printStackTrace();
-//        }
-//        Transformer t = f.getStylesheet();
-//        Document d = null;
-//
-//        try {
-//            d = f.getXMLDocument("testfixture.osm");
-//        } catch (IOException e) {
-//            if (printStacktraces) e.printStackTrace();
-//        }
-//        DOMSource source = new DOMSource(d);
 
-        //        StreamResult result = new StreamResult(System.out);
-//        try {
-//            t.transform(source, result);
-//        } catch (TransformerException e) {
-//            e.printStackTrace();
-//        }
-start();
+        start(1);
 
     }
 
-public static void start(){
-    FileLoader loader=null;
-    try {
-        loader = new FileLoader(new FileIO("testfixture.osm","toRDF.xsl"));
-    } catch (IOException e) {
-        e.printStackTrace();
-    } catch (SAXException e) {
-        e.printStackTrace();
+    public static void start(int loadnum) {
+
+        FileLoader loader = null;
+        try {
+            loader = new FileLoader(new FileIO("testfixture.osm", "toRDF.xsl"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SAXException e) {
+            e.printStackTrace();
+        }
+
+        ITransformer t = null;
+        switch (loadnum) {
+            case 1:
+                t = new TripleBuilder(loader, new FileStore("data-out/result.rdf"));
+                break;
+            case 2:
+                t = new TripleBuilder(loader, new GraphdbStore());
+                break;
+            case 3:
+                t = new SaxonTransformer(loader, new FileStore("data-out/result.rdf"));
+                break;
+            default:
+                t = new TripleBuilder(loader, new FileStore("data-out/result.rdf"));
+        }
+
+
+                t.transform();
+        }
+
     }
-
-    TripleBuilder t = null;
-    t = new TripleBuilder(loader,new FileStore("data-out/result.rdf"));
-
-    t.getModel();
-}
-
-}

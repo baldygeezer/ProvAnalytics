@@ -107,7 +107,7 @@ public class FileIO implements IFileIO {
                 switch(scanner.nextLine()){
                     case"q": System.exit(1);
                         break;
-                    case "r": Main.start();
+                    case "r": Main.start(1);
                 }
             }
         } else if (file.length() < 100) {

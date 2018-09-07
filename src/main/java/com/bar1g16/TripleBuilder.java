@@ -2,27 +2,24 @@ package com.bar1g16;
 
 import com.bar1g16.interfaces.IDataLoader;
 import com.bar1g16.interfaces.IDataStore;
+import com.bar1g16.interfaces.ITransformer;
 import org.w3c.dom.Document;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.Result;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
-import javax.xml.transform.dom.DOMResult;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.*;
 
-import org.apache.jena.rdf.model.Model;
-import org.apache.jena.rdf.model.ModelFactory;
-
 
 /***
- * Injests plain XML data using an IDataLoader - a strategy for allowing us to use XML files or input streams,
+ * Ingests plain XML data using an IDataLoader - a strategy for allowing us to use XML files or input streams,
  * The
  *
  */
-public class TripleBuilder {
+public class TripleBuilder implements ITransformer {
     // a representation of an xml document (org.w3c.dom.Document)
     private Document document;
     private File stylesheet;
@@ -59,8 +56,8 @@ public class TripleBuilder {
             if (Prefs.printStackTraces) e.printStackTrace();
         }
     }
-
-    public void getModel() {
+    @Override
+    public void transform() {
 
         Transformer transformer = dataLoader.getStyleSheet();
         Document xmlDoc = null;
@@ -76,22 +73,37 @@ public class TripleBuilder {
          write the resylt to file. This needs to be replaced with an object that persists the data
           */
        // Result result = new StreamResult(new File("data-out/result.rdf"));
+        ByteArrayOutputStream byteArrayOutputStream=new ByteArrayOutputStream();
+       // BufferedOutputStream o = new BufferedOutputStream(byteArrayOutputStream);
+        Result result = new StreamResult(byteArrayOutputStream);
 
+       // StringWriter stringWriter=new StringWriter();
+       // Result result = new StreamResult(stringWriter);
+       // Result result = dataStorage.getResult();
         // DOMResult result1=new DOMResult();
         //SAXResult result=new SAXResult();
         try {
 
-            transformer.transform(source, dataStorage.getResult());
+            transformer.transform(source,result);
+
+
         } catch (TransformerException e) {
             e.printStackTrace();
         }
 
-        /* @TODO this should not be here
-        create a JENA model and read the daya form the result file into it
+        /**
+         * We wrote out our data to a byte array output stream
+         * We will pass this to the IDataStores, which no longer care about transformer results
+         * ...or we will find something better than OutputBuffers
          */
-        Model m = ModelFactory.createDefaultModel();
-        m.read("data-out/result.rdf");
-        m.write(System.out);
+
+
+        //s=stringWriter.toString();
+        dataStorage.save(byteArrayOutputStream);
+
+      ///  Model m = ModelFactory.createDefaultModel();
+      //  m.read("data-out/result.rdf");
+      //  m.write(System.out);
 
     }
 

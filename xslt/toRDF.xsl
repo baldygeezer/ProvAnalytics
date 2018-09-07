@@ -3,11 +3,11 @@
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
                 xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-                xml:base="http://www.w3.org/2002/07/owl"
+                xmlns:owl="http://www.w3.org/2002/07/owl"
              >
-    <Ontology>
+    <owl:Ontology>
         <imports rdf:resource="ontologies/osmp.rdf"/>
-    </Ontology>
+    </owl:Ontology>
     <!--xsl directives -->
     <xsl:output method="xml" indent="yes"/>
     <!--***************************************************************-->
@@ -15,7 +15,14 @@
     <!--match and Handle the document root  (<osm>)
         ...put an RDF tag in it-->
     <xsl:template match="/">
-        <rdf:RDF>
+        <rdf:RDF
+                xml:base="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#"
+                xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                xmlns:owl="http://www.w3.org/2002/07/owl#"
+                xmlns:xml="http://www.w3.org/XML/1998/namespace"
+                xmlns:osm="http://www.openstreetmap.org/#"
+                xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+                xmlns:prov="http://www.w3.org/ns/prov#">
             <xsl:apply-templates/>
         </rdf:RDF>
     </xsl:template>
@@ -39,8 +46,14 @@
             <!--<xsl:apply-templates select="child::*"/>-->
     </xsl:for-each>
             <rdfs:type rdf:resource="prov:Entity"/>
-            <xsl:for-each select="descendant::node()">
-                <xsl:element name="osm:{name()}"><xsl:value-of select="attribute::*"/></xsl:element>
+            <xsl:for-each select="child::*">
+                <xsl:element name="osm:{name()}">
+                    <xsl:for-each select="attribute::*">
+                    <xsl:value-of select="self::node()"/>
+<xsl:if test="name()='k'">&#8260;</xsl:if>
+            </xsl:for-each>
+
+        </xsl:element>
 <!--<xsl:apply-templates select="/*/*"/>-->
             </xsl:for-each>
         </rdf:Description>

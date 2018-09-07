@@ -11,7 +11,7 @@
     <node id="254429" version="4" timestamp="2010-02-14T19:37:45Z" uid="55782" user="0123456789" changeset="3877615" lat="50.9199584"
           lon="-1.3953136">
         <tag k="highway" v="traffic_signals"/>
-        <tag k="crossing" v="island;uncontrolled"/>
+        <tag k="crossing" v="island;uncontrolled" />
     </node>
     <node id="254429" version="5" timestamp="2011-04-02T18:11:05Z" uid="55782" user="0123456789" changeset="7746576" lat="50.9199528"
           lon="-1.3953564">
