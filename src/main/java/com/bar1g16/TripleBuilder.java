@@ -69,23 +69,14 @@ public class TripleBuilder implements ITransformer {
         }
         DOMSource source = new DOMSource(xmlDoc);
 
-         /* @TODO this should not be here
-         write the resylt to file. This needs to be replaced with an object that persists the data
-          */
-       // Result result = new StreamResult(new File("data-out/result.rdf"));
         ByteArrayOutputStream byteArrayOutputStream=new ByteArrayOutputStream();
-       // BufferedOutputStream o = new BufferedOutputStream(byteArrayOutputStream);
+
         Result result = new StreamResult(byteArrayOutputStream);
 
-       // StringWriter stringWriter=new StringWriter();
-       // Result result = new StreamResult(stringWriter);
-       // Result result = dataStorage.getResult();
-        // DOMResult result1=new DOMResult();
-        //SAXResult result=new SAXResult();
+
         try {
 
             transformer.transform(source,result);
-
 
         } catch (TransformerException e) {
             e.printStackTrace();
@@ -98,12 +89,8 @@ public class TripleBuilder implements ITransformer {
          */
 
 
-        //s=stringWriter.toString();
         dataStorage.save(byteArrayOutputStream);
 
-      ///  Model m = ModelFactory.createDefaultModel();
-      //  m.read("data-out/result.rdf");
-      //  m.write(System.out);
 
     }
 

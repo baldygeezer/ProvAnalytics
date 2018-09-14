@@ -4,6 +4,7 @@ import com.bar1g16.interfaces.IDataLoader;
 import com.bar1g16.interfaces.IFileIO;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -27,20 +28,18 @@ public class FileLoader implements IDataLoader {
     /***
      * @param files an object that gets the required files
      */
-    public FileLoader( IFileIO files) throws IOException, SAXException {
-this.files=files;
+    public FileLoader(IFileIO files) throws IOException, SAXException {
+        this.files = files;
         //get the XSD transformation as a Transformer object, store it, throwing exception if we can't
         //find the xsl file
         docBuilderFactory = DocumentBuilderFactory.newInstance();
         try {
             docBuilder = docBuilderFactory.newDocumentBuilder();
         } catch (ParserConfigurationException e) {
-             e.printStackTrace();
+            e.printStackTrace();
         }
-
         setStyleSheet();
-       xmlDocument=setXMLDocument();
-
+        xmlDocument = setXMLDocument();
     }
 
 

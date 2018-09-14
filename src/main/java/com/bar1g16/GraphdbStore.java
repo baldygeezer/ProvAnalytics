@@ -4,6 +4,7 @@ import com.bar1g16.interfaces.IDataStore;
 
 import org.eclipse.rdf4j.query.QueryLanguage;
 import org.eclipse.rdf4j.query.Update;
+import org.eclipse.rdf4j.query.algebra.In;
 import org.eclipse.rdf4j.repository.Repository;
 import org.eclipse.rdf4j.repository.RepositoryConnection;
 import org.eclipse.rdf4j.repository.config.RepositoryConfig;
@@ -26,6 +27,7 @@ public class GraphdbStore implements IDataStore {
     private StringWriter stringWriter = new StringWriter();
     private StreamResult result;
     private Writer writer;
+    private ByteArrayOutputStream out;
 
     /**
      * @return a reference to a sax result object that an XSLT Transformer writes data to
@@ -39,7 +41,7 @@ public class GraphdbStore implements IDataStore {
         return result;
     }
 
-    public boolean save(ByteArrayOutputStream data) {
+    public boolean save(StreamResult data) {
         //String insertString= "INSERT DATA {"+ resultString + "}";
         String resultString = data.toString();
 
@@ -55,6 +57,8 @@ public class GraphdbStore implements IDataStore {
         }
 
         try {
+           // OutputStream in = data.getOutputStream();
+
 
             conn.add(url, resultString, RDFFormat.RDFXML);
         } catch (IOException e) {
@@ -64,7 +68,34 @@ public class GraphdbStore implements IDataStore {
 
         return true;
     }
+    public boolean save(ByteArrayOutputStream data) {
+        //String insertString= "INSERT DATA {"+ resultString + "}";
+       // String resultString = data.toString();
+        ByteArrayInputStream in = new ByteArrayInputStream(data.toByteArray());
+        RepositoryConnection conn = getConnection();
+        conn.begin();
 
+        URL url = null;
+
+        try {
+            url = new URL("https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#");
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
+        try {
+
+conn.add(in,"",RDFFormat.RDFXML);
+           // InputStream in = new BufferedInputStream();
+           // conn.add(url, resultString, RDFFormat.RDFXML);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        conn.commit();
+
+        return true;
+    }
 
     public GraphdbStore() {
     }
@@ -77,6 +108,16 @@ public class GraphdbStore implements IDataStore {
         repo.initialize();
         RepositoryConnection conn = repo.getConnection();
         return conn;
+    }
+
+    /**
+     * experimental method
+     * @return
+     */
+    public OutputStream getOutputStream(){
+        out=new ByteArrayOutputStream();
+
+        return out;
     }
 
 }

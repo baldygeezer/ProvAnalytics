@@ -1,13 +1,14 @@
-<xsl:stylesheet version="1.0"
+<?xml version="1.0"?>
+<xsl:stylesheet version="2.0"
                 xmlns:osm="http://www.osm.org#"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
                 xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
                 xmlns:owl="http://www.w3.org/2002/07/owl"
              >
-    <owl:Ontology>
-        <imports rdf:resource="ontologies/osmp.rdf"/>
-    </owl:Ontology>
+
+
+
     <!--xsl directives -->
     <xsl:output method="xml" indent="yes"/>
     <!--***************************************************************-->
@@ -23,6 +24,11 @@
                 xmlns:osm="http://www.openstreetmap.org/#"
                 xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
                 xmlns:prov="http://www.w3.org/ns/prov#">
+
+            <owl:Ontology>
+                <owl:imports rdf:resource="ontologies/osmp.rdf"/>
+            </owl:Ontology>
+
             <xsl:apply-templates/>
         </rdf:RDF>
     </xsl:template>

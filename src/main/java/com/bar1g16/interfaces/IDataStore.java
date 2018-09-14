@@ -15,4 +15,5 @@ public interface IDataStore  {
      */
     Result getResult();
     boolean save(ByteArrayOutputStream b);
+
 }
