@@ -32,11 +32,9 @@
     <!--process every top level element(way, relation, node)-->
     <xsl:template match="/*/*">
 
-        <rdf:Description rdf:about="https://openstreetmap.org/{name()}/{@id}/v{@version}">
+        <rdf:Description rdf:about="osm:{name()}/{@id}/v{@version}">
             <xsl:for-each select="@*">
-                <xsl:attribute name="osm:{name()}">
-                    <xsl:value-of select="."/>
-                </xsl:attribute>
+                <xsl:attribute name="osm:{name()}">osm:<xsl:value-of select="."/></xsl:attribute>
                 <!--apply a template that processes the attributes and turns them into rdf attributes-->
                 <!--&lt;!&ndash;if there are child nodes...&ndash;&gt;-->
                 <!--<xsl:apply-templates select="child::*"/>-->
@@ -53,10 +51,12 @@
                 <!--<xsl:apply-templates select="/*/*"/>-->
             </xsl:for-each>
         </rdf:Description>
-
-
-
+        <!-- make RDF descriptions for changesets and users -->
+        <xsl:apply-templates select="@id"/>
     </xsl:template>
+<xsl:template match="@id">
+    <rdf:Description rdf:about="osm:users/{.}"></rdf:Description>
+</xsl:template>
 
     <!--<xsl:template match="/*/*">-->
 
