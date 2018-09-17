@@ -10,7 +10,7 @@ private StreamResult result;
 private String filePath;
 
     public FileStore(String filePath) {
-       // result = new StreamResult(new File(filePath));
+
         this.filePath=filePath;
     }
 
@@ -34,18 +34,7 @@ File file=new File(filePath);
         return true;
     }
 
-    /**
-     * experimental method
-     * @return
-     */
-    public OutputStream getOutputStream(){
-        try {
-            return new FileOutputStream(new File("data-out/result.rdf")) ;
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
+
 
 
 }

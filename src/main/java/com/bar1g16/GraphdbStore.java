@@ -41,42 +41,42 @@ public class GraphdbStore implements IDataStore {
         return result;
     }
 
-    public boolean save(StreamResult data) {
-        //String insertString= "INSERT DATA {"+ resultString + "}";
-        String resultString = data.toString();
+//    public boolean save(StreamResult data) {
+//
+//        String resultString = data.toString();
+//
+//        RepositoryConnection conn = getConnection();
+//        conn.begin();
+//
+//        URL url = null;
+//
+//        try {
+//            url = new URL("https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#");
+//        } catch (MalformedURLException e) {
+//            e.printStackTrace();
+//        }
+//
+//        try {
+//            // OutputStream in = data.getOutputStream();
+//
+//
+//            conn.add(url, resultString, RDFFormat.RDFXML);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        conn.commit();
+//
+//        return true;
+//    }
 
-        RepositoryConnection conn = getConnection();
-        conn.begin();
-
-        URL url = null;
-
-        try {
-            url = new URL("https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#");
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-
-        try {
-           // OutputStream in = data.getOutputStream();
-
-
-            conn.add(url, resultString, RDFFormat.RDFXML);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        conn.commit();
-
-        return true;
-    }
     public boolean save(ByteArrayOutputStream data) {
         //String insertString= "INSERT DATA {"+ resultString + "}";
-       // String resultString = data.toString();
+        // String resultString = data.toString();
         ByteArrayInputStream in = new ByteArrayInputStream(data.toByteArray());
         RepositoryConnection conn = getConnection();
         conn.begin();
 
         URL url = null;
-
         try {
             url = new URL("https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#");
         } catch (MalformedURLException e) {
@@ -85,9 +85,9 @@ public class GraphdbStore implements IDataStore {
 
         try {
 
-conn.add(in,"",RDFFormat.RDFXML);
-           // InputStream in = new BufferedInputStream();
-           // conn.add(url, resultString, RDFFormat.RDFXML);
+            conn.add(in, "", RDFFormat.RDFXML);
+            // InputStream in = new BufferedInputStream();
+            // conn.add(url, resultString, RDFFormat.RDFXML);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -112,10 +112,11 @@ conn.add(in,"",RDFFormat.RDFXML);
 
     /**
      * experimental method
+     *
      * @return
      */
-    public OutputStream getOutputStream(){
-        out=new ByteArrayOutputStream();
+    public OutputStream getOutputStream() {
+        out = new ByteArrayOutputStream();
 
         return out;
     }

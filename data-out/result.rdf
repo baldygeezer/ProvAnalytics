@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
          xmlns:owl="http://www.w3.org/2002/07/owl#"
-         xmlns:osm="http://www.openstreetmap.org/#"
+         xmlns:osm="http://www.openstreetmap.org#"
          xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
          xmlns:prov="http://www.w3.org/ns/prov#"
-         xml:base="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#">
-   <owl:Ontology>
-      <imports rdf:resource="ontologies/osmp.rdf"/>
-   </owl:Ontology>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/254429/v1"
+         xmlns:osmp="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#">
+   <rdf:Description rdf:about="https://openstreetmap.org/node/254429/v1"
                     osm:id="254429"
                     osm:version="1"
                     osm:timestamp="2007-09-25T13:11:17Z"
@@ -19,11 +14,9 @@
                     osm:changeset="514036"
                     osm:lat="50.9199968"
                     osm:lon="-1.3953744">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/254429/v2"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/254429/v2"
                     osm:id="254429"
                     osm:version="2"
                     osm:timestamp="2008-04-29T13:55:41Z"
@@ -32,11 +25,9 @@
                     osm:changeset="287333"
                     osm:lat="50.9199584"
                     osm:lon="-1.3953136">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/254429/v3"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/254429/v3"
                     osm:id="254429"
                     osm:version="3"
                     osm:timestamp="2008-05-19T22:25:05Z"
@@ -45,12 +36,10 @@
                     osm:changeset="479991"
                     osm:lat="50.9199584"
                     osm:lon="-1.3953136">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
       <osm:tag>highway⁄traffic_signals</osm:tag>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/254429/v4"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/254429/v4"
                     osm:id="254429"
                     osm:version="4"
                     osm:timestamp="2010-02-14T19:37:45Z"
@@ -59,13 +48,11 @@
                     osm:changeset="3877615"
                     osm:lat="50.9199584"
                     osm:lon="-1.3953136">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
       <osm:tag>highway⁄traffic_signals</osm:tag>
       <osm:tag>crossing⁄island;uncontrolled</osm:tag>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/254429/v5"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/254429/v5"
                     osm:id="254429"
                     osm:version="5"
                     osm:timestamp="2011-04-02T18:11:05Z"
@@ -74,13 +61,11 @@
                     osm:changeset="7746576"
                     osm:lat="50.9199528"
                     osm:lon="-1.3953564">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
       <osm:tag>highway⁄traffic_signals</osm:tag>
       <osm:tag>crossing⁄island;uncontrolled</osm:tag>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/254429/v6"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/254429/v6"
                     osm:id="254429"
                     osm:version="6"
                     osm:timestamp="2012-02-11T08:42:37Z"
@@ -89,13 +74,11 @@
                     osm:changeset="10650281"
                     osm:lat="50.9199824"
                     osm:lon="-1.3953309">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
       <osm:tag>highway⁄traffic_signals</osm:tag>
       <osm:tag>crossing⁄island;uncontrolled</osm:tag>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/254429/v7"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/254429/v7"
                     osm:id="254429"
                     osm:version="7"
                     osm:timestamp="2012-03-07T15:07:12Z"
@@ -104,13 +87,11 @@
                     osm:changeset="10899959"
                     osm:lat="50.9199448"
                     osm:lon="-1.3953573">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
       <osm:tag>highway⁄traffic_signals</osm:tag>
       <osm:tag>crossing⁄island;uncontrolled</osm:tag>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/254430/v1"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/254430/v1"
                     osm:id="254430"
                     osm:version="1"
                     osm:timestamp="2007-09-25T13:11:17Z"
@@ -119,11 +100,9 @@
                     osm:changeset="514036"
                     osm:lat="50.9230534"
                     osm:lon="-1.3952716">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/254430/v2"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/254430/v2"
                     osm:id="254430"
                     osm:version="2"
                     osm:timestamp="2008-10-21T20:40:25Z"
@@ -132,11 +111,9 @@
                     osm:changeset="485587"
                     osm:lat="50.9230534"
                     osm:lon="-1.3952716">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/254430/v3"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/254430/v3"
                     osm:id="254430"
                     osm:version="3"
                     osm:timestamp="2008-12-12T16:12:16Z"
@@ -145,11 +122,9 @@
                     osm:changeset="340545"
                     osm:lat="50.9230534"
                     osm:lon="-1.3952716">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/319638/v1"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/319638/v1"
                     osm:id="319638"
                     osm:version="1"
                     osm:timestamp="2007-09-25T13:11:17Z"
@@ -158,11 +133,9 @@
                     osm:changeset="514036"
                     osm:lat="50.9212765"
                     osm:lon="-1.3954226">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/319638/v2"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/319638/v2"
                     osm:id="319638"
                     osm:version="2"
                     osm:timestamp="2008-10-21T20:40:25Z"
@@ -171,11 +144,9 @@
                     osm:changeset="485587"
                     osm:lat="50.9212765"
                     osm:lon="-1.3954226">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/319638/v3"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/319638/v3"
                     osm:id="319638"
                     osm:version="3"
                     osm:timestamp="2008-12-12T16:12:16Z"
@@ -184,11 +155,9 @@
                     osm:changeset="340545"
                     osm:lat="50.9212765"
                     osm:lon="-1.3954226">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/319638/v4"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/319638/v4"
                     osm:id="319638"
                     osm:version="4"
                     osm:timestamp="2008-12-12T16:12:40Z"
@@ -197,11 +166,9 @@
                     osm:changeset="340545"
                     osm:lat="50.9212765"
                     osm:lon="-1.3954226">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/319638/v5"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/319638/v5"
                     osm:id="319638"
                     osm:version="5"
                     osm:timestamp="2010-10-06T18:12:36Z"
@@ -210,11 +177,9 @@
                     osm:changeset="5971653"
                     osm:lat="50.921228"
                     osm:lon="-1.395406">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/319638/v6"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/319638/v6"
                     osm:id="319638"
                     osm:version="6"
                     osm:timestamp="2011-04-02T18:11:04Z"
@@ -223,11 +188,9 @@
                     osm:changeset="7746576"
                     osm:lat="50.921259"
                     osm:lon="-1.395432">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/319638/v7"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/319638/v7"
                     osm:id="319638"
                     osm:version="7"
                     osm:timestamp="2012-02-11T08:42:37Z"
@@ -236,11 +199,9 @@
                     osm:changeset="10650281"
                     osm:lat="50.9212886"
                     osm:lon="-1.3954065">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/319638/v8"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/319638/v8"
                     osm:id="319638"
                     osm:version="8"
                     osm:timestamp="2012-03-07T15:07:12Z"
@@ -249,11 +210,9 @@
                     osm:changeset="10899959"
                     osm:lat="50.9212876"
                     osm:lon="-1.3954392">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/319638/v9"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/319638/v9"
                     osm:id="319638"
                     osm:version="9"
                     osm:timestamp="2012-08-18T18:56:35Z"
@@ -262,11 +221,9 @@
                     osm:changeset="12776108"
                     osm:lat="50.9212627"
                     osm:lon="-1.3954484">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/319640/v1"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/319640/v1"
                     osm:id="319640"
                     osm:version="1"
                     osm:timestamp="2011-04-02T18:11:04Z"
@@ -275,11 +232,9 @@
                     osm:changeset="7746576"
                     osm:lat="50.9221647"
                     osm:lon="-1.3954197">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/319640/v2"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/319640/v2"
                     osm:id="319640"
                     osm:version="2"
                     osm:timestamp="2012-02-11T08:42:37Z"
@@ -288,11 +243,9 @@
                     osm:changeset="10650281"
                     osm:lat="50.9221943"
                     osm:lon="-1.3953942">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/319640/v3"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/319640/v3"
                     osm:id="319640"
                     osm:version="3"
                     osm:timestamp="2012-03-07T15:07:12Z"
@@ -301,11 +254,9 @@
                     osm:changeset="10899959"
                     osm:lat="50.9221762"
                     osm:lon="-1.3954235">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/324341/v1"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/324341/v1"
                     osm:id="324341"
                     osm:version="1"
                     osm:timestamp="2007-09-25T13:11:17Z"
@@ -314,11 +265,9 @@
                     osm:changeset="514036"
                     osm:lat="50.923628"
                     osm:lon="-1.3948577">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/324341/v2"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/324341/v2"
                     osm:id="324341"
                     osm:version="2"
                     osm:timestamp="2008-10-21T20:40:25Z"
@@ -327,11 +276,9 @@
                     osm:changeset="485587"
                     osm:lat="50.923628"
                     osm:lon="-1.3948577">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/324341/v3"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/324341/v3"
                     osm:id="324341"
                     osm:version="3"
                     osm:timestamp="2008-10-21T20:40:43Z"
@@ -340,11 +287,9 @@
                     osm:changeset="485587"
                     osm:lat="50.9234954"
                     osm:lon="-1.394935">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/324341/v4"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/324341/v4"
                     osm:id="324341"
                     osm:version="4"
                     osm:timestamp="2008-10-21T20:40:58Z"
@@ -353,11 +298,9 @@
                     osm:changeset="485587"
                     osm:lat="50.9234954"
                     osm:lon="-1.394935">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/324341/v5"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/324341/v5"
                     osm:id="324341"
                     osm:version="5"
                     osm:timestamp="2008-10-21T20:42:32Z"
@@ -366,11 +309,9 @@
                     osm:changeset="485587"
                     osm:lat="50.9234954"
                     osm:lon="-1.394935">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/324341/v6"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/324341/v6"
                     osm:id="324341"
                     osm:version="6"
                     osm:timestamp="2008-12-12T16:12:16Z"
@@ -379,11 +320,9 @@
                     osm:changeset="340545"
                     osm:lat="50.9234954"
                     osm:lon="-1.394935">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/324341/v7"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/324341/v7"
                     osm:id="324341"
                     osm:version="7"
                     osm:timestamp="2008-12-12T16:12:40Z"
@@ -392,11 +331,9 @@
                     osm:changeset="340545"
                     osm:lat="50.9234954"
                     osm:lon="-1.394935">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/324341/v8"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/324341/v8"
                     osm:id="324341"
                     osm:version="8"
                     osm:timestamp="2010-12-20T08:50:07Z"
@@ -405,11 +342,9 @@
                     osm:changeset="6713760"
                     osm:lat="50.9235438"
                     osm:lon="-1.394935">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/324341/v9"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/324341/v9"
                     osm:id="324341"
                     osm:version="9"
                     osm:timestamp="2012-02-11T08:42:38Z"
@@ -418,11 +353,9 @@
                     osm:changeset="10650281"
                     osm:lat="50.9235734"
                     osm:lon="-1.3949095">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/324341/v10"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/324341/v10"
                     osm:id="324341"
                     osm:version="10"
                     osm:timestamp="2012-07-23T16:15:46Z"
@@ -431,11 +364,9 @@
                     osm:changeset="12452880"
                     osm:lat="50.9235965"
                     osm:lon="-1.3948879">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/21420434/v1"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/21420434/v1"
                     osm:id="21420434"
                     osm:version="1"
                     osm:timestamp="2012-02-11T08:42:37Z"
@@ -444,11 +375,9 @@
                     osm:changeset="10650281"
                     osm:lat="50.9226904"
                     osm:lon="-1.3953511">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/21420434/v2"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/21420434/v2"
                     osm:id="21420434"
                     osm:version="2"
                     osm:timestamp="2012-03-07T15:07:13Z"
@@ -457,11 +386,9 @@
                     osm:changeset="10899959"
                     osm:lat="50.9226883"
                     osm:lon="-1.3953846">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/27558592/v1"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/27558592/v1"
                     osm:id="27558592"
                     osm:version="1"
                     osm:timestamp="2007-09-25T13:11:17Z"
@@ -470,12 +397,10 @@
                     osm:changeset="514036"
                     osm:lat="50.9266834"
                     osm:lon="-1.3914922">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
       <osm:tag>created_by⁄JOSM</osm:tag>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/27558592/v2"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/27558592/v2"
                     osm:id="27558592"
                     osm:version="2"
                     osm:timestamp="2008-12-12T16:12:16Z"
@@ -484,11 +409,9 @@
                     osm:changeset="340545"
                     osm:lat="50.9266834"
                     osm:lon="-1.3914922">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/27558592/v3"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/27558592/v3"
                     osm:id="27558592"
                     osm:version="3"
                     osm:timestamp="2008-12-12T16:12:39Z"
@@ -497,11 +420,9 @@
                     osm:changeset="340545"
                     osm:lat="50.9266834"
                     osm:lon="-1.3914922">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/27558592/v4"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/27558592/v4"
                     osm:id="27558592"
                     osm:version="4"
                     osm:timestamp="2012-02-11T08:42:38Z"
@@ -510,11 +431,9 @@
                     osm:changeset="10650281"
                     osm:lat="50.926713"
                     osm:lon="-1.3914667">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/27558592/v5"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/27558592/v5"
                     osm:id="27558592"
                     osm:version="5"
                     osm:timestamp="2012-02-11T09:48:00Z"
@@ -523,11 +442,9 @@
                     osm:changeset="10650721"
                     osm:lat="50.9266865"
                     osm:lon="-1.3914327">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/1740735279/v1"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/1740735279/v1"
                     osm:id="1740735279"
                     osm:version="1"
                     osm:timestamp="2008-12-12T16:12:16Z"
@@ -536,11 +453,9 @@
                     osm:changeset="340545"
                     osm:lat="50.9266834"
                     osm:lon="-1.3914922">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/1740735278/v1"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/1740735278/v1"
                     osm:id="1740735278"
                     osm:version="1"
                     osm:timestamp="2008-12-12T16:12:22Z"
@@ -549,11 +464,9 @@
                     osm:changeset="340545"
                     osm:lat="50.9266834"
                     osm:lon="-1.3914922">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/1740735275/v1"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/1740735275/v1"
                     osm:id="1740735275"
                     osm:version="1"
                     osm:timestamp="2008-12-12T16:12:36Z"
@@ -562,11 +475,9 @@
                     osm:changeset="340545"
                     osm:lat="50.9266834"
                     osm:lon="-1.3914922">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/node/1740735276/v1"
+   <rdf:Description rdf:about="https://openstreetmap.org/node/1740735276/v1"
                     osm:id="1740735276"
                     osm:version="1"
                     osm:timestamp="2008-12-12T16:12:40Z"
@@ -575,18 +486,16 @@
                     osm:changeset="340545"
                     osm:lat="50.9266834"
                     osm:lon="-1.3914922">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/way/149920731/v1"
+   <rdf:Description rdf:about="https://openstreetmap.org/way/149920731/v1"
                     osm:id="149920731"
                     osm:version="1"
                     osm:timestamp="2012-04-07T18:51:48Z"
                     osm:uid="55782"
                     osm:user="0123456789"
                     osm:changeset="11217591">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
       <osm:nd>254430</osm:nd>
       <osm:nd>319638</osm:nd>
       <osm:tag>ref⁄C502</osm:tag>
@@ -598,16 +507,14 @@
       <osm:tag>old_ref⁄A335</osm:tag>
       <osm:tag>motorcar⁄yes</osm:tag>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/way/149920731/v2"
+   <rdf:Description rdf:about="https://openstreetmap.org/way/149920731/v2"
                     osm:id="149920731"
                     osm:version="2"
                     osm:timestamp="2012-11-08T11:02:58Z"
                     osm:uid="84000"
                     osm:user="pcman1985"
                     osm:changeset="13796146">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
       <osm:nd>254430</osm:nd>
       <osm:nd>319638</osm:nd>
       <osm:tag>ref⁄C502</osm:tag>
@@ -620,16 +527,14 @@
       <osm:tag>maxspeed⁄30 mph</osm:tag>
       <osm:tag>motorcar⁄yes</osm:tag>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/way/149920731/v3"
+   <rdf:Description rdf:about="https://openstreetmap.org/way/149920731/v3"
                     osm:id="149920731"
                     osm:version="3"
                     osm:timestamp="2013-05-17T22:35:33Z"
                     osm:uid="534393"
                     osm:user="Chris Baines"
                     osm:changeset="16173913">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
       <osm:nd>254430</osm:nd>
       <osm:nd>319638</osm:nd>
       <osm:nd>319640</osm:nd>
@@ -643,32 +548,28 @@
       <osm:tag>maxspeed⁄30 mph</osm:tag>
       <osm:tag>motorcar⁄yes</osm:tag>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/way/162141724/v1"
+   <rdf:Description rdf:about="https://openstreetmap.org/way/162141724/v1"
                     osm:id="162141724"
                     osm:version="1"
                     osm:timestamp="2012-05-04T21:07:08Z"
                     osm:uid="534393"
                     osm:user="Chris Baines"
                     osm:changeset="11502302">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
       <osm:nd>1740735279</osm:nd>
       <osm:nd>1740735278</osm:nd>
       <osm:nd>1740735275</osm:nd>
       <osm:nd>1740735276</osm:nd>
       <osm:tag>building⁄house</osm:tag>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/way/162141724/v2"
+   <rdf:Description rdf:about="https://openstreetmap.org/way/162141724/v2"
                     osm:id="162141724"
                     osm:version="2"
                     osm:timestamp="2012-08-20T09:07:35Z"
                     osm:uid="534393"
                     osm:user="Chris Baines"
                     osm:changeset="12793195">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
       <osm:nd>1740735279</osm:nd>
       <osm:nd>1740735278</osm:nd>
       <osm:nd>1740735275</osm:nd>
@@ -677,32 +578,28 @@
       <osm:tag>addr:street⁄Portswood Road</osm:tag>
       <osm:tag>addr:housenumber⁄109</osm:tag>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/relation/1867844/v1"
+   <rdf:Description rdf:about="https://openstreetmap.org/relation/1867844/v1"
                     osm:id="1867844"
                     osm:version="1"
                     osm:timestamp="2011-11-28T13:42:03Z"
                     osm:uid="540739"
                     osm:user="robbob700"
                     osm:changeset="9977905">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
       <osm:member>way162141724</osm:member>
       <osm:member>way149920731</osm:member>
       <osm:tag>ref⁄3</osm:tag>
       <osm:tag>type⁄route</osm:tag>
       <osm:tag>route⁄bus</osm:tag>
    </rdf:Description>
-   <rdf:Description xmlns:osm="http://www.osm.org#"
-                    xmlns:owl="http://www.w3.org/2002/07/owl"
-                    rdf:about="https://openstreetmap.org/relation/1867844/v2"
+   <rdf:Description rdf:about="https://openstreetmap.org/relation/1867844/v2"
                     osm:id="1867844"
                     osm:version="2"
                     osm:timestamp="2011-11-28T13:42:03Z"
                     osm:uid="540739"
                     osm:user="robbob700"
                     osm:changeset="9977905">
-      <rdfs:type rdf:resource="prov:Entity"/>
+      <rdfs:type rdf:resource="osmp:Node"/>
       <osm:member>way162141724</osm:member>
       <osm:member>way149920731</osm:member>
       <osm:tag>ref⁄3</osm:tag>

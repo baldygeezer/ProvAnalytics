@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" name="file:/Users/bernardroper/IdeaProjects/ProvAnalytics/data-out/ontologies/osmp.rdf" uri="file:/Users/bernardroper/IdeaProjects/ProvAnalytics/ontologies/osmp.rdf"/>
+    <uri id="User Entered Import Resolution" name="https://www.ecs.soton.ac.uk/people/bar1g16/ontologies/osmp.rdf" uri="file:/Users/bernardroper/IdeaProjects/ProvAnalytics/ontologies/osmp.rdf"/>
     <uri id="User Entered Import Resolution" name="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp" uri="file:/Users/bernardroper/IdeaProjects/ProvAnalytics/ontologies/osmp.rdf"/>
     <uri id="Imports Wizard Entry" name="http://www.w3.org/ns/prov-o-20130430" uri="prov-o.owl"/>
-    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base=""/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1537194690709" name="http://www.w3.org/2002/07/owl" uri="result.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1537194690709" name="https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#" uri="result1.rdf"/>
+    </group>
 </catalog>

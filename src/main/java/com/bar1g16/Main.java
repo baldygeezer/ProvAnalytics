@@ -8,36 +8,29 @@ public class Main {
 
     public static void main(String[] args) {
 
-        start(3);
+        start(2);
 
     }
 
     public static void start(int loadnum) {
 
         FileLoader loader = null;
-        S9FileLoader sLoader=null;
-        try {
+        FileLoader sLoader=null;
+
             loader = new FileLoader(new FileIO("testfixture.osm", "toRDF.xsl"));
-            sLoader=new S9FileLoader(new FileIO("testfixture.osm", "toRDF.xsl"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (SAXException e) {
-            e.printStackTrace();
-        }
+            // sLoader=new FileLoader(new FileIO("testfixture.osm", "toRDF.xsl"));
+
 
         ITransformer t = null;
         switch (loadnum) {
             case 1:
-                t = new TripleBuilder(loader, new FileStore("data-out/result.rdf"));
+                t = new SaxonTransformer(loader, new FileStore("data-out/result.rdf"));
                 break;
             case 2:
-                t = new TripleBuilder(loader, new GraphdbStore());
-                break;
-            case 3:
-                t = new SaxonTransformer(sLoader, new GraphdbStore());
+                t = new SaxonTransformer(loader, new GraphdbStore());
                 break;
             default:
-                t = new TripleBuilder(loader, new FileStore("data-out/result.rdf"));
+                t = new SaxonTransformer(loader, new FileStore("data-out/result.rdf"));
         }
 
 

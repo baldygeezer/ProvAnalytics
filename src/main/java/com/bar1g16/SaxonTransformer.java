@@ -14,11 +14,11 @@ import javax.xml.transform.stream.StreamResult;
 import java.io.*;
 
 public class SaxonTransformer implements ITransformer {
-    IS9DataLoader dataLoader;
+    IDataLoader dataLoader;
     IDataStore dataStorage;
 
-    public SaxonTransformer(IS9DataLoader IS9dataLoader, IDataStore dataStorage) {
-        this.dataLoader = IS9dataLoader;
+    public SaxonTransformer(IDataLoader IDataLoader, IDataStore dataStorage) {
+        this.dataLoader = IDataLoader;
         this.dataStorage = dataStorage;
     }
 
@@ -27,8 +27,6 @@ public class SaxonTransformer implements ITransformer {
         Processor processor = new Processor(false);
         XsltTransformer transformer = getTransformer(processor);
         Serializer result = processor.newSerializer(out);
-
-
         transformer.setDestination(result);
         try {
             transformer.transform();
@@ -43,7 +41,7 @@ public class SaxonTransformer implements ITransformer {
         XsltExecutable stylesheet = null;
         XdmNode src = null;
         try {
-            stylesheet = styleSheetCompiler.compile(dataLoader.getXSLDoc());
+            stylesheet = styleSheetCompiler.compile(dataLoader.getStyleSheet());
             src = processor.newDocumentBuilder().build(dataLoader.getXMLData());
         } catch (SaxonApiException e) {
             e.printStackTrace();

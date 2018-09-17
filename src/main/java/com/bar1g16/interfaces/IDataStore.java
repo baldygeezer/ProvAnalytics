@@ -6,7 +6,6 @@ import java.io.ByteArrayOutputStream;
 
 
 public interface IDataStore  {
-
     /**
      * classes implement this to provide a specific result object for an XSLT transformer. the concrete implementation
      * can then decide whether the result should write to various database platforms or files etc.
@@ -15,5 +14,4 @@ public interface IDataStore  {
      */
     Result getResult();
     boolean save(ByteArrayOutputStream b);
-
 }
