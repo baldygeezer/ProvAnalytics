@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
          xmlns:owl="http://www.w3.org/2002/07/owl#"
-         xmlns:osm="http://www.openstreetmap.org#"
+         xmlns:osm="http://www.openstreetmap.org/"
          xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
          xmlns:prov="http://www.w3.org/ns/prov#"
-         xmlns:osmp="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#">
+         xmlns:osmp="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#"
+         xmlns="https://wiki.openstreetmap.org/wiki/">
    <rdf:Description rdf:about="osm:node/254429/v1"
                     osm:id="osm:254429"
                     osm:version="osm:1"
@@ -14,7 +15,7 @@
                     osm:changeset="osm:514036"
                     osm:lat="osm:50.9199968"
                     osm:lon="osm:-1.3953744">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:node"/>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/254429"/>
    <rdf:Description rdf:about="osm:node/254429/v2"
@@ -26,7 +27,7 @@
                     osm:changeset="osm:287333"
                     osm:lat="osm:50.9199584"
                     osm:lon="osm:-1.3953136">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:node"/>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/254429"/>
    <rdf:Description rdf:about="osm:node/254429/v3"
@@ -38,8 +39,8 @@
                     osm:changeset="osm:479991"
                     osm:lat="osm:50.9199584"
                     osm:lon="osm:-1.3953136">
-      <rdfs:type rdf:resource="osmp:Node"/>
-      <osm:tag>highway⁄traffic_signals</osm:tag>
+      <rdfs:type rdf:resource="osdm:node"/>
+      <osm:tag>:highway%3Dtraffic_signals</osm:tag>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/254429"/>
    <rdf:Description rdf:about="osm:node/254429/v4"
@@ -51,9 +52,9 @@
                     osm:changeset="osm:3877615"
                     osm:lat="osm:50.9199584"
                     osm:lon="osm:-1.3953136">
-      <rdfs:type rdf:resource="osmp:Node"/>
-      <osm:tag>highway⁄traffic_signals</osm:tag>
-      <osm:tag>crossing⁄island;uncontrolled</osm:tag>
+      <rdfs:type rdf:resource="osdm:node"/>
+      <osm:tag>:highway%3Dtraffic_signals</osm:tag>
+      <osm:tag>:crossing%3Disland;uncontrolled</osm:tag>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/254429"/>
    <rdf:Description rdf:about="osm:node/254429/v5"
@@ -65,9 +66,9 @@
                     osm:changeset="osm:7746576"
                     osm:lat="osm:50.9199528"
                     osm:lon="osm:-1.3953564">
-      <rdfs:type rdf:resource="osmp:Node"/>
-      <osm:tag>highway⁄traffic_signals</osm:tag>
-      <osm:tag>crossing⁄island;uncontrolled</osm:tag>
+      <rdfs:type rdf:resource="osdm:node"/>
+      <osm:tag>:highway%3Dtraffic_signals</osm:tag>
+      <osm:tag>:crossing%3Disland;uncontrolled</osm:tag>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/254429"/>
    <rdf:Description rdf:about="osm:node/254429/v6"
@@ -79,9 +80,9 @@
                     osm:changeset="osm:10650281"
                     osm:lat="osm:50.9199824"
                     osm:lon="osm:-1.3953309">
-      <rdfs:type rdf:resource="osmp:Node"/>
-      <osm:tag>highway⁄traffic_signals</osm:tag>
-      <osm:tag>crossing⁄island;uncontrolled</osm:tag>
+      <rdfs:type rdf:resource="osdm:node"/>
+      <osm:tag>:highway%3Dtraffic_signals</osm:tag>
+      <osm:tag>:crossing%3Disland;uncontrolled</osm:tag>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/254429"/>
    <rdf:Description rdf:about="osm:node/254429/v7"
@@ -93,9 +94,9 @@
                     osm:changeset="osm:10899959"
                     osm:lat="osm:50.9199448"
                     osm:lon="osm:-1.3953573">
-      <rdfs:type rdf:resource="osmp:Node"/>
-      <osm:tag>highway⁄traffic_signals</osm:tag>
-      <osm:tag>crossing⁄island;uncontrolled</osm:tag>
+      <rdfs:type rdf:resource="osdm:node"/>
+      <osm:tag>:highway%3Dtraffic_signals</osm:tag>
+      <osm:tag>:crossing%3Disland;uncontrolled</osm:tag>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/254429"/>
    <rdf:Description rdf:about="osm:node/254430/v1"
@@ -107,7 +108,7 @@
                     osm:changeset="osm:514036"
                     osm:lat="osm:50.9230534"
                     osm:lon="osm:-1.3952716">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:node"/>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/254430"/>
    <rdf:Description rdf:about="osm:node/254430/v2"
@@ -119,7 +120,7 @@
                     osm:changeset="osm:485587"
                     osm:lat="osm:50.9230534"
                     osm:lon="osm:-1.3952716">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:node"/>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/254430"/>
    <rdf:Description rdf:about="osm:node/254430/v3"
@@ -131,7 +132,7 @@
                     osm:changeset="osm:340545"
                     osm:lat="osm:50.9230534"
                     osm:lon="osm:-1.3952716">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:node"/>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/254430"/>
    <rdf:Description rdf:about="osm:node/319638/v1"
@@ -143,7 +144,7 @@
                     osm:changeset="osm:514036"
                     osm:lat="osm:50.9212765"
                     osm:lon="osm:-1.3954226">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:node"/>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/319638"/>
    <rdf:Description rdf:about="osm:node/319638/v2"
@@ -155,7 +156,7 @@
                     osm:changeset="osm:485587"
                     osm:lat="osm:50.9212765"
                     osm:lon="osm:-1.3954226">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:node"/>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/319638"/>
    <rdf:Description rdf:about="osm:node/319638/v3"
@@ -167,7 +168,7 @@
                     osm:changeset="osm:340545"
                     osm:lat="osm:50.9212765"
                     osm:lon="osm:-1.3954226">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:node"/>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/319638"/>
    <rdf:Description rdf:about="osm:node/319638/v4"
@@ -179,7 +180,7 @@
                     osm:changeset="osm:340545"
                     osm:lat="osm:50.9212765"
                     osm:lon="osm:-1.3954226">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:node"/>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/319638"/>
    <rdf:Description rdf:about="osm:node/319638/v5"
@@ -191,7 +192,7 @@
                     osm:changeset="osm:5971653"
                     osm:lat="osm:50.921228"
                     osm:lon="osm:-1.395406">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:node"/>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/319638"/>
    <rdf:Description rdf:about="osm:node/319638/v6"
@@ -203,7 +204,7 @@
                     osm:changeset="osm:7746576"
                     osm:lat="osm:50.921259"
                     osm:lon="osm:-1.395432">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:node"/>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/319638"/>
    <rdf:Description rdf:about="osm:node/319638/v7"
@@ -215,7 +216,7 @@
                     osm:changeset="osm:10650281"
                     osm:lat="osm:50.9212886"
                     osm:lon="osm:-1.3954065">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:node"/>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/319638"/>
    <rdf:Description rdf:about="osm:node/319638/v8"
@@ -227,7 +228,7 @@
                     osm:changeset="osm:10899959"
                     osm:lat="osm:50.9212876"
                     osm:lon="osm:-1.3954392">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:node"/>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/319638"/>
    <rdf:Description rdf:about="osm:node/319638/v9"
@@ -239,7 +240,7 @@
                     osm:changeset="osm:12776108"
                     osm:lat="osm:50.9212627"
                     osm:lon="osm:-1.3954484">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:node"/>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/319638"/>
    <rdf:Description rdf:about="osm:node/319640/v1"
@@ -251,7 +252,7 @@
                     osm:changeset="osm:7746576"
                     osm:lat="osm:50.9221647"
                     osm:lon="osm:-1.3954197">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:node"/>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/319640"/>
    <rdf:Description rdf:about="osm:node/319640/v2"
@@ -263,7 +264,7 @@
                     osm:changeset="osm:10650281"
                     osm:lat="osm:50.9221943"
                     osm:lon="osm:-1.3953942">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:node"/>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/319640"/>
    <rdf:Description rdf:about="osm:node/319640/v3"
@@ -275,7 +276,7 @@
                     osm:changeset="osm:10899959"
                     osm:lat="osm:50.9221762"
                     osm:lon="osm:-1.3954235">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:node"/>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/319640"/>
    <rdf:Description rdf:about="osm:node/324341/v1"
@@ -287,7 +288,7 @@
                     osm:changeset="osm:514036"
                     osm:lat="osm:50.923628"
                     osm:lon="osm:-1.3948577">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:node"/>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/324341"/>
    <rdf:Description rdf:about="osm:node/324341/v2"
@@ -299,7 +300,7 @@
                     osm:changeset="osm:485587"
                     osm:lat="osm:50.923628"
                     osm:lon="osm:-1.3948577">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:node"/>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/324341"/>
    <rdf:Description rdf:about="osm:node/324341/v3"
@@ -311,7 +312,7 @@
                     osm:changeset="osm:485587"
                     osm:lat="osm:50.9234954"
                     osm:lon="osm:-1.394935">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:node"/>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/324341"/>
    <rdf:Description rdf:about="osm:node/324341/v4"
@@ -323,7 +324,7 @@
                     osm:changeset="osm:485587"
                     osm:lat="osm:50.9234954"
                     osm:lon="osm:-1.394935">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:node"/>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/324341"/>
    <rdf:Description rdf:about="osm:node/324341/v5"
@@ -335,7 +336,7 @@
                     osm:changeset="osm:485587"
                     osm:lat="osm:50.9234954"
                     osm:lon="osm:-1.394935">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:node"/>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/324341"/>
    <rdf:Description rdf:about="osm:node/324341/v6"
@@ -347,7 +348,7 @@
                     osm:changeset="osm:340545"
                     osm:lat="osm:50.9234954"
                     osm:lon="osm:-1.394935">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:node"/>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/324341"/>
    <rdf:Description rdf:about="osm:node/324341/v7"
@@ -359,7 +360,7 @@
                     osm:changeset="osm:340545"
                     osm:lat="osm:50.9234954"
                     osm:lon="osm:-1.394935">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:node"/>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/324341"/>
    <rdf:Description rdf:about="osm:node/324341/v8"
@@ -371,7 +372,7 @@
                     osm:changeset="osm:6713760"
                     osm:lat="osm:50.9235438"
                     osm:lon="osm:-1.394935">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:node"/>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/324341"/>
    <rdf:Description rdf:about="osm:node/324341/v9"
@@ -383,7 +384,7 @@
                     osm:changeset="osm:10650281"
                     osm:lat="osm:50.9235734"
                     osm:lon="osm:-1.3949095">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:node"/>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/324341"/>
    <rdf:Description rdf:about="osm:node/324341/v10"
@@ -395,7 +396,7 @@
                     osm:changeset="osm:12452880"
                     osm:lat="osm:50.9235965"
                     osm:lon="osm:-1.3948879">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:node"/>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/324341"/>
    <rdf:Description rdf:about="osm:node/21420434/v1"
@@ -407,7 +408,7 @@
                     osm:changeset="osm:10650281"
                     osm:lat="osm:50.9226904"
                     osm:lon="osm:-1.3953511">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:node"/>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/21420434"/>
    <rdf:Description rdf:about="osm:node/21420434/v2"
@@ -419,7 +420,7 @@
                     osm:changeset="osm:10899959"
                     osm:lat="osm:50.9226883"
                     osm:lon="osm:-1.3953846">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:node"/>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/21420434"/>
    <rdf:Description rdf:about="osm:node/27558592/v1"
@@ -431,8 +432,8 @@
                     osm:changeset="osm:514036"
                     osm:lat="osm:50.9266834"
                     osm:lon="osm:-1.3914922">
-      <rdfs:type rdf:resource="osmp:Node"/>
-      <osm:tag>created_by⁄JOSM</osm:tag>
+      <rdfs:type rdf:resource="osdm:node"/>
+      <osm:tag>:created_by%3DJOSM</osm:tag>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/27558592"/>
    <rdf:Description rdf:about="osm:node/27558592/v2"
@@ -444,7 +445,7 @@
                     osm:changeset="osm:340545"
                     osm:lat="osm:50.9266834"
                     osm:lon="osm:-1.3914922">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:node"/>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/27558592"/>
    <rdf:Description rdf:about="osm:node/27558592/v3"
@@ -456,7 +457,7 @@
                     osm:changeset="osm:340545"
                     osm:lat="osm:50.9266834"
                     osm:lon="osm:-1.3914922">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:node"/>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/27558592"/>
    <rdf:Description rdf:about="osm:node/27558592/v4"
@@ -468,7 +469,7 @@
                     osm:changeset="osm:10650281"
                     osm:lat="osm:50.926713"
                     osm:lon="osm:-1.3914667">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:node"/>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/27558592"/>
    <rdf:Description rdf:about="osm:node/27558592/v5"
@@ -480,7 +481,7 @@
                     osm:changeset="osm:10650721"
                     osm:lat="osm:50.9266865"
                     osm:lon="osm:-1.3914327">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:node"/>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/27558592"/>
    <rdf:Description rdf:about="osm:node/1740735279/v1"
@@ -492,7 +493,7 @@
                     osm:changeset="osm:340545"
                     osm:lat="osm:50.9266834"
                     osm:lon="osm:-1.3914922">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:node"/>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/1740735279"/>
    <rdf:Description rdf:about="osm:node/1740735278/v1"
@@ -504,7 +505,7 @@
                     osm:changeset="osm:340545"
                     osm:lat="osm:50.9266834"
                     osm:lon="osm:-1.3914922">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:node"/>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/1740735278"/>
    <rdf:Description rdf:about="osm:node/1740735275/v1"
@@ -516,7 +517,7 @@
                     osm:changeset="osm:340545"
                     osm:lat="osm:50.9266834"
                     osm:lon="osm:-1.3914922">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:node"/>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/1740735275"/>
    <rdf:Description rdf:about="osm:node/1740735276/v1"
@@ -528,7 +529,7 @@
                     osm:changeset="osm:340545"
                     osm:lat="osm:50.9266834"
                     osm:lon="osm:-1.3914922">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:node"/>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/1740735276"/>
    <rdf:Description rdf:about="osm:way/149920731/v1"
@@ -538,17 +539,17 @@
                     osm:uid="osm:55782"
                     osm:user="osm:0123456789"
                     osm:changeset="osm:11217591">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:way"/>
       <osm:nd>254430</osm:nd>
       <osm:nd>319638</osm:nd>
-      <osm:tag>ref⁄C502</osm:tag>
-      <osm:tag>foot⁄yes</osm:tag>
-      <osm:tag>name⁄Portswood Road</osm:tag>
-      <osm:tag>horse⁄yes</osm:tag>
-      <osm:tag>bicycle⁄yes</osm:tag>
-      <osm:tag>highway⁄tertiary</osm:tag>
-      <osm:tag>old_ref⁄A335</osm:tag>
-      <osm:tag>motorcar⁄yes</osm:tag>
+      <osm:tag>:ref%3DC502</osm:tag>
+      <osm:tag>:foot%3Dyes</osm:tag>
+      <osm:tag>:name%3DPortswood Road</osm:tag>
+      <osm:tag>:horse%3Dyes</osm:tag>
+      <osm:tag>:bicycle%3Dyes</osm:tag>
+      <osm:tag>:highway%3Dtertiary</osm:tag>
+      <osm:tag>:old_ref%3DA335</osm:tag>
+      <osm:tag>:motorcar%3Dyes</osm:tag>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/149920731"/>
    <rdf:Description rdf:about="osm:way/149920731/v2"
@@ -558,18 +559,18 @@
                     osm:uid="osm:84000"
                     osm:user="osm:pcman1985"
                     osm:changeset="osm:13796146">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:way"/>
       <osm:nd>254430</osm:nd>
       <osm:nd>319638</osm:nd>
-      <osm:tag>ref⁄C502</osm:tag>
-      <osm:tag>foot⁄yes</osm:tag>
-      <osm:tag>name⁄Portswood Road</osm:tag>
-      <osm:tag>horse⁄yes</osm:tag>
-      <osm:tag>bicycle⁄yes</osm:tag>
-      <osm:tag>highway⁄tertiary</osm:tag>
-      <osm:tag>old_ref⁄A335</osm:tag>
-      <osm:tag>maxspeed⁄30 mph</osm:tag>
-      <osm:tag>motorcar⁄yes</osm:tag>
+      <osm:tag>:ref%3DC502</osm:tag>
+      <osm:tag>:foot%3Dyes</osm:tag>
+      <osm:tag>:name%3DPortswood Road</osm:tag>
+      <osm:tag>:horse%3Dyes</osm:tag>
+      <osm:tag>:bicycle%3Dyes</osm:tag>
+      <osm:tag>:highway%3Dtertiary</osm:tag>
+      <osm:tag>:old_ref%3DA335</osm:tag>
+      <osm:tag>:maxspeed%3D30 mph</osm:tag>
+      <osm:tag>:motorcar%3Dyes</osm:tag>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/149920731"/>
    <rdf:Description rdf:about="osm:way/149920731/v3"
@@ -579,19 +580,19 @@
                     osm:uid="osm:534393"
                     osm:user="osm:Chris Baines"
                     osm:changeset="osm:16173913">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:way"/>
       <osm:nd>254430</osm:nd>
       <osm:nd>319638</osm:nd>
       <osm:nd>319640</osm:nd>
-      <osm:tag>ref⁄C502</osm:tag>
-      <osm:tag>foot⁄yes</osm:tag>
-      <osm:tag>name⁄Portswood Road</osm:tag>
-      <osm:tag>horse⁄yes</osm:tag>
-      <osm:tag>bicycle⁄yes</osm:tag>
-      <osm:tag>highway⁄tertiary</osm:tag>
-      <osm:tag>old_ref⁄A335</osm:tag>
-      <osm:tag>maxspeed⁄30 mph</osm:tag>
-      <osm:tag>motorcar⁄yes</osm:tag>
+      <osm:tag>:ref%3DC502</osm:tag>
+      <osm:tag>:foot%3Dyes</osm:tag>
+      <osm:tag>:name%3DPortswood Road</osm:tag>
+      <osm:tag>:horse%3Dyes</osm:tag>
+      <osm:tag>:bicycle%3Dyes</osm:tag>
+      <osm:tag>:highway%3Dtertiary</osm:tag>
+      <osm:tag>:old_ref%3DA335</osm:tag>
+      <osm:tag>:maxspeed%3D30 mph</osm:tag>
+      <osm:tag>:motorcar%3Dyes</osm:tag>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/149920731"/>
    <rdf:Description rdf:about="osm:way/162141724/v1"
@@ -601,12 +602,12 @@
                     osm:uid="osm:534393"
                     osm:user="osm:Chris Baines"
                     osm:changeset="osm:11502302">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:way"/>
       <osm:nd>1740735279</osm:nd>
       <osm:nd>1740735278</osm:nd>
       <osm:nd>1740735275</osm:nd>
       <osm:nd>1740735276</osm:nd>
-      <osm:tag>building⁄house</osm:tag>
+      <osm:tag>:building%3Dhouse</osm:tag>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/162141724"/>
    <rdf:Description rdf:about="osm:way/162141724/v2"
@@ -616,14 +617,14 @@
                     osm:uid="osm:534393"
                     osm:user="osm:Chris Baines"
                     osm:changeset="osm:12793195">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:way"/>
       <osm:nd>1740735279</osm:nd>
       <osm:nd>1740735278</osm:nd>
       <osm:nd>1740735275</osm:nd>
       <osm:nd>1740735276</osm:nd>
-      <osm:tag>building⁄house</osm:tag>
-      <osm:tag>addr:street⁄Portswood Road</osm:tag>
-      <osm:tag>addr:housenumber⁄109</osm:tag>
+      <osm:tag>:building%3Dhouse</osm:tag>
+      <osm:tag>:addr:street%3DPortswood Road</osm:tag>
+      <osm:tag>:addr:housenumber%3D109</osm:tag>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/162141724"/>
    <rdf:Description rdf:about="osm:relation/1867844/v1"
@@ -633,12 +634,12 @@
                     osm:uid="osm:540739"
                     osm:user="osm:robbob700"
                     osm:changeset="osm:9977905">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:relation"/>
       <osm:member>way162141724</osm:member>
       <osm:member>way149920731</osm:member>
-      <osm:tag>ref⁄3</osm:tag>
-      <osm:tag>type⁄route</osm:tag>
-      <osm:tag>route⁄bus</osm:tag>
+      <osm:tag>:ref%3D3</osm:tag>
+      <osm:tag>:type%3Droute</osm:tag>
+      <osm:tag>:route%3Dbus</osm:tag>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/1867844"/>
    <rdf:Description rdf:about="osm:relation/1867844/v2"
@@ -648,13 +649,13 @@
                     osm:uid="osm:540739"
                     osm:user="osm:robbob700"
                     osm:changeset="osm:9977905">
-      <rdfs:type rdf:resource="osmp:Node"/>
+      <rdfs:type rdf:resource="osdm:relation"/>
       <osm:member>way162141724</osm:member>
       <osm:member>way149920731</osm:member>
-      <osm:tag>ref⁄3</osm:tag>
-      <osm:tag>type⁄route</osm:tag>
-      <osm:tag>route⁄bus</osm:tag>
-      <osm:tag>operator⁄First Southampton</osm:tag>
+      <osm:tag>:ref%3D3</osm:tag>
+      <osm:tag>:type%3Droute</osm:tag>
+      <osm:tag>:route%3Dbus</osm:tag>
+      <osm:tag>:operator%3DFirst Southampton</osm:tag>
    </rdf:Description>
    <rdf:Description rdf:about="osm:users/1867844"/>
 </rdf:RDF>

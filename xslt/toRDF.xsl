@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <xsl:stylesheet version="2.0"
-                xmlns:osm="http://www.openstreetmap.org#"
+                xmlns:osm="http://www.openstreetmap.org/"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
                 xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
@@ -13,10 +13,11 @@
     <xsl:template match="/">
         <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
                  xmlns:owl="http://www.w3.org/2002/07/owl#"
-                 xmlns:osm="http://www.openstreetmap.org#"
+                 xmlns:osm="http://www.openstreetmap.org/"
                  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
                  xmlns:prov="http://www.w3.org/ns/prov#"
-                 xmlns:osmp="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#">
+                 xmlns:osmp="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#"
+                 xmlns="https://wiki.openstreetmap.org/wiki/">
 
 
             <xsl:apply-templates/>
@@ -39,12 +40,13 @@
                 <!--&lt;!&ndash;if there are child nodes...&ndash;&gt;-->
                 <!--<xsl:apply-templates select="child::*"/>-->
             </xsl:for-each>
-            <rdfs:type rdf:resource="osmp:Node"/>
+            <rdfs:type rdf:resource="osdm:{name()}"/>
             <xsl:for-each select="child::*">
                 <xsl:element name="osm:{name()}">
                     <xsl:for-each select="attribute::*">
+                        <xsl:if test="name()='k'">:</xsl:if>
                         <xsl:value-of select="self::node()"/>
-                        <xsl:if test="name()='k'">&#8260;</xsl:if>
+                        <xsl:if test="name()='k'">%3D</xsl:if>
                     </xsl:for-each>
 
                 </xsl:element>
