@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:osm="http://www.openstreetmap.org/"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:prov="http://www.w3.org/ns/prov#"
+         xmlns:osmp="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#"
+         xmlns:osmdm="https://wiki.openstreetmap.org/wiki/">
+   <osmdm:node rdf:about="osm:node/254429/v1"
+                    osm:id="254429"
+                    prov:attributedTo="osm:users/53637478489"
+                    osm:version="1"
+                    osm:timestamp="2007-09-25T13:11:17Z"
+                    osm:uid="53637478489"
+                    osm:user="user1"
+                    osm:changeset="514036"
+                    osm:lat="50.9199968"
+                    osm:lon="-1.3953744">
+      <rdfs:type rdf:resource="osdm:node"/>
+   </osmdm:node>
+   <osmdm:user rdf:about="osm:users/53637478489">
+      <rdfs:type rdf:resource="prov:Agent"/>
+   </osmdm:user>
+   <rdf:Description rdf:about="osm:node/254429/v2"
+                    osm:id="254429"
+                    prov:attributedTo="osm:users/53637478490"
+                    osm:version="2"
+                    osm:timestamp="2008-04-29T13:55:41Z"
+                    osm:uid="53637478490"
+                    osm:user="user2"
+                    osm:changeset="287333"
+                    osm:lat="50.9199584"
+                    osm:lon="-1.3953136">
+      <rdfs:type rdf:resource="osdm:node"/>
+   </rdf:Description>
+   <rdf:Description rdf:about="osm:users/53637478490">
+      <rdfs:type rdf:resource="prov:Agent"/>
+   </rdf:Description>
+  
+ 
+</rdf:RDF>
