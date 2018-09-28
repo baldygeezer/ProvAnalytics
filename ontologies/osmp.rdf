@@ -7,7 +7,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:prov="http://www.w3.org/ns/prov#">
-    <owl:Ontology rdf:about="https://wiki.openstreetmap.org/wiki/">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp">
         <owl:imports rdf:resource="http://www.w3.org/ns/prov-o"/>
     </owl:Ontology>
     
@@ -24,31 +24,31 @@
     
 
 
-    <!-- https://wiki.openstreetmap.org/wiki/hadMember -->
+    <!-- http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#hadMember -->
 
-    <owl:ObjectProperty rdf:about="https://wiki.openstreetmap.org/wiki/hadMember">
-        <rdfs:domain rdf:resource="https://wiki.openstreetmap.org/wiki/Relation"/>
-        <rdfs:range rdf:resource="https://wiki.openstreetmap.org/wiki/Node"/>
-        <rdfs:range rdf:resource="https://wiki.openstreetmap.org/wiki/Relation"/>
-        <rdfs:range rdf:resource="https://wiki.openstreetmap.org/wiki/Way"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#hadMember">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#Relation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#Node"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#Relation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#Way"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://wiki.openstreetmap.org/wiki/hadTag -->
+    <!-- http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#hadTag -->
 
-    <owl:ObjectProperty rdf:about="https://wiki.openstreetmap.org/wiki/hadTag">
-        <rdfs:domain rdf:resource="https://wiki.openstreetmap.org/wiki/Relation"/>
-        <rdfs:domain rdf:resource="https://wiki.openstreetmap.org/wiki/Way"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#hadTag">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#Relation"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#Way"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://wiki.openstreetmap.org/wiki/nd -->
+    <!-- http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#nd -->
 
-    <owl:ObjectProperty rdf:about="https://wiki.openstreetmap.org/wiki/nd">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#nd">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#hadMember"/>
-        <rdfs:domain rdf:resource="https://wiki.openstreetmap.org/wiki/Way"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#Way"/>
     </owl:ObjectProperty>
     
 
@@ -64,34 +64,34 @@
     
 
 
-    <!-- https://wiki.openstreetmap.org/wiki/Node -->
+    <!-- http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#Node -->
 
-    <owl:Class rdf:about="https://wiki.openstreetmap.org/wiki/Node">
+    <owl:Class rdf:about="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#Node">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
     </owl:Class>
     
 
 
-    <!-- https://wiki.openstreetmap.org/wiki/Relation -->
+    <!-- http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#Relation -->
 
-    <owl:Class rdf:about="https://wiki.openstreetmap.org/wiki/Relation">
+    <owl:Class rdf:about="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#Relation">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Collection"/>
-        <owl:disjointWith rdf:resource="https://wiki.openstreetmap.org/wiki/Way"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#Way"/>
     </owl:Class>
     
 
 
-    <!-- https://wiki.openstreetmap.org/wiki/Tag -->
+    <!-- http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#User -->
 
-    <owl:Class rdf:about="https://wiki.openstreetmap.org/wiki/Tag">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#User">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Person"/>
     </owl:Class>
     
 
 
-    <!-- https://wiki.openstreetmap.org/wiki/Way -->
+    <!-- http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#Way -->
 
-    <owl:Class rdf:about="https://wiki.openstreetmap.org/wiki/Way">
+    <owl:Class rdf:about="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#Way">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Collection"/>
     </owl:Class>
 </rdf:RDF>

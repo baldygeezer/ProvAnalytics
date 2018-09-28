@@ -1,7 +1,5 @@
 package com.bar1g16;
-
 import com.bar1g16.interfaces.IDataStore;
-
 import org.eclipse.rdf4j.query.QueryLanguage;
 import org.eclipse.rdf4j.query.Update;
 import org.eclipse.rdf4j.query.algebra.In;
@@ -14,7 +12,6 @@ import org.eclipse.rdf4j.repository.manager.RepositoryManager;
 import org.eclipse.rdf4j.repository.sail.SailRepository;
 import org.eclipse.rdf4j.rio.RDFFormat;
 import org.eclipse.rdf4j.rio.RDFParser;
-
 import javax.xml.transform.Result;
 import javax.xml.transform.stream.StreamResult;
 import java.io.*;
@@ -28,6 +25,8 @@ public class GraphdbStore implements IDataStore {
     private StreamResult result;
     private Writer writer;
     private ByteArrayOutputStream out;
+    private String db;
+    private String repoName;
 
     /**
      * @return a reference to a sax result object that an XSLT Transformer writes data to
@@ -36,75 +35,107 @@ public class GraphdbStore implements IDataStore {
     public Result getResult() {
         if (result == null) {
             result = new StreamResult(stringWriter);
-
         }
         return result;
     }
 
-//    public boolean save(StreamResult data) {
-//
-//        String resultString = data.toString();
-//
-//        RepositoryConnection conn = getConnection();
+//    public boolean save(ByteArrayOutputStream data,String db, String repoName) {
+//        ByteArrayInputStream in = new ByteArrayInputStream(data.toByteArray());
+//        RepositoryConnection conn = getConnection(db, repoName);
 //        conn.begin();
-//
+////        URL url = null;
+////        try {
+////            url = new URL("https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#");
+////        } catch (MalformedURLException e) {
+////            e.printStackTrace();
+////        }
+//        try {
+//            conn.add(in, "", RDFFormat.RDFXML);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        conn.commit();
+//        return true;
+//    }
+
+    public boolean save(ByteArrayOutputStream data) {
+        ByteArrayInputStream in = new ByteArrayInputStream(data.toByteArray());
+        RepositoryConnection conn;
+        if (repoName == null || db == null) {
+            conn = getConnection();
+        } else {
+            conn = getConnection(repoName, db);
+        }
+
+
+        conn.begin();
 //        URL url = null;
-//
 //        try {
 //            url = new URL("https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#");
 //        } catch (MalformedURLException e) {
 //            e.printStackTrace();
 //        }
-//
-//        try {
-//            // OutputStream in = data.getOutputStream();
-//
-//
-//            conn.add(url, resultString, RDFFormat.RDFXML);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        conn.commit();
-//
-//        return true;
-//    }
-
-    public boolean save(ByteArrayOutputStream data) {
-        //String insertString= "INSERT DATA {"+ resultString + "}";
-        // String resultString = data.toString();
-        ByteArrayInputStream in = new ByteArrayInputStream(data.toByteArray());
-        RepositoryConnection conn = getConnection();
-        conn.begin();
-
-        URL url = null;
         try {
-            url = new URL("https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#");
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-
-        try {
-
             conn.add(in, "", RDFFormat.RDFXML);
-            // InputStream in = new BufferedInputStream();
-            // conn.add(url, resultString, RDFFormat.RDFXML);
-
         } catch (IOException e) {
             e.printStackTrace();
         }
         conn.commit();
-
         return true;
     }
 
+    /**
+     * default constructor
+     */
     public GraphdbStore() {
     }
 
+    /**
+     * constructor to specify the database and repo
+     *
+     * @param db       url of database server
+     * @param repoName name of the GraphDB repo
+     */
+    public GraphdbStore(String db, String repoName) {
+        this.db = db;
+        this.repoName = repoName;
+    }
 
+    /**
+     * constructor to specify just repo, using local database.
+     *
+     * @param repoName name of the GraphDB repo
+     */
+    public GraphdbStore(String repoName) {
+        this.repoName = repoName;
+        this.db = "http://localhost:7200/";
+    }
+
+    /**
+     * get a connection to the repository
+     *
+     * @return an initialised rdf4j RepositoryConnection object, using default values
+     */
     private RepositoryConnection getConnection() {
         RepositoryManager repoManager = new LocalRepositoryManager(new File("."));
         repoManager.initialize();
         Repository repo = new HTTPRepository("http://localhost:7200/", "test");
+        repo.initialize();
+        RepositoryConnection conn = repo.getConnection();
+        return conn;
+    }
+
+    /**
+     * get a connection to the repository
+     *
+     * @param db
+     * @param repoName
+     * @return an initialised rdf4j RepositoryConnection object, spefying the database and repository
+     */
+    private RepositoryConnection getConnection(String db, String repoName) {
+        RepositoryManager repoManager = new LocalRepositoryManager(new File("."));
+        repoManager.initialize();
+        Repository repo = new HTTPRepository( repoName, db);
         repo.initialize();
         RepositoryConnection conn = repo.getConnection();
         return conn;

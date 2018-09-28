@@ -3,7 +3,9 @@
                 xmlns:osm="http://www.openstreetmap.org/"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-                xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+                xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+                xmlns:prov="http://www.w3.org/ns/prov#"
+                xmlns:osmdm="https://wiki.openstreetmap.org/wiki/">
     <!--xsl directives -->
     <xsl:output method="xml" indent="yes"/>
     <!--***************************************************************-->
@@ -17,9 +19,7 @@
                  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
                  xmlns:prov="http://www.w3.org/ns/prov#"
                  xmlns:osmp="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#"
-                 xmlns="https://wiki.openstreetmap.org/wiki/">
-
-
+                 xmlns:osmdm="https://wiki.openstreetmap.org/wiki/">
             <xsl:apply-templates/>
         </rdf:RDF>
     </xsl:template>
@@ -32,13 +32,16 @@
 
     <!--process every top level element(way, relation, node)-->
     <xsl:template match="/*/*">
-
         <rdf:Description rdf:about="osm:{name()}/{@id}/v{@version}">
+            <xsl:variable name="uid" select="@uid"/>
             <xsl:for-each select="@*">
-                <xsl:attribute name="osm:{name()}">osm:<xsl:value-of select="."/></xsl:attribute>
+                <xsl:attribute name="osm:{name()}"><xsl:value-of select="."/></xsl:attribute>
                 <!--apply a template that processes the attributes and turns them into rdf attributes-->
                 <!--&lt;!&ndash;if there are child nodes...&ndash;&gt;-->
                 <!--<xsl:apply-templates select="child::*"/>-->
+                <xsl:if test="name()='id'">
+                    <xsl:attribute name="prov:attributedTo">osm:users/<xsl:value-of select="$uid"/></xsl:attribute>
+                </xsl:if>
             </xsl:for-each>
             <rdfs:type rdf:resource="osdm:{name()}"/>
             <xsl:for-each select="child::*">
@@ -54,10 +57,10 @@
             </xsl:for-each>
         </rdf:Description>
         <!-- make RDF descriptions for changesets and users -->
-        <xsl:apply-templates select="@id"/>
+        <xsl:apply-templates select="@uid"/>
     </xsl:template>
-<xsl:template match="@id">
-    <rdf:Description rdf:about="osm:users/{.}"></rdf:Description>
+<xsl:template match="@uid">
+    <rdf:Description rdf:about="osm:users/{.}"><rdfs:type rdf:resource="prov:Agent"/></rdf:Description>
 </xsl:template>
 
     <!--<xsl:template match="/*/*">-->

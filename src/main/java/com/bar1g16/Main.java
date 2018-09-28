@@ -8,8 +8,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        start(1);
-
+        start(3);
+System.out.println();
     }
 
     public static void start(int loadnum) {
@@ -17,7 +17,7 @@ public class Main {
         FileLoader loader = null;
         FileLoader sLoader=null;
 
-            loader = new FileLoader(new FileIO("testfixture.osm", "toRDF.xsl"));
+            loader = new FileLoader(new FileIO("testSample.osh", "toRDF.xsl"));
             // sLoader=new FileLoader(new FileIO("testfixture.osm", "toRDF.xsl"));
 
 
@@ -29,6 +29,9 @@ public class Main {
             case 2:
                 t = new SaxonTransformer(loader, new GraphdbStore());
                 break;
+            case 3:
+               t = new SaxonTransformer(loader, new GraphdbStore("testicle"));
+               break;
             default:
                 t = new SaxonTransformer(loader, new FileStore("data-out/result.rdf"));
         }
