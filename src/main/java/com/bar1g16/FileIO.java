@@ -8,7 +8,7 @@ import java.io.File;
 import java.util.Scanner;
 
 /***
- * Handles ingests information using file IO. Ingests an xslt stylesheet and xml file. Outputs objects required to apply the xslt transformation to the xml
+ * Handles/ingests information using file IO. Ingests an xslt stylesheet and xml file. Outputs objects required to apply the xslt transformation to the xml
  * Abstract so that specifics about how the files are handled, and where they come from can be delegated to a concrete class
  * saves results to file
  */

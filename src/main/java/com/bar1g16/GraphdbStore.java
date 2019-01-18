@@ -1,5 +1,7 @@
 package com.bar1g16;
 import com.bar1g16.interfaces.IDataStore;
+import org.eclipse.rdf4j.model.IRI;
+import org.eclipse.rdf4j.model.ValueFactory;
 import org.eclipse.rdf4j.query.QueryLanguage;
 import org.eclipse.rdf4j.query.Update;
 import org.eclipse.rdf4j.query.algebra.In;
@@ -27,6 +29,8 @@ public class GraphdbStore implements IDataStore {
     private ByteArrayOutputStream out;
     private String db;
     private String repoName;
+    private IRI context;
+    private String graphName;
 
     /**
      * @return a reference to a sax result object that an XSLT Transformer writes data to
@@ -58,25 +62,52 @@ public class GraphdbStore implements IDataStore {
 //        return true;
 //    }
 
+//    public boolean save(ByteArrayOutputStream data) {
+//        ByteArrayInputStream in = new ByteArrayInputStream(data.toByteArray());
+//        RepositoryConnection conn;
+//        if (repoName == null || db == null) {
+//            conn = getConnection();
+//        } else {
+//            conn = getConnection(repoName, db);
+//        }
+//
+//
+//        conn.begin();
+////        URL url = null;
+////        try {
+////            url = new URL("https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#");
+////        } catch (MalformedURLException e) {
+////            e.printStackTrace();
+////        }
+//        try {
+//            conn.add(in, "", RDFFormat.RDFXML);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        conn.commit();
+//        return true;
+//    }
+
+    /**
+     * experiment to add add the data to a named graph
+     * @param data
+     * @param graphName
+     * @return
+     */
     public boolean save(ByteArrayOutputStream data) {
         ByteArrayInputStream in = new ByteArrayInputStream(data.toByteArray());
         RepositoryConnection conn;
-        if (repoName == null || db == null) {
+        if (repoName == null || db == null || graphName ==null) {
             conn = getConnection();
         } else {
-            conn = getConnection(repoName, db);
+            conn = getConnection(repoName, db, graphName);
         }
 
 
         conn.begin();
-//        URL url = null;
-//        try {
-//            url = new URL("https://www.ecs.soton.ac.uk/people/bar1g16/OSMProv#");
-//        } catch (MalformedURLException e) {
-//            e.printStackTrace();
-//        }
+
         try {
-            conn.add(in, "", RDFFormat.RDFXML);
+            conn.add(in, "", RDFFormat.RDFXML,context);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -84,22 +115,23 @@ public class GraphdbStore implements IDataStore {
         return true;
     }
 
+
     /**
      * default constructor
      */
     public GraphdbStore() {
     }
 
-    /**
-     * constructor to specify the database and repo
-     *
-     * @param db       url of database server
-     * @param repoName name of the GraphDB repo
-     */
-    public GraphdbStore(String db, String repoName) {
-        this.db = db;
-        this.repoName = repoName;
-    }
+//    /**
+//     * constructor to specify the database and repo
+//     *
+//     * @param db       url of database server
+//     * @param repoName name of the GraphDB repo
+//     */
+//    public GraphdbStore(String db, String repoName) {
+//        this.db = db;
+//        this.repoName = repoName;
+//    }
 
     /**
      * constructor to specify just repo, using local database.
@@ -109,6 +141,17 @@ public class GraphdbStore implements IDataStore {
     public GraphdbStore(String repoName) {
         this.repoName = repoName;
         this.db = "http://localhost:7200/";
+    }
+
+    /**
+     * exprimental constructor to specify repo and a named graph, using local database.
+     *
+     * @param repoName name of the GraphDB repo
+     */
+    public GraphdbStore(String repoName, String graphName) {
+        this.repoName = repoName;
+        this.db = "http://localhost:7200/";
+        this.graphName=graphName;
     }
 
     /**
@@ -138,6 +181,26 @@ public class GraphdbStore implements IDataStore {
         Repository repo = new HTTPRepository( repoName, db);
         repo.initialize();
         RepositoryConnection conn = repo.getConnection();
+        return conn;
+    }
+
+    /**
+     * method we are developing to import into a named graph
+     * @param db
+     * @param repoName
+     * @param graphName
+     * @return
+     */
+    private RepositoryConnection getConnection(String db, String repoName, String graphName) {
+        RepositoryManager repoManager = new LocalRepositoryManager(new File("."));
+        repoManager.initialize();
+        Repository repo = new HTTPRepository( repoName, db);
+        repo.initialize();
+        RepositoryConnection conn = repo.getConnection();
+
+        ValueFactory valueFactory= repo.getValueFactory();
+        context= valueFactory.createIRI(graphName);
+
         return conn;
     }
 

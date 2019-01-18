@@ -13,6 +13,9 @@ import javax.xml.transform.Transformer;
 import javax.xml.transform.stream.StreamSource;
 import java.io.IOException;
 
+/**
+ * class to load osm data from file
+ */
 public class FileLoader implements IDataLoader {
     private DocumentBuilderFactory docBuilderFactory;
     private DocumentBuilder docBuilder;
