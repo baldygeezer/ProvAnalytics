@@ -6,9 +6,9 @@
          xmlns:prov="http://www.w3.org/ns/prov#"
          xmlns:osmp="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#"
          xmlns:osmdm="https://wiki.openstreetmap.org/wiki/">
-   <osmdm:node rdf:about="osm:node/254429/v1"
+   <osmdm:node rdf:about="http://www.openstreetmap.org/node/254429/v1"
                     osm:id="254429"
-                    prov:attributedTo="osm:users/53637478489"
+                    prov:attributedTo="http://www.openstreetmap.org/users/53637478489"
                     osm:version="1"
                     osm:timestamp="2007-09-25T13:11:17Z"
                     osm:uid="53637478489"
@@ -18,12 +18,12 @@
                     osm:lon="-1.3953744">
       <rdfs:type rdf:resource="osdm:node"/>
    </osmdm:node>
-   <osmdm:user rdf:about="osm:users/53637478489">
+   <osmdm:user rdf:about="http://www.openstreetmap.org/users/53637478489">
       <rdfs:type rdf:resource="prov:Agent"/>
    </osmdm:user>
-   <rdf:Description rdf:about="osm:node/254429/v2"
+   <rdf:Description rdf:about="http://www.openstreetmap.org/node/254429/v2"
                     osm:id="254429"
-                    prov:attributedTo="osm:users/53637478490"
+                    prov:attributedTo="http://www.openstreetmap.org/users/53637478490"
                     osm:version="2"
                     osm:timestamp="2008-04-29T13:55:41Z"
                     osm:uid="53637478490"
@@ -33,8 +33,8 @@
                     osm:lon="-1.3953136">
       <rdfs:type rdf:resource="osdm:node"/>
    </rdf:Description>
-   <rdf:Description rdf:about="osm:users/53637478490">
-      <rdfs:type rdf:resource="prov:Agent"/>
+   <rdf:Description rdf:about="http://www.openstreetmap.org/users/53637478490">
+      <owl:class rdf:resource="prov:Agent"/>
    </rdf:Description>
   
  

@@ -6,6 +6,7 @@
                 xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
                 xmlns:prov="http://www.w3.org/ns/prov#"
                 xmlns:osmdm="https://wiki.openstreetmap.org/wiki/"
+                xmlns:osmp="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#"
                 xmlns:dc="http://purl.org/dc/terms/">
     <!--xsl directives -->
     <xsl:output method="xml" indent="yes"/>
@@ -61,7 +62,7 @@
             <!--for every child element in the data...-->
             <xsl:for-each select="child::*">
                 <!--make an element with same name prefixed with osm:-->
-                <xsl:element name="osm:{name()}">
+                <xsl:element name="osmp:{name()}">
                    <!--if it is an 'nd' element, add an rdf:resource of type node-->
                     <xsl:if test="name()='nd'">
                         <xsl:attribute name="rdf:resource">http://www.openstreetmap.org/node/<xsl:value-of select="attribute()"/></xsl:attribute>
@@ -88,27 +89,50 @@
                 <xsl:attribute name="rdf:resource">http://www.openstreetmap.org/users/<xsl:value-of select="$uid"/></xsl:attribute>
             </xsl:element>
 
-            <!-- the rdf:type element - points at a class in the osmp ontology that subclasses a prov-o Entity
-            the uri is a page on the osm wiki which has the canonical description-->
-            <!--<rdfs:type rdf:resource="https://wiki.openstreetmap.org/wiki/{name()}"/>-->
-           <!--in order to keep our ontology classes named nicely we uppercase the primitive's name here -->
+            <!-- this switch handles the rdf:type element and the provWasRevisionOf
+            rdf:type- points at a class in the osmp ontology that subclasses a prov-o Entity
+            the uri is a page on the osm wiki which has the canonical description
+          in order to keep our ontology classes named nicely we uppercase the primitive's name here
+          the prov:wasrevsionOf is handled here to get the type of revise element withou using  another switch-->
             <xsl:choose>
                 <xsl:when test="name()='node'">
                     <rdf:type rdf:resource="https://wiki.openstreetmap.org/wiki/Node"/>
+                    <!--the prov wasRevisionOf element - points at the previous version-->
+                    <!--<xsl:if test="$version > 1">-->
+                        <!--<xsl:element name="prov:wasRevisionOf">-->
+                            <!--<xsl:attribute name="rdf:resource">http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#node<xsl:value-of select="attribute::id"/>v<xsl:value-of select="$version - 1"/></xsl:attribute>-->
+                        <!--</xsl:element>-->
+                    <!--</xsl:if>-->
                 </xsl:when>
                 <xsl:when test="name()='way'">
                     <rdf:type rdf:resource="https://wiki.openstreetmap.org/wiki/Way"/>
+                    <!--the prov wasRevisionOf element - points at the previous version-->
+                    <!--<xsl:if test="$version > 1">-->
+                        <!--<xsl:element name="prov:wasRevisionOf">-->
+                            <!--<xsl:attribute name="rdf:resource">http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#way#<xsl:value-of select="attribute::id"/>v<xsl:value-of select="$version - 1"/></xsl:attribute>-->
+                        <!--</xsl:element>-->
+                    <!--</xsl:if>-->
+
                 </xsl:when>
                 <xsl:when test="name()='relation'">
                     <rdf:type rdf:resource="https://wiki.openstreetmap.org/wiki/Relation"/>
+                    <!--the prov wasRevisionOf element - points at the previous version-->
+                    <!--<xsl:if test="$version > 1">-->
+                        <!--<xsl:element name="prov:wasRevisionOf">-->
+                            <!--<xsl:attribute name="rdf:resource">http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#relation#<xsl:value-of select="attribute::id"/>v<xsl:value-of select="$version - 1"/></xsl:attribute>-->
+                        <!--</xsl:element>-->
+                    <!--</xsl:if>-->
+
                 </xsl:when>
             </xsl:choose>
-            <!--the prov wasRevisionOf element - points at the previous version-->
+
             <xsl:if test="$version > 1">
-            <xsl:element name="prov:wasRevisionOf">
-                <xsl:attribute name="rdf:resource">http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#<xsl:value-of select="attribute::id"/>v<xsl:value-of select="$version - 1"/></xsl:attribute>
-            </xsl:element>
-        </xsl:if>
+                <xsl:element name="prov:wasRevisionOf">
+                    <xsl:attribute name="rdf:resource">http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#<xsl:value-of select="name()"/><xsl:value-of select="attribute::id"/>v<xsl:value-of select="$version - 1"/></xsl:attribute>
+                </xsl:element>
+            </xsl:if>
+
+
             <!--the prov generated by element - points at a changeset-->
             <xsl:element name="prov:wasGeneratedBy">
                 <xsl:attribute name="rdf:resource">http://www.openstreetmap.org/changeset/<xsl:value-of select="$changeset"/></xsl:attribute>
