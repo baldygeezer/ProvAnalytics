@@ -7,7 +7,8 @@
                 xmlns:prov="http://www.w3.org/ns/prov#"
                 xmlns:osmdm="https://wiki.openstreetmap.org/wiki/"
                 xmlns:osmp="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#"
-                xmlns:dc="http://purl.org/dc/terms/">
+                xmlns:dc="http://purl.org/dc/terms/"
+                >
     <!--xsl directives -->
     <xsl:output method="xml" indent="yes"/>
     <!--***************************************************************-->
@@ -22,7 +23,8 @@
                  xmlns:prov="http://www.w3.org/ns/prov#"
                  xmlns:osmp="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#"
                  xmlns:osmdm="https://wiki.openstreetmap.org/wiki/"
-                 xmlns:dc="http://purl.org/dc/terms/">
+                 xmlns:dc="http://purl.org/dc/terms/"
+                >
 
             <xsl:apply-templates/>
         </rdf:RDF>
@@ -46,8 +48,8 @@
             <xsl:variable name="version" select="@version"/>
             <!-- for every attribute we find...-->
             <xsl:for-each select="@*">
+                <!--.process the attributes and turn them into qnamed attributes-->
                 <xsl:attribute name="osm:{name()}"><xsl:value-of select="."/></xsl:attribute>
-                <!--...apply a template that processes the attributes and turns them into qnamed attributes-->
                 <!--&lt;!&ndash;if there are child nodes...&ndash;&gt;-->
                 <!--<xsl:apply-templates select="child::*"/>-->
 
@@ -89,7 +91,12 @@
                 <xsl:attribute name="rdf:resource">http://www.openstreetmap.org/users/<xsl:value-of select="$uid"/></xsl:attribute>
             </xsl:element>
 
-            <!-- this switch handles the rdf:type element and the provWasRevisionOf
+            <xsl:element name="osmp:hasVersionNumber">
+             <xsl:attribute name="rdf:datatype">http://www.w3.org/2001/XMLSchema#int</xsl:attribute>
+                <xsl:value-of select="$version"/>
+            </xsl:element>
+
+            <!-- this switch handles the rdf:type element ???????and the provWasRevisionOf ?????????
             rdf:type- points at a class in the osmp ontology that subclasses a prov-o Entity
             the uri is a page on the osm wiki which has the canonical description
           in order to keep our ontology classes named nicely we uppercase the primitive's name here
