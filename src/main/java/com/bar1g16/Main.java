@@ -46,7 +46,7 @@ public class Main {
                break;
             case 4:
                 //send the result to graphDB using an unfortunately named repo
-                t = new SaxonTransformer(loader, new GraphdbStore("realOSM","http://osm.osmd.org/dtatata"));
+                t = new SaxonTransformer(loader, new GraphdbStore("realOSM_RL-OPT","http://osm.osmd.org/dtatata"));
                 break;
 
             default:

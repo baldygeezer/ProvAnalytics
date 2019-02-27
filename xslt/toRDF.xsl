@@ -156,7 +156,7 @@
     <!--lots of duplicates in a file, but only one in the triplestore-->
     <!--as they will overwrite each other-->
 <xsl:template match="@uid">
-    <rdf:Description rdf:about="http://www.openstreetmap.org/users/{.}"><rdfs:type rdf:resource="http://www.w3.org/ns/prov#Agent"/></rdf:Description>
+    <rdf:Description rdf:about="http://www.openstreetmap.org/users/{.}"><rdf:type rdf:resource="http://www.w3.org/ns/prov#Agent"/></rdf:Description>
 </xsl:template>
 
     <xsl:template match="@id">
