@@ -100,18 +100,16 @@
 
             <xsl:apply-templates select="tag"/>
 
-            <!--<xsl:if test="/*/*/*/attribute()='source'">-->
 
-<!--<xsl:apply-templates select="/*/*/*/@v"/>-->
-<!--</xsl:if>-->
         </rdf:Description>
 
         </xsl:template>
 
 
-
+<!--template to deal with tags; strips whitespace, splits attribut value on ";" and makes a prov:used triple of each split value
+-->
     <xsl:template match="tag">
-        <xsl:if test="attribute::k='source'">
+        <xsl:if test="(attribute::k='source') or (attribute::k='imagery_used')">
             <xsl:variable name= "val" select="replace(attribute::v,' ','')"/>
             <xsl:for-each select="tokenize($val,';')">
                     <xsl:element name="prov:used">
