@@ -16,21 +16,19 @@
     <!--match and Handle the document root  (<osm>)
         ...put an RDF tag in it-->
     <xsl:template match="/">
-    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-             xmlns:owl="http://www.w3.org/2002/07/owl#"
-             xmlns:osm="http://www.openstreetmap.org/"
-             xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-             xmlns:prov="http://www.w3.org/ns/prov#"
-             xmlns:osmp="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#"
-             xmlns:osmdm="https://wiki.openstreetmap.org/wiki/"
-             xmlns:dc="http://purl.org/dc/terms/"
-    >
+        <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                 xmlns:owl="http://www.w3.org/2002/07/owl#"
+                 xmlns:osm="http://www.openstreetmap.org/"
+                 xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+                 xmlns:prov="http://www.w3.org/ns/prov#"
+                 xmlns:osmp="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#"
+                 xmlns:osmdm="https://wiki.openstreetmap.org/wiki/"
+                 xmlns:dc="http://purl.org/dc/terms/"
+        >
 
-        <xsl:apply-templates/>
+            <xsl:apply-templates/>
+        </rdf:RDF>
 
-
-
-    </rdf:RDF>
     </xsl:template>
     <!--process each changeset-->
     <xsl:template match="/*/*">
@@ -43,7 +41,9 @@
             <!-- for every attribute we find...-->
             <xsl:for-each select="@*">
                 <!--.process the attributes and turn them into qnamed attributes-->
-                <xsl:attribute name="osm:{name()}"><xsl:value-of select="."/></xsl:attribute>
+                <xsl:attribute name="osm:{name()}">
+                    <xsl:value-of select="."/>
+                </xsl:attribute>
             </xsl:for-each>
 
             <!-- handle tags and members-->
@@ -56,99 +56,86 @@
                     <xsl:for-each select="attribute::*">
                         <!-- if it's a k prefix with : v - we need to add a uri prefix at some stage...-->
                         <xsl:if test="name()='k'">:</xsl:if>
-                            <xsl:value-of select="self::node()"/>
+                        <xsl:value-of select="self::node()"/>
                         <!-- if it's a 'k', then suffix with a %3D (slash) to separate it from 'v'-->
                         <xsl:if test="name()='k'">%3D</xsl:if>
                     </xsl:for-each>
                 </xsl:element>
 
-                <!--<xsl:for-each select="attribute::*">-->
-                    <!--<xsl:if test="name()='v'">-->
-                       <!---->
-                    <!--</xsl:if>-->
-
-                    <!--&lt;!&ndash;<xsl:value-of select="dff"/>&ndash;&gt;-->
-
-                    <!--<xsl:if test="self::node()='source'">-->
-                        <!--<xsl:value-of select="self::*"/>-->
-                        <!--<xsl:apply-templates select="@v"/>-->
-                        <!--&lt;!&ndash;<xsl:element name="prov:used">&ndash;&gt;-->
-                            <!--&lt;!&ndash;<xsl:attribute name="rdf:resource">http://www.openstreetmap.org/users/</xsl:attribute>&ndash;&gt;-->
-                        <!--&lt;!&ndash;</xsl:element>&ndash;&gt;-->
-                    <!--</xsl:if>-->
-                <!--</xsl:for-each>-->
             </xsl:for-each>
 
-            <!-- the prov attribution element - we still haven't minted the URI properly!-->
+            <!-- prov association with the user who opened the changeset-->
             <xsl:element name="prov:wasAssociatedWith">
-                <xsl:attribute name="rdf:resource">http://www.openstreetmap.org/users/<xsl:value-of select="$uid"/></xsl:attribute>
+                <xsl:attribute name="rdf:resource">http://www.openstreetmap.org/users/<xsl:value-of select="$uid"/>
+                </xsl:attribute>
             </xsl:element>
 
-<!-- give each changeset a type -->
+            <!-- give each changeset a type -->
             <rdf:type rdf:resource="http://www.w3.org/ns/prov#Activity"/>
 
-<!--apply the template to handle tags-->
+            <!--apply the template to handle tags-->
             <xsl:apply-templates select="tag"/>
 
         </rdf:Description>
 
-    <xsl:for-each select="child::tag">
-        <xsl:if test="(attribute::k='source') or (attribute::k='imagery_used')">
-            <!-- ...Then we make a variable containing  the 'v' attribute value  -->
-            <xsl:variable name= "vl" select="attribute::v"/>
+        <!--make entities for the sources and imagery used These are outside the changeset statement as they are separate entities that the changeset points at -->
+        <xsl:for-each select="child::tag">
+            <xsl:if test="(attribute::k='source') or (attribute::k='imagery_used')">
+                <!-- ...Then we make a variable containing  the 'v' attribute value  -->
+                <xsl:variable name="vl" select="attribute::v"/>
 
-            <!--<xsl:element name="prov:poopydoop"><xsl:value-of select="replace($vl,' ','')"/> </xsl:element>-->
-            <!-- split on the semicolon and iterate over the resulting list structure -->
-<!-- splut the value on the semicolon and stripe non uri characters-->
-            <xsl:for-each select="tokenize(replace($vl,'[()/.# ]',''),';')">
-                <!--make a prov:Entity out of each value-->
-                <rdf:Description rdf:about="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#{.}">
-                    <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+                <!-- split the value on the semicolon and strip non uri characters then iterate over the resulting list structure-->
+                <xsl:for-each select="tokenize(replace($vl,'[()/.# ]',''),';')">
+                    <!--make a prov:Entity out of each value-->
+                    <rdf:Description rdf:about="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#{.}">
+                        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+                    </rdf:Description>
+                </xsl:for-each>
+
+            </xsl:if>
+
+            <!--make a prov:Software agent from the created_by - This is outside the changeset statement as it is a separate entity that the changeset points at-->
+            <xsl:if test="(attribute::k='created_by')">
+                <rdf:Description
+                        rdf:about="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#{replace(attribute::v,'[()/.# ]','')}">
+                    <rdf:type rdf:resource="http://www.w3.org/ns/prov#SoftwareAgent"/>
                 </rdf:Description>
-            </xsl:for-each>
+            </xsl:if>
 
-        </xsl:if>
-
-    <!--make a prov:Software agent from the created_by-->
-    <xsl:if test="(attribute::k='created_by')">
-        <rdf:Description rdf:about="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#{replace(attribute::v,'[()/.# ]','')}">
-            <rdf:type rdf:resource="http://www.w3.org/ns/prov#SoftwareAgent"/>
-        </rdf:Description>
-    </xsl:if>
-
-    </xsl:for-each>
+        </xsl:for-each>
     </xsl:template>
 
 
-<!--template to deal with tags; strips whitespace, splits attribute value on ";" and makes a prov:used triple of each split value
--->
+    <!--template to deal with tags; strips non-uri characters, splits attribute value on ";" and makes a prov:used triple of each split value
+    -->
     <xsl:template match="tag">
         <!--if the there is a key 'source' or 'imagery_used'... -->
         <xsl:if test="(attribute::k='source') or (attribute::k='imagery_used')">
             <!-- ...Then we make a variable containing ALL the 'v' attribute values, after we stripped out all the whitespace -->
-            <xsl:variable name= "val" select="replace(attribute::v,'[()/.# ]','')"/>
+            <xsl:variable name="val" select="replace(attribute::v,'[()/.# ]','')"/>
             <!-- split on the semicolon and iterate over the resulting list structure -->
             <xsl:for-each select="tokenize($val,';')">
                 <!--make a prov:used element out of each value-->
-                    <xsl:element name="prov:used">
-                        <xsl:attribute name="rdf:resource">http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#<xsl:value-of select="."/></xsl:attribute>
-                    </xsl:element>
+                <xsl:element name="prov:used">
+                    <xsl:attribute name="rdf:resource">http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#<xsl:value-of
+                            select="."/>
+                    </xsl:attribute>
+                </xsl:element>
             </xsl:for-each>
-             </xsl:if>
+        </xsl:if>
 
         <!--check if the 'k' attribute  is a "created by"-->
         <xsl:if test="(attribute::k='created_by')">
-            <!--<xsl:variable name= "val" select="replace(attribute::v,' ','')"/>
-            make a prov:association-->
-                <xsl:element name="prov:wasAssociatedWith">
-                    <xsl:attribute name="rdf:resource">http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#<xsl:value-of select="replace(attribute::v,'[()/.# ]','')"/></xsl:attribute>
-                </xsl:element>
+            <!-- make a prov:association, do the regex thing to clean the value-->
+            <xsl:element name="prov:wasAssociatedWith">
+                <xsl:attribute name="rdf:resource">http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#<xsl:value-of
+                        select="replace(attribute::v,'[()/.# ]','')"/>
+                </xsl:attribute>
+            </xsl:element>
 
         </xsl:if>
 
     </xsl:template>
-
-
 
 
 </xsl:stylesheet>
