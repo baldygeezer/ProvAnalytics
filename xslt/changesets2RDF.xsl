@@ -106,8 +106,7 @@
     </xsl:template>
 
 
-    <!--template to deal with tags; strips non-uri characters, splits attribute value on ";" and makes a prov:used triple of each split value
-    -->
+    <!--template to deal with tags; strips non-uri characters, splits attribute value on ";" and makes a prov:used triple of each split value-->
     <xsl:template match="tag">
         <!--if the there is a key 'source' or 'imagery_used'... -->
         <xsl:if test="(attribute::k='source') or (attribute::k='imagery_used')">
