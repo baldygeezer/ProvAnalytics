@@ -7,9 +7,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        start(5);
+        start("csetsData.osm","osmHistData.osh","FullOSM","http://www.osm.org");
         //messing about with some rdf data to see what it looks like in graph db
-      //  DeleteMeEventually pw = new DeleteMeEventually();
+        //  DeleteMeEventually pw = new DeleteMeEventually();
         // pw.print();
     }
 
@@ -32,7 +32,7 @@ public class Main {
 
 
         loader = new FileLoader(new FileIO("osmHistData.osh", "toRDF.xsl"));
-        changeSetLoader= new FileLoader(new FileIO("MiniCsets.osm","changesets2rdf.xsl"));
+        changeSetLoader = new FileLoader(new FileIO("MiniCsets.osm", "changesets2rdf.xsl"));
         // sLoader=new FileLoader(new FileIO("testfixture.osm", "toRDF.xsl"));
 
         ITransformer t = null;
@@ -55,7 +55,7 @@ public class Main {
                 t = new SaxonTransformer(loader, new GraphdbStore("realOSM_RL-OPT", "http://osm.osmd.org/dtatata"));
                 break;
             case 5:
-                //send the result to graphDB using realOSM_RL-OPT repo and placing triples in a named graph
+                //send the result (changesets) to graphDB using realOSM_RL-OPT repo and placing triples in a named graph
                 t = new SaxonTransformer(changeSetLoader, new FileStore("changesetResult.rdf"));
                 break;
             case 6:
@@ -72,6 +72,26 @@ public class Main {
 
         try {
             t.transform();
+
+        } catch (SaxonApiException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void start(String csetSourcFile, String historySourceFile, String repo, String graphname) {
+        ITransformer historyTransformer = null;
+        ITransformer csetTransformer = null;
+
+        FileLoader cSetLoader = new FileLoader(new FileIO(csetSourcFile, "changesets2rdf.xsl"));
+        FileLoader historyLoader = new FileLoader(new FileIO(historySourceFile, "toRDF.xsl"));
+
+        GraphdbStore gdb = new GraphdbStore(repo, graphname);
+
+        csetTransformer = new SaxonTransformer(cSetLoader, gdb);
+        historyTransformer = new SaxonTransformer(historyLoader,gdb);
+        try {
+            csetTransformer.transform();
+            //historyTransformer.transform();
 
         } catch (SaxonApiException e) {
             e.printStackTrace();

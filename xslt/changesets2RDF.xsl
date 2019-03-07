@@ -34,7 +34,7 @@
     <xsl:template match="/*/*">
 
         <!--the rdf Description for each changeset -->
-        <rdf:Description rdf:about="http://www.openstreetmap.org/changeset/{@id}v{@version}">
+        <rdf:Description rdf:about="http://www.openstreetmap.org/changeset/{@id}">
 
             <!--variable to get the user who opened this changeset -->
             <xsl:variable name="uid" select="@uid"/>
@@ -64,6 +64,7 @@
 
             </xsl:for-each>
 
+<!-- @TODO check that there is a UID - it seems that on some pre 2009 chagesets there isn't -->
             <!-- prov association with the user who opened the changeset-->
             <xsl:element name="prov:wasAssociatedWith">
                 <xsl:attribute name="rdf:resource">http://www.openstreetmap.org/users/<xsl:value-of select="$uid"/>
@@ -85,7 +86,7 @@
                 <xsl:variable name="vl" select="attribute::v"/>
 
                 <!-- split the value on the semicolon and strip non uri characters then iterate over the resulting list structure-->
-                <xsl:for-each select="tokenize(replace($vl,'[()/.# ]',''),';')">
+                <xsl:for-each select="tokenize(replace($vl,'[()/.#, ]',''),';')">
                     <!--make a prov:Entity out of each value-->
                     <rdf:Description rdf:about="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#{.}">
                         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
@@ -97,7 +98,7 @@
             <!--make a prov:Software agent from the created_by - This is outside the changeset statement as it is a separate entity that the changeset points at-->
             <xsl:if test="(attribute::k='created_by')">
                 <rdf:Description
-                        rdf:about="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#{replace(attribute::v,'[()/.# ]','')}">
+                        rdf:about="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#{replace(attribute::v,'[|^()\\.# ,:]','')}">
                     <rdf:type rdf:resource="http://www.w3.org/ns/prov#SoftwareAgent"/>
                 </rdf:Description>
             </xsl:if>
@@ -111,13 +112,12 @@
         <!--if the there is a key 'source' or 'imagery_used'... -->
         <xsl:if test="(attribute::k='source') or (attribute::k='imagery_used')">
             <!-- ...Then we make a variable containing ALL the 'v' attribute values, after we stripped out all the whitespace -->
-            <xsl:variable name="val" select="replace(attribute::v,'[()/.# ]','')"/>
+            <xsl:variable name="val" select="replace(attribute::v,'[|^()\\.# ,:]','')"/>
             <!-- split on the semicolon and iterate over the resulting list structure -->
             <xsl:for-each select="tokenize($val,';')">
                 <!--make a prov:used element out of each value-->
                 <xsl:element name="prov:used">
-                    <xsl:attribute name="rdf:resource">http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#<xsl:value-of
-                            select="."/>
+                    <xsl:attribute name="rdf:resource">http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#<xsl:value-of select="."/>
                     </xsl:attribute>
                 </xsl:element>
             </xsl:for-each>
@@ -128,7 +128,7 @@
             <!-- make a prov:association, do the regex thing to clean the value-->
             <xsl:element name="prov:wasAssociatedWith">
                 <xsl:attribute name="rdf:resource">http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#<xsl:value-of
-                        select="replace(attribute::v,'[()/.# ]','')"/>
+                        select="replace(attribute::v,'[|^()\\.# ,:]','')"/>
                 </xsl:attribute>
             </xsl:element>
 
