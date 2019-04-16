@@ -35,9 +35,17 @@
 
         <!--the rdf Description for each changeset -->
         <rdf:Description rdf:about="http://www.openstreetmap.org/changeset/{@id}">
-
+@
             <!--variable to get the user who opened this changeset -->
-            <xsl:variable name="uid" select="@uid"/>
+            <xsl:choose>
+                <xsl:when test="@uid=''">
+                <xsl:variable name="uid" select="anonymous"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:variable name="uid" select="@uid"/>
+                </xsl:otherwise>
+            </xsl:choose>
+
             <!-- for every attribute we find...-->
             <xsl:for-each select="@*">
                 <!--.process the attributes and turn them into qnamed attributes-->
@@ -65,6 +73,7 @@
             </xsl:for-each>
 
 <!-- @TODO check that there is a UID - it seems that on some pre 2009 chagesets there isn't -->
+
             <!-- prov association with the user who opened the changeset-->
             <xsl:element name="prov:wasAssociatedWith">
                 <xsl:attribute name="rdf:resource">http://www.openstreetmap.org/users/<xsl:value-of select="$uid"/>
