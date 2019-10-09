@@ -35,16 +35,20 @@
 
         <!--the rdf Description for each changeset -->
         <rdf:Description rdf:about="http://www.openstreetmap.org/changeset/{@id}">
-@
+
             <!--variable to get the user who opened this changeset -->
+      <!--see the stack overflow page you have open - don't declarea the varieable inside choose
+      put the valueOf in the choose and put the choose inside the variable declaration-->
+            <xsl:variable name="uid" >
             <xsl:choose>
                 <xsl:when test="@uid=''">
-                <xsl:variable name="uid" select="anonymous"/>
+                <xsl:value-of select = "'anonymous'"/>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:variable name="uid" select="@uid"/>
+                    <xsl:value-of select = "'@uid'"/>
                 </xsl:otherwise>
             </xsl:choose>
+            </xsl:variable>
 
             <!-- for every attribute we find...-->
             <xsl:for-each select="@*">

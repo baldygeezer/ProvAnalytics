@@ -32,8 +32,8 @@ public class Main {
         FileLoader changeSetLoader = null;
 
 
-        loader = new FileLoader(new FileIO("osmHistData.osh", "toRDF.xsl"));
-        changeSetLoader = new FileLoader(new FileIO("MiniCsets.osm", "changesets2rdf.xsl"));
+        loader = new FileLoader(new FileIO("data-in/osmHistData.osh", "toRDF.xsl"));
+        changeSetLoader = new FileLoader(new FileIO("data-in/MiniCsets.osm", "changesets2rdf.xsl"));
         // sLoader=new FileLoader(new FileIO("testfixture.osm", "toRDF.xsl"));
 
         ITransformer t = null;
@@ -63,7 +63,10 @@ public class Main {
                 //send the result to graphDB using realOSM_RL-OPT repo and placing triples in a named graph
                 t = new SaxonTransformer(changeSetLoader, new GraphdbStore("realOSM_RL-OPT", "http://osm.osmd.org/changesets"));
                 break;
-
+//            case 7:
+//                //send the result to graphDB using realOSM_RL-OPT repo and placing triples in a named graph
+//                t = new SaxonTransformer(changeSetLoader, new GraphdbStore("realOSM_RL-OPT", "http://osm.osmd.org/changesets"));
+//                break;
 
             default:
                 //same as 1

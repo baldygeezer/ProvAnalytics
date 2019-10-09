@@ -42,15 +42,16 @@ public class FileIO implements IFileIO {
     }
 
     /**
-     * constructor specifying the name of  files. Use no arguments when getting files
-     *
-     * @param dataFileName   name of the data file
+     * constructor specifying the name of files. Use no arguments when getting files
+     * NB we change this to not append the path to the input folder, so that we can use multi file loaders
+     * @toDo look at better way of doing file locations
+     * @param dataFileName path to  the data file
      * @param styleSheetName name of the stylesheet
      */
     public FileIO(String dataFileName, String styleSheetName) {
         this.dataFileName = dataFileName;
         this.styleSheetName = styleSheetName;
-        dataFile = getFile(dataPath + this.dataFileName);
+        dataFile = getFile( this.dataFileName);
         styleSheet = getFile(xslPath + this.styleSheetName);
     }
 
