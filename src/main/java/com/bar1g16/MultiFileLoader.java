@@ -11,19 +11,33 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import com.bar1g16.interfaces.ITransformer;
 import net.sf.saxon.s9api.SaxonApiException;
+import org.apache.jena.dboe.migrate.L;
+
 
 public class MultiFileLoader {
+private Logster log ;
 
     public static void main(String[] args) {
 
         MultiFileLoader m = new MultiFileLoader();
         //m.getFiles("data-in/cleanCset");
-            m.start();
+         m.start();
+
+
+//        for (int ctr = 1; ctr < 4; ctr++) {
+//
+//            m.log.log(Level.INFO, ctr + " potato ");
+//        }
+    }
+
+    public MultiFileLoader() {
+        this.log = Logster.getInstance();
     }
 
     public void start() {
@@ -34,7 +48,7 @@ public class MultiFileLoader {
 
     private ArrayList<String> getFiles(String dirLoc) {
 
-        Path dirPath = Paths.get("data-in"+ dirLoc);
+        Path dirPath = Paths.get("data-in" + dirLoc);
         ArrayList<String> fileLocList = new ArrayList<>();
         try (Stream<Path> walk = Files.walk(dirPath)) {
             fileLocList = walk.filter(Files::isRegularFile).map(x -> x.toFile().toString()).collect(Collectors.toCollection(ArrayList::new));
@@ -64,9 +78,12 @@ public class MultiFileLoader {
             IDataLoader loader = new FileLoader(new FileIO(fileLocation, styleSheetName));
             t = new SaxonTransformer(loader, new GraphdbStore(repoName, "http://osm.osmd.org/" + graphSuffix));
             try {
+                log.log(Level.INFO,"transforming file: "+fileLocation);
                 t.transform();
+
             } catch (SaxonApiException e) {
-                e.printStackTrace();
+                log.log(Level.INFO,"transforming file failed: "+fileLocation);
+                //e.printStackTrace();
             }
 
         }

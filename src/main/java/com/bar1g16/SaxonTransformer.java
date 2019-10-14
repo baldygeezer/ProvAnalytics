@@ -53,6 +53,7 @@ public class SaxonTransformer implements ITransformer {
     }
 
     private void save(ByteArrayOutputStream out) {
+
         dataStorage.save(out);
     }
 
