@@ -21,13 +21,13 @@ import org.apache.jena.dboe.migrate.L;
 
 
 public class MultiFileLoader {
-private Logster log ;
+    private Logster log;
 
     public static void main(String[] args) {
 
         MultiFileLoader m = new MultiFileLoader();
         //m.getFiles("data-in/cleanCset");
-         m.start();
+        m.start();
 
 
 //        for (int ctr = 1; ctr < 4; ctr++) {
@@ -73,16 +73,17 @@ private Logster log ;
     private void processFiles(String dirLoc, String styleSheetName, String repoName, String graphSuffix) {
         ITransformer t = null;
         ArrayList<String> fileLocations = getFiles(dirLoc);
-
+        int ctr = 1;
         for (String fileLocation : fileLocations) {
             IDataLoader loader = new FileLoader(new FileIO(fileLocation, styleSheetName));
             t = new SaxonTransformer(loader, new GraphdbStore(repoName, "http://osm.osmd.org/" + graphSuffix));
             try {
-                log.log(Level.INFO,"transforming file: "+fileLocation);
+                log.log(Level.INFO, "transforming file: " + fileLocation + " (file #"+ctr+" of "+fileLocations.size()+")");
                 t.transform();
+                ctr++;
 
             } catch (SaxonApiException e) {
-                log.log(Level.INFO,"transforming file failed: "+fileLocation);
+                log.log(Level.INFO, "transforming file failed: " + fileLocation);
                 //e.printStackTrace();
             }
 
