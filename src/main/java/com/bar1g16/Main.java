@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
 
        // start("csetsData.osm","osmHistData.osh","FullOSM","http://www.osm.org");
-        start(5);
+        start(7);
         //messing about with some rdf data to see what it looks like in graph db
         //  DeleteMeEventually pw = new DeleteMeEventually();
         // pw.print();
@@ -63,10 +63,10 @@ public class Main {
                 //send the result to graphDB using realOSM_RL-OPT repo and placing triples in a named graph
                 t = new SaxonTransformer(changeSetLoader, new GraphdbStore("realOSM_RL-OPT", "http://osm.osmd.org/changesets"));
                 break;
-//            case 7:
-//                //send the result to graphDB using realOSM_RL-OPT repo and placing triples in a named graph
-//                t = new SaxonTransformer(changeSetLoader, new GraphdbStore("realOSM_RL-OPT", "http://osm.osmd.org/changesets"));
-//                break;
+           case 7:
+//                //test a cleaned changeset
+                t = new SaxonTransformer(new FileLoader(new FileIO("data-in/cleanHampCset/chunk_1775.xml", "changesets2rdf.xsl")), new FileStore("changesetResult.rdf"));
+                break;
 
             default:
                 //same as 1

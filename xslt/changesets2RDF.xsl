@@ -45,7 +45,7 @@
                 <xsl:value-of select = "'anonymous'"/>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:value-of select = "'@uid'"/>
+                    <xsl:value-of select = "@uid"/>
                 </xsl:otherwise>
             </xsl:choose>
             </xsl:variable>
