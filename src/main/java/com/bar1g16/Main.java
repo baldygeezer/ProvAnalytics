@@ -65,7 +65,7 @@ public class Main {
                 break;
            case 7:
 //                //test a cleaned changeset
-                t = new SaxonTransformer(new FileLoader(new FileIO("data-in/cleanHampCset/chunk_1775.xml", "changesets2rdf.xsl")), new FileStore("changesetResult.rdf"));
+                t = new SaxonTransformer(new FileLoader(new FileIO("data-in/cleanHampCset/fails/chunk_1774.xml", "changesets2rdf.xsl")), new FileStore("changesetResult.rdf"));
                 break;
 
             default:

@@ -18,6 +18,7 @@ import java.util.stream.Stream;
 import com.bar1g16.interfaces.ITransformer;
 import net.sf.saxon.s9api.SaxonApiException;
 import org.apache.jena.dboe.migrate.L;
+import org.eclipse.rdf4j.query.algebra.Str;
 
 
 public class MultiFileLoader {
@@ -43,36 +44,19 @@ public class MultiFileLoader {
     public void start() {
         //ArrayList<String> fileList = getFiles();
         // processFiles("/cleanCset", "changesets2rdf.xsl", "sotonData_RL-OPT", "changesets");
-        processFiles("/cleanHampCset", "changesets2rdf.xsl", "sotonData_RL-OPT", "changesets", true);
+        // processFiles("/cleanHampCset", "changesets2rdf.xsl", "sotonData_RL-OPT", "changesets", true);
         // processFiles("/cleanSotonHist", "toRDF.xsl", "sotonData_RL-OPT", "history");
+        processFiles("/cleantest", "changesets2rdf.xsl", "test", "changesets", true);
+
+        int ctr = 0;
+        ArrayList<String> fails = getFiles();
+        for (String s : fails) {
+            System.out.println(s);
+            ctr++;
+        }
+        System.out.println(ctr);
     }
 
-//    /**
-//     * get a list of all the files in a directory
-//     * @param dirLoc the directory to look in
-//     * @return
-//     */
-//    private ArrayList<String> getFiles(String dirLoc) {
-//
-//        Path dirPath = Paths.get("data-in" + dirLoc);
-//        ArrayList<String> fileLocList = new ArrayList<>();
-//        try (Stream<Path> walk = Files.walk(dirPath)) {
-//            fileLocList = walk.filter(Files::isRegularFile).map(x -> x.toFile().toString()).collect(Collectors.toCollection(ArrayList::new));
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//
-//        //get rid of Mac OS filesystem crap
-//        // @todo Windows?
-//        for (String str : fileLocList) {
-//            if (str.contains(".DS_Store")) {
-//               fileLocList.remove(str);
-//            }
-//        }
-//
-//        return fileLocList;
-//
-//    }
 
     /**
      * //     * get a list of all the files in a directory
@@ -82,10 +66,9 @@ public class MultiFileLoader {
      */
     private ArrayList<String> getFiles(String dirLoc) {
         File dir = new File("data-in" + dirLoc);
-        // dir.setReadable(true);
-        // System.out.println(dir.length());
         ArrayList<String> files = new ArrayList<>();
         File[] fileList = dir.listFiles();
+
         for (File file : fileList) {
             if (!file.isHidden()) {
                 files.add("data-in" + dirLoc + "/" + file.getName());
@@ -93,33 +76,68 @@ public class MultiFileLoader {
         }
         return files;
     }
+
+
     /**
-     * //     * get a list of all the failed files from the log
+     * //     * the no-arg version to get a list of all the failed files from the log and copy them into a 'fail' folder
      * //     * @param dirLoc the directory to look in
      * //     * @return
      * //
      */
     private ArrayList<String> getFiles() {
-
         ArrayList<String> files = new ArrayList<>();
-       File logFile=new File ("fileLog.txt") ;
-       String line;
+        File logFile = new File("fileLog.txt");
+        String line;
+        String failDirLoc;
         try {
-            BufferedReader fileReader=new BufferedReader(new FileReader(logFile));
-            while ((line = fileReader.readLine()) != null){
-                //do your shit wit da string...
+            BufferedReader fileReader = new BufferedReader(new FileReader(logFile));
+            while ((line = fileReader.readLine()) != null) {
+                //split each line on the colon
+                String[] lineList = line.split(":");
+                //if the line is logging a failed file...
+                if (lineList[1].equals(" transforming file failed")) {
+                    //...strip trailing whitespace and add it to the list
+                    String filePath = lineList[2].trim();
+                    files.add(filePath);
+
+                    //break up the uri into a list by separating on the "\"
+                    String[] fileLocParts = filePath.split("/");
+
+                    //get the filename (string after the last /)
+                    String fileName = fileLocParts[fileLocParts.length - 1];
+
+                    //replace the filename with the name of a subdirectory that we copy the files to
+                    fileLocParts[fileLocParts.length - 1] = "fails";
+                    failDirLoc = "";
+
+                    //make it back into a string uri pointing at the subdirectory
+                    for (String s : fileLocParts) {
+                        failDirLoc += s + "/";
+                    }
+                    //get an nio path with it
+                    Path failDirPath = Paths.get(failDirLoc);
+
+                    //if we didn't already make a subfolder, make one
+                    if (!Files.isDirectory(failDirPath)) {
+                        Files.createDirectory(failDirPath);
+                    }
+
+                    //copy the file into it- the second arg is making the path to for the
+                    // file by adding the filename to the directory url
+                    Files.copy(Paths.get(filePath), failDirPath.resolve(fileName));
+
+                }
             }
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-        }
-        catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
-
         return files;
     }
+
 
     /**
      * This method processes the files in a directory and sends them to the triplestore
@@ -134,15 +152,15 @@ public class MultiFileLoader {
 
     private void processFiles(String dirLoc, String styleSheetName, String repoName, String graphSuffix, boolean failedFiles) {
         ITransformer t = null;
-        ArrayList<String> fileLocations=new ArrayList<>();
+        ArrayList<String> fileLocations = new ArrayList<>();
         //if we are importing files that have failed on the first run...
-        if (failedFiles) {
-            //...call the no arg version of get files which scrapes the log for file failures
-            fileLocations = getFiles();
-        } else {
-            //if this is a first run - just scoure the directory and import
-            fileLocations = getFiles(dirLoc);
-        }
+//        if (failedFiles) {
+//            //...call the no arg version of get files which scrapes the log for file failures
+//            fileLocations = getFiles();
+//        } else {
+//            //if this is a first run - just scour the directory and import
+        fileLocations = getFiles(dirLoc);
+//        }
 
         int ctr = 1;
         for (String fileLocation : fileLocations) {
@@ -157,13 +175,14 @@ public class MultiFileLoader {
                 log.log(Level.INFO, "transforming file failed: " + fileLocation);
                 //e.printStackTrace();
             } catch (Exception e) {
+                ctr++;
                 log.log(Level.INFO, "transforming file failed: " + fileLocation);
+                e.printStackTrace();
             }
         }
 
 
     }
-
 
 
 }
