@@ -43,10 +43,10 @@ public class MultiFileLoader {
 
     public void start() {
         //ArrayList<String> fileList = getFiles();
-        // processFiles("/cleanCset", "changesets2rdf.xsl", "sotonData_RL-OPT", "changesets");
+         processFiles("/cleanCset/fails1", "changesets2rdf.xsl", "sotonData_RL-OPT", "changesets");
         // processFiles("/cleanHampCset", "changesets2rdf.xsl", "sotonData_RL-OPT", "changesets", true);
         // processFiles("/cleanSotonHist", "toRDF.xsl", "sotonData_RL-OPT", "history");
-        processFiles("/cleantest", "changesets2rdf.xsl", "test", "changesets", true);
+        processFiles("/cleanCset/fails1", "changesets2rdf.xsl", "test", "changesets");
 
         int ctr = 0;
         ArrayList<String> fails = getFiles();
@@ -142,7 +142,6 @@ public class MultiFileLoader {
     /**
      * This method processes the files in a directory and sends them to the triplestore
      *
-     * @param failedFiles    whether we are reprocessing files wot failed
      * @param dirLoc         path to the folder containing the files
      * @param styleSheetName name of the stylesheet file (must be in the xslt directory)
      * @param repoName       name of the repo in GraphDB
@@ -150,7 +149,7 @@ public class MultiFileLoader {
      *                       (this is appended to 'http://osm.osmd.org/')
      */
 
-    private void processFiles(String dirLoc, String styleSheetName, String repoName, String graphSuffix, boolean failedFiles) {
+    private void processFiles(String dirLoc, String styleSheetName, String repoName, String graphSuffix) {
         ITransformer t = null;
         ArrayList<String> fileLocations = new ArrayList<>();
         //if we are importing files that have failed on the first run...
