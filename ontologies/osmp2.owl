@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#"
+     xml:base="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:prov="http://www.w3.org/ns/prov#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp">
+        <owl:imports rdf:resource="http://www.opengis.net/ont/geosparql"/>
+        <owl:imports rdf:resource="http://www.w3.org/ns/prov-o"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#hadTag -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#hadTag">
+        <rdfs:domain rdf:resource="https://wiki.openstreetmap.org/wiki/Relation"/>
+        <rdfs:domain rdf:resource="https://wiki.openstreetmap.org/wiki/Way"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#hasLatestVersion -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#hasLatestVersion">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#member -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#member">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#hadMember"/>
+        <rdfs:domain rdf:resource="https://wiki.openstreetmap.org/wiki/Relation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#nd -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#nd">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#hadMember"/>
+        <rdfs:domain rdf:resource="https://wiki.openstreetmap.org/wiki/Way"/>
+        <rdfs:range rdf:resource="https://wiki.openstreetmap.org/wiki/Node"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#ref -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#ref">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#hadMember"/>
+        <rdfs:domain rdf:resource="https://wiki.openstreetmap.org/wiki/Relation"/>
+        <rdfs:range rdf:resource="https://wiki.openstreetmap.org/wiki/Node"/>
+        <rdfs:range rdf:resource="https://wiki.openstreetmap.org/wiki/Relation"/>
+        <rdfs:range rdf:resource="https://wiki.openstreetmap.org/wiki/Way"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#hasVersionNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#hasVersionNumber">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#Primitive"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#Primitive -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#Primitive">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#User -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#User">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- https://wiki.openstreetmap.org/wiki/Node -->
+
+    <owl:Class rdf:about="https://wiki.openstreetmap.org/wiki/Node">
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#Primitive"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- https://wiki.openstreetmap.org/wiki/Relation -->
+
+    <owl:Class rdf:about="https://wiki.openstreetmap.org/wiki/Relation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#Primitive"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Collection"/>
+        <owl:disjointWith rdf:resource="https://wiki.openstreetmap.org/wiki/Way"/>
+    </owl:Class>
+    
+
+
+    <!-- https://wiki.openstreetmap.org/wiki/Way -->
+
+    <owl:Class rdf:about="https://wiki.openstreetmap.org/wiki/Way">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bernardroper/ontologies/2018/7/osmp#Primitive"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Collection"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
