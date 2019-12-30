@@ -43,13 +43,15 @@ public class MultiFileLoader {
 
     public void start() {
         //ArrayList<String> fileList = getFiles();
-         processFiles("/cleanCset/fails1", "changesets2rdf.xsl", "sotonData_RL-OPT", "changesets");
+         processFiles("SotonHistClean_sf/1", "toRDF.xsl", "SotonDataFinal", "history");
         // processFiles("/cleanHampCset", "changesets2rdf.xsl", "sotonData_RL-OPT", "changesets", true);
         // processFiles("/cleanSotonHist", "toRDF.xsl", "sotonData_RL-OPT", "history");
-        processFiles("/cleanCset/fails1", "changesets2rdf.xsl", "test", "changesets");
+       // processFiles("/cleanCset/fails1", "changesets2rdf.xsl", "test", "changesets");
+
+
 
         int ctr = 0;
-        ArrayList<String> fails = getFiles();
+        ArrayList<String> fails = getFailedFiles();
         for (String s : fails) {
             System.out.println(s);
             ctr++;
@@ -79,12 +81,13 @@ public class MultiFileLoader {
 
 
     /**
-     * //     * the no-arg version to get a list of all the failed files from the log and copy them into a 'fail' folder
-     * //     * @param dirLoc the directory to look in
+     *      get a list of all the failed files from the log;
+     *      copy them into a 'fail' folder
+     *
      * //     * @return
      * //
      */
-    private ArrayList<String> getFiles() {
+    private ArrayList<String> getFailedFiles() {
         ArrayList<String> files = new ArrayList<>();
         File logFile = new File("fileLog.txt");
         String line;
