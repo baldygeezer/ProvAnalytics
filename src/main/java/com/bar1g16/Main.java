@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
 
        // start("csetsData.osm","osmHistData.osh","FullOSM","http://www.osm.org");
-        start(7);
+        start(1);
         //messing about with some rdf data to see what it looks like in graph db
         //  DeleteMeEventually pw = new DeleteMeEventually();
         // pw.print();
@@ -32,8 +32,8 @@ public class Main {
         FileLoader changeSetLoader = null;
 
 
-        loader = new FileLoader(new FileIO("data-in/osmHistData.osh", "toRDF.xsl"));
-        changeSetLoader = new FileLoader(new FileIO("data-in/MiniCsets.osm", "changesets2rdf.xsl"));
+        loader = new FileLoader(new FileIO("data-in/relationtest.osm", "toRDF.xsl"));
+        //changeSetLoader = new FileLoader(new FileIO("data-in/MiniCsets.osm", "changesets2rdf.xsl"));
         // sLoader=new FileLoader(new FileIO("testfixture.osm", "toRDF.xsl"));
 
         ITransformer t = null;
@@ -67,7 +67,11 @@ public class Main {
 //                //test a cleaned changeset
                 t = new SaxonTransformer(new FileLoader(new FileIO("data-in/cleanHampCset/fails/chunk_1774.xml", "changesets2rdf.xsl")), new FileStore("changesetResult.rdf"));
                 break;
-
+            case 9:
+//                //run an osmose file - save output to file
+                t = new SaxonTransformer(new FileLoader(new FileIO("data-in/osmose.xml", "osmose2rdf.xsl")), new FileStore(
+                        "osmoseResult.rdf"));
+                break;
             default:
                 //same as 1
                 t = new SaxonTransformer(loader, new FileStore("data-out/result.rdf"));

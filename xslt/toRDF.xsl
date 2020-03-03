@@ -54,21 +54,23 @@
                 <!--<xsl:apply-templates select="child::*"/>-->
 
                 <!--if the attribute is an id we make an attribution statement -->
-                <!--<xsl:if test="name()='id'"> &lt;!&ndash;ON weds start here&ndash;&gt;-->
-                    <!--<xsl:attribute name="prov:attributedTo">osm:users/<xsl:value-of select="$uid"/></xsl:attribute>-->
-                    <!--&lt;!&ndash;<xsl:element name="prov:attributedTo">osm:users/<xsl:value-of select="$uid"/></xsl:element>&ndash;&gt;-->
-                <!--</xsl:if>-->
+
             </xsl:for-each>
 
             <!-- handle tags and members-->
-            <!--for every child element in the data...-->
+            <!--for every child element in the data -->
             <xsl:for-each select="child::*">
-                <!--make an element with same name prefixed with osm:-->
+
+<!--check that it isn't a relation member-->
+                <xsl:choose>
+                    <xsl:when test="name()!='member'">
+                <!--  if not then make an element with same name prefixed with osm:-->
                 <xsl:element name="osmp:{name()}">
                    <!--if it is an 'nd' element, add an rdf:resource of type node-->
                     <xsl:if test="name()='nd'">
                         <xsl:attribute name="rdf:resource">http://www.openstreetmap.org/node/<xsl:value-of select="attribute()"/></xsl:attribute>
-                    </xsl:if> <!-- !!!!!!!!!!!we need to handle member elements in relations as well!!!!!!!!!!!! -->
+                    </xsl:if>
+                    <!-- !!!!!!!!!!!we need to handle member elements in relations as well!!!!!!!!!!!! -->
 <!-- for every  attribute of a child element -->
                     <xsl:for-each select="attribute::*">
                         <!-- if it's a k prefix with : v - we need to add a uri prefix at some stage...-->
@@ -84,6 +86,16 @@
                         <xsl:if test="name()='k'">%3D</xsl:if>
                     </xsl:for-each>
                 </xsl:element>
+                    </xsl:when>
+
+                    <!-- otherwise for every element that is a relation member...-->
+                    <xsl:otherwise>
+                        <xsl:element name="osmp:{name()}">
+                        <xsl:attribute name="rdf:resource">http://www.openstreetmap.org/<xsl:value-of select="@type"/>/<xsl:value-of select="@ref"/></xsl:attribute>
+                        </xsl:element>
+                    </xsl:otherwise>
+
+                </xsl:choose>
             </xsl:for-each>
 
             <!-- the prov attribution element - we still haven't minted the URI properly!-->

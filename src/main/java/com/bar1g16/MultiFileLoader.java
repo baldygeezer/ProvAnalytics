@@ -43,21 +43,23 @@ public class MultiFileLoader {
 
     public void start() {
         //ArrayList<String> fileList = getFiles();
-         processFiles("SotonHistClean_sf/1", "toRDF.xsl", "SotonDataFinal", "history");
-        // processFiles("/cleanHampCset", "changesets2rdf.xsl", "sotonData_RL-OPT", "changesets", true);
+    //  processFiles("/sotonLatest/7", "toRDF.xsl", "sotonLatest", "history");
+        processFiles("/sotonLatestCleanCset", "changesets2rdf.xsl", "sotonLatest", "changesets");
+   //     processFiles("/cleanCset", "changesets2rdf.xsl", "sotonrdfs", "changesets");
         // processFiles("/cleanSotonHist", "toRDF.xsl", "sotonData_RL-OPT", "history");
        // processFiles("/cleanCset/fails1", "changesets2rdf.xsl", "test", "changesets");
 
 
-
-        int ctr = 0;
-        ArrayList<String> fails = getFailedFiles();
-        for (String s : fails) {
-            System.out.println(s);
-            ctr++;
-        }
-        System.out.println(ctr);
-    }
+////        print out the list of failures and copy the failed files to a subdir
+//        int ctr = 0;
+//        ArrayList<String> fails = getFailedFiles();
+//        for (String s : fails) {
+//            System.out.println(s);
+//            ctr++;
+//        }
+//        System.out.println(ctr);
+//
+   }
 
 
     /**
